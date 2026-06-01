@@ -1,9 +1,16 @@
-/* styles.css — placeholder (Phase 0). Real dashboard styling lands in Phase 3. */
+/* styles.css — dashboard styling (Phase 3). */
 :root {
   --bg: #0f1115;
+  --panel: #171a21;
+  --panel-2: #1e222b;
   --fg: #e6e6e6;
   --muted: #9aa0a6;
-  --accent: #4f8cff;
+  --border: #2a2f3a;
+  --buy: #2ecc71;
+  --sell: #e74c3c;
+  --neutral: #95a5a6;
+  --up: #2ecc71;
+  --down: #e74c3c;
 }
 
 * { box-sizing: border-box; }
@@ -16,15 +23,99 @@ body {
   line-height: 1.5;
 }
 
-header, main, footer {
-  max-width: 960px;
+header, .controls, main, footer {
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 1rem 1.25rem;
+  padding: 0.75rem 1.25rem;
 }
 
-h1 { margin-bottom: 0.25rem; }
+.title-row { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+h1 { margin: 0.25rem 0; font-size: 1.5rem; }
+.updated { color: var(--muted); font-size: 0.85rem; }
+.tagline { color: var(--muted); margin: 0.25rem 0 0; font-size: 0.9rem; }
 
-.tagline, footer p { color: var(--muted); }
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.controls input, .controls select {
+  background: var(--panel-2);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+}
+.controls label { color: var(--muted); font-size: 0.85rem; display: flex; gap: 0.4rem; align-items: center; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+.card-error { border-color: var(--sell); }
+
+.card-head { display: flex; justify-content: space-between; align-items: center; }
+.ticker { font-weight: 700; font-size: 1.15rem; letter-spacing: 0.03em; }
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.badge.buy { background: rgba(46, 204, 113, 0.18); color: var(--buy); }
+.badge.sell { background: rgba(231, 76, 60, 0.18); color: var(--sell); }
+.badge.neutral { background: rgba(149, 165, 166, 0.18); color: var(--neutral); }
+.badge.err { background: rgba(231, 76, 60, 0.25); color: var(--sell); }
+
+.price-row { display: flex; align-items: baseline; gap: 0.6rem; margin: 0.5rem 0 0.25rem; }
+.price { font-size: 1.3rem; font-weight: 600; }
+.change.up { color: var(--up); }
+.change.down { color: var(--down); }
+
+.composite { font-size: 0.9rem; color: var(--muted); }
+.composite strong { color: var(--fg); font-size: 1rem; }
+.coverage { margin-left: 0.5rem; font-size: 0.78rem; }
+
+.subscores {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0.4rem 0;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.subscores span {
+  background: var(--panel-2);
+  padding: 0.15rem 0.45rem;
+  border-radius: 5px;
+}
+
+.flags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.4rem 0; }
+.flag {
+  font-size: 0.7rem;
+  background: rgba(241, 196, 15, 0.16);
+  color: #f1c40f;
+  padding: 0.12rem 0.4rem;
+  border-radius: 5px;
+}
+
+details { margin-top: 0.5rem; }
+summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
+.reasons { margin: 0.5rem 0 0; padding-left: 1.1rem; font-size: 0.85rem; }
+.reasons li { margin-bottom: 0.2rem; }
+.err-msg { color: var(--sell); font-size: 0.85rem; }
 
 .placeholder {
   border: 1px dashed var(--muted);
@@ -38,3 +129,5 @@ code {
   padding: 0.1rem 0.35rem;
   border-radius: 4px;
 }
+
+footer p { color: var(--muted); font-size: 0.8rem; }
