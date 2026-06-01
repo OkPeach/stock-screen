@@ -1,40 +1,36 @@
 {
-  "generated_at": "2026-06-01T09:05:13.441590+00:00",
-  "count": 4,
+  "generated_at": "2026-06-01T09:44:22.250711+00:00",
+  "count": 5,
   "tickers": [
     {
       "symbol": "AAPL",
+      "company": "Apple",
+      "sector": "Technology",
       "price": 185.2,
       "change_pct": 1.3,
       "verdict": "WATCH-BUY",
-      "composite": 0.65,
+      "composite": 0.51,
       "coverage": 1.0,
       "scores": {
-        "fundamentals": 1.0,
+        "fundamentals": 0.5,
         "technicals": 0.4,
-        "sentiment": 0.44
+        "sentiment": 0.681
       },
       "reasons": [
         "[fundamentals] P/E 21.0 < 25 (attractive)",
-        "[fundamentals] Revenue growth 11.0% YoY > 5%",
-        "[fundamentals] Debt/Equity 0.50 < 1.5",
-        "[fundamentals] Positive free cash flow",
+        "[fundamentals] Revenue growth 8.0% YoY > 5%",
+        "[fundamentals] Debt/Equity 1.50 > 1.5 (leveraged)",
         "[technicals] SMA50 (173.80) above SMA200 (143.80) \u2014 uptrend",
         "[technicals] RSI 100 > 70 (overbought)",
         "[technicals] MACD above signal (bullish)",
-        "[sentiment] News-sentiment score 0.72 (Finnhub)"
+        "[sentiment] Headline sentiment +0.68 over 2 stories (2+ / 0-, VADER)"
       ],
       "flags": [
+        "high_leverage",
         "rsi_overbought"
       ],
       "alerts": [],
       "details": {
-        "fundamentals": {
-          "pe": 21.0,
-          "rev_growth": 0.11,
-          "debt_to_equity": 0.5,
-          "fcf": 90000.0
-        },
         "technicals": {
           "sma_fast": 173.8,
           "sma_slow": 143.8,
@@ -43,44 +39,134 @@
           "macd_signal": 2.8
         },
         "sentiment": {
-          "source": "finnhub_news_sentiment"
+          "source": "vader_headlines",
+          "stories": 2,
+          "avg": 0.681
         }
-      }
+      },
+      "sources": {
+        "primary": "finnhub"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 21.0,
+          "display": "21.0\u00d7",
+          "sector_benchmark": 49.0,
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 48.0,
+          "display": "48.0\u00d7",
+          "sector_benchmark": 34.0,
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 8.5,
+          "display": "8.5\u00d7",
+          "sector_benchmark": 24.0,
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 44.1,
+          "display": "44.1%",
+          "sector_benchmark": 71.0,
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 25.3,
+          "display": "25.3%",
+          "sector_benchmark": 42.0,
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 150.0,
+          "display": "150.0%",
+          "sector_benchmark": 79.0,
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 0.99,
+          "display": "1.0\u00d7",
+          "sector_benchmark": 2.685,
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 1.5,
+          "display": "1.5\u00d7",
+          "sector_benchmark": 0.435,
+          "word": "heavy",
+          "tone": "bad"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 8.0,
+          "display": "8.0%",
+          "sector_benchmark": 71.0,
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 0.5,
+          "display": "0.5%",
+          "sector_benchmark": 0.39,
+          "word": "high",
+          "tone": "neutral"
+        }
+      ],
+      "peers_in_sector": 2
     },
     {
       "symbol": "MSFT",
-      "price": 132.0,
-      "change_pct": 0.4,
-      "verdict": "NEUTRAL",
-      "composite": -0.027,
-      "coverage": 0.75,
+      "company": "Microsoft",
+      "sector": "Technology",
+      "price": 410.0,
+      "change_pct": 0.2,
+      "verdict": "WATCH-SELL",
+      "composite": -0.281,
+      "coverage": 0.6,
       "scores": {
-        "fundamentals": 0.3,
+        "fundamentals": 0.0,
         "technicals": -0.4,
-        "sentiment": 0.0
+        "sentiment": -0.114
       },
       "reasons": [
-        "[fundamentals] P/E 42.0 > 40 (rich)",
-        "[fundamentals] Revenue growth 6.0% YoY > 5%",
-        "[fundamentals] Debt/Equity 0.60 < 1.5",
-        "[fundamentals] Positive free cash flow",
+        "[fundamentals] fundamentals: no usable metrics on this plan",
         "[technicals] SMA50 (121.86) below SMA200 (130.86) \u2014 downtrend",
         "[technicals] RSI 0 < 30 (oversold)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Sentiment unavailable (premium endpoint); 1 recent headlines, treated as neutral"
+        "[sentiment] Headline sentiment -0.11 over 2 stories (1+ / 1-, VADER)"
       ],
       "flags": [
-        "high_pe",
         "rsi_oversold"
       ],
       "alerts": [],
       "details": {
-        "fundamentals": {
-          "pe": 42.0,
-          "rev_growth": 0.06,
-          "debt_to_equity": 0.6,
-          "fcf": 60000.0
-        },
         "technicals": {
           "sma_fast": 121.86,
           "sma_slow": 130.86,
@@ -89,49 +175,400 @@
           "macd_signal": -0.84
         },
         "sentiment": {
-          "source": "fallback",
-          "headlines": 1
+          "source": "vader_headlines",
+          "stories": 2,
+          "avg": -0.114
         }
-      }
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fundamentals": "fmp"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 36.0,
+          "display": "36.0\u00d7",
+          "sector_benchmark": 41.5,
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 13.0,
+          "display": "13.0\u00d7",
+          "sector_benchmark": 51.5,
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 13.0,
+          "display": "13.0\u00d7",
+          "sector_benchmark": 21.75,
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 69.0,
+          "display": "69.0%",
+          "sector_benchmark": 58.55,
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 36.0,
+          "display": "36.0%",
+          "sector_benchmark": 36.65,
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 43.0,
+          "display": "43.0%",
+          "sector_benchmark": 132.5,
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 1.27,
+          "display": "1.3\u00d7",
+          "sector_benchmark": 2.545,
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.47,
+          "display": "0.5\u00d7",
+          "sector_benchmark": 0.95,
+          "word": "lean",
+          "tone": "good"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 16.0,
+          "display": "16.0%",
+          "sector_benchmark": 67.0,
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 0.75,
+          "display": "0.8%",
+          "sector_benchmark": 0.265,
+          "word": "high",
+          "tone": "neutral"
+        }
+      ],
+      "peers_in_sector": 2
+    },
+    {
+      "symbol": "NVDA",
+      "company": "NVIDIA",
+      "sector": "Technology",
+      "price": 880.0,
+      "change_pct": 3.1,
+      "verdict": "WATCH-BUY",
+      "composite": 0.367,
+      "coverage": 1.0,
+      "scores": {
+        "fundamentals": 0.1,
+        "technicals": 0.4,
+        "sentiment": 0.75
+      },
+      "reasons": [
+        "[fundamentals] P/E 62.0 > 40 (rich)",
+        "[fundamentals] Revenue growth 126.0% YoY > 5%",
+        "[fundamentals] Debt/Equity 0.40 < 1.5",
+        "[technicals] SMA50 (173.80) above SMA200 (143.80) \u2014 uptrend",
+        "[technicals] RSI 100 > 70 (overbought)",
+        "[technicals] MACD above signal (bullish)",
+        "[sentiment] Headline sentiment +0.75 over 2 stories (2+ / 0-, VADER)"
+      ],
+      "flags": [
+        "high_pe",
+        "rsi_overbought"
+      ],
+      "alerts": [],
+      "details": {
+        "technicals": {
+          "sma_fast": 173.8,
+          "sma_slow": 143.8,
+          "rsi": 100.0,
+          "macd": 2.8,
+          "macd_signal": 2.8
+        },
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 2,
+          "avg": 0.75
+        }
+      },
+      "sources": {
+        "primary": "finnhub"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 62.0,
+          "display": "62.0\u00d7",
+          "sector_benchmark": 28.5,
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 55.0,
+          "display": "55.0\u00d7",
+          "sector_benchmark": 30.5,
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 35.0,
+          "display": "35.0\u00d7",
+          "sector_benchmark": 10.75,
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 73.0,
+          "display": "73.0%",
+          "sector_benchmark": 56.55,
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 48.0,
+          "display": "48.0%",
+          "sector_benchmark": 30.65,
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 115.0,
+          "display": "115.0%",
+          "sector_benchmark": 96.5,
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 4.1,
+          "display": "4.1\u00d7",
+          "sector_benchmark": 1.13,
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.4,
+          "display": "0.4\u00d7",
+          "sector_benchmark": 0.985,
+          "word": "lean",
+          "tone": "good"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 126.0,
+          "display": "126.0%",
+          "sector_benchmark": 12.0,
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 0.03,
+          "display": "0.0%",
+          "sector_benchmark": 0.625,
+          "word": "low",
+          "tone": "neutral"
+        }
+      ],
+      "peers_in_sector": 2
+    },
+    {
+      "symbol": "JPM",
+      "company": "JPMorgan",
+      "sector": "Financial Services",
+      "price": 195.0,
+      "change_pct": -1.1,
+      "verdict": "NEUTRAL",
+      "composite": 0.216,
+      "coverage": 1.0,
+      "scores": {
+        "fundamentals": 0.5,
+        "technicals": -0.4,
+        "sentiment": 0.625
+      },
+      "reasons": [
+        "[fundamentals] P/E 11.0 < 25 (attractive)",
+        "[fundamentals] Revenue growth 5.0% YoY (soft)",
+        "[fundamentals] Debt/Equity 1.30 < 1.5",
+        "[technicals] SMA50 (121.86) below SMA200 (130.86) \u2014 downtrend",
+        "[technicals] RSI 0 < 30 (oversold)",
+        "[technicals] MACD below signal (bearish)",
+        "[sentiment] Headline sentiment +0.62 over 1 stories (1+ / 0-, VADER)"
+      ],
+      "flags": [
+        "rsi_oversold"
+      ],
+      "alerts": [],
+      "details": {
+        "technicals": {
+          "sma_fast": 121.86,
+          "sma_slow": 130.86,
+          "rsi": 0.0,
+          "macd": -0.84,
+          "macd_signal": -0.84
+        },
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 1,
+          "avg": 0.625
+        }
+      },
+      "sources": {
+        "primary": "finnhub"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 11.0,
+          "display": "11.0\u00d7",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 1.6,
+          "display": "1.6\u00d7",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 30.0,
+          "display": "30.0%",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 15.0,
+          "display": "15.0%",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 1.1,
+          "display": "1.1\u00d7",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 1.3,
+          "display": "1.3\u00d7",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 5.0,
+          "display": "5.0%",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 2.4,
+          "display": "2.4%",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        }
+      ],
+      "peers_in_sector": 0
     },
     {
       "symbol": "TSLA",
+      "company": "Tesla",
+      "sector": "Consumer Cyclical",
       "price": 172.0,
       "change_pct": -6.4,
-      "verdict": "WATCH-SELL",
-      "composite": -0.3,
+      "verdict": "NEUTRAL",
+      "composite": -0.235,
       "coverage": 1.0,
       "scores": {
-        "fundamentals": -0.5,
+        "fundamentals": -0.3,
         "technicals": 0.0,
-        "sentiment": -0.4
+        "sentiment": -0.462
       },
       "reasons": [
         "[fundamentals] P/E 58.0 > 40 (rich)",
         "[fundamentals] Revenue growth 2.0% YoY (soft)",
         "[fundamentals] Debt/Equity 0.30 < 1.5",
-        "[fundamentals] Negative free cash flow",
         "[technicals] SMA50 (105.01) below SMA200 (136.27) \u2014 downtrend",
         "[technicals] RSI 20 < 30 (oversold)",
         "[technicals] MACD above signal (bullish)",
-        "[sentiment] News-sentiment score 0.30 (Finnhub)"
+        "[sentiment] Headline sentiment -0.46 over 2 stories (0+ / 2-, VADER)"
       ],
       "flags": [
         "big_daily_move",
         "high_pe",
-        "negative_fcf",
         "rsi_oversold"
       ],
       "alerts": [
         "Daily move -6.4% (>= 5%)"
       ],
       "details": {
-        "fundamentals": {
-          "pe": 58.0,
-          "rev_growth": 0.02,
-          "debt_to_equity": 0.3,
-          "fcf": -2000.0
-        },
         "technicals": {
           "sma_fast": 105.01,
           "sma_slow": 136.27,
@@ -140,13 +577,107 @@
           "macd_signal": -1.913
         },
         "sentiment": {
-          "source": "finnhub_news_sentiment"
+          "source": "vader_headlines",
+          "stories": 2,
+          "avg": -0.462
         }
-      }
-    },
-    {
-      "symbol": "NVDA",
-      "error": "No quote data (rate limited)"
+      },
+      "sources": {
+        "primary": "finnhub"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 58.0,
+          "display": "58.0\u00d7",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 9.0,
+          "display": "9.0\u00d7",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 6.0,
+          "display": "6.0\u00d7",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 17.0,
+          "display": "17.0%",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 7.0,
+          "display": "7.0%",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 9.0,
+          "display": "9.0%",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 1.7,
+          "display": "1.7\u00d7",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.3,
+          "display": "0.3\u00d7",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 2.0,
+          "display": "2.0%",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 0.0,
+          "display": "0.0%",
+          "sector_benchmark": null,
+          "word": null,
+          "tone": null
+        }
+      ],
+      "peers_in_sector": 0
     }
   ],
   "sample": true

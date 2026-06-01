@@ -144,6 +144,19 @@ def get_basic_financials(symbol: str, session: requests.Session | None = None) -
     return data.get("metric", {}) if isinstance(data.get("metric"), dict) else {}
 
 
+def get_profile(symbol: str, session: requests.Session | None = None) -> dict:
+    """Company profile (/stock/profile2) -> sector/industry/name (free tier)."""
+    session = session or requests.Session()
+    data = _get(session, "/stock/profile2", {"symbol": symbol})
+    if not isinstance(data, dict):
+        return {}
+    return {
+        "sector": data.get("finnhubIndustry"),  # Finnhub's closest field
+        "industry": data.get("finnhubIndustry"),
+        "companyName": data.get("name"),
+    }
+
+
 def get_news_sentiment(symbol: str, session: requests.Session | None = None) -> dict:
     """Finnhub news-sentiment (/news-sentiment).
 
