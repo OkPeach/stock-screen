@@ -8,26 +8,46 @@
 </head>
 <body>
   <!--
-    This page is served publicly by GitHub Pages.
-    NEVER put API keys or secrets in this folder. The pipeline writes
-    data/latest.json; this page only reads and renders it (Phase 3).
+    Served publicly by GitHub Pages. NEVER put API keys or secrets in this
+    folder. This page only fetches and renders data/latest.json, which the
+    pipeline produces in GitHub Actions.
   -->
   <header>
-    <h1>Personal Stock Screener</h1>
-    <p class="tagline">Decision-support dashboard. Not financial advice.</p>
+    <div class="title-row">
+      <h1>Personal Stock Screener</h1>
+      <span id="updated" class="updated"></span>
+    </div>
+    <p class="tagline">Decision-support dashboard — verdicts are a filter to investigate, not buy/sell instructions. Not financial advice.</p>
   </header>
 
+  <section class="controls">
+    <input id="search" type="search" placeholder="Filter by ticker…" aria-label="Filter by ticker" />
+    <label>Verdict
+      <select id="verdict-filter">
+        <option value="ALL">All</option>
+        <option value="WATCH-BUY">Watch-Buy</option>
+        <option value="NEUTRAL">Neutral</option>
+        <option value="WATCH-SELL">Watch-Sell</option>
+      </select>
+    </label>
+    <label>Sort
+      <select id="sort">
+        <option value="composite-desc">Composite ↓</option>
+        <option value="composite-asc">Composite ↑</option>
+        <option value="symbol-asc">Ticker A–Z</option>
+        <option value="change-desc">Day move ↓</option>
+        <option value="change-asc">Day move ↑</option>
+      </select>
+    </label>
+  </section>
+
   <main>
-    <section id="dashboard">
-      <p class="placeholder">
-        Skeleton placeholder (Phase 0). The dashboard will render here once the
-        pipeline produces <code>data/latest.json</code>.
-      </p>
-    </section>
+    <p id="status" class="placeholder">Loading…</p>
+    <div id="cards" class="cards"></div>
   </main>
 
   <footer>
-    <p>Refreshed on a schedule by GitHub Actions.</p>
+    <p>Refreshed on a schedule by GitHub Actions. Data source: Finnhub / FMP (computed locally).</p>
   </footer>
 
   <script src="app.js"></script>
