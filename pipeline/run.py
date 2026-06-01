@@ -28,6 +28,7 @@ from pipeline.checks import technicals as tech_check
 from pipeline.checks import sentiment as sent_check
 from pipeline.checks import alerts as alert_check
 from pipeline import scoring
+from pipeline import metrics
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = REPO_ROOT / "config.yaml"
@@ -66,17 +67,41 @@ def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
         except fmp.FMPError:
             pass  # keep whatever Finnhub returned (possibly an error dict)
 
-    if use_fmp and _has_error(raw.get("financials")):
+    # Keep the two providers' fundamentals separate so metrics.extract can
+    # normalize by source (Finnhub=percent, FMP=fraction). A merged dict would
+    # lose that provenance on shared key names.
+    fin_finnhub = raw["financials"] if not _has_error(raw.get("financials")) else {}
+    fin_fmp: dict = {}
+    if use_fmp:
         try:
-            raw["financials"] = fmp.get_fundamentals(symbol)
-            sources["fundamentals"] = "fmp"
+            fin_fmp = fmp.get_fundamentals(symbol)
         except fmp.FMPError:
             pass
+    if fin_finnhub and fin_fmp:
+        sources["fundamentals"] = "finnhub+fmp"
+    elif fin_fmp:
+        sources["fundamentals"] = "fmp"
 
-    fundamentals = fund_check.check(raw.get("financials", {}), thresholds.get("fundamentals", {}))
+    # Company sector for peer-relative labelling.
+    profile = {}
+    if use_fmp:
+        try:
+            profile = fmp.get_profile(symbol)
+        except fmp.FMPError:
+            pass
+    if not profile.get("sector"):
+        try:
+            profile = {**profile, **fh.get_profile(symbol)}
+        except fh.FinnhubError:
+            pass
+
+    # For the composite score the existing check normalizes per-value, so a
+    # Finnhub-first merge is fine here (display uses the source-aware extract).
+    merged_fin = {**fin_fmp, **fin_finnhub}
+    fundamentals = fund_check.check(merged_fin, thresholds.get("fundamentals", {}))
     technicals = tech_check.check(raw.get("ohlcv", {}), thresholds.get("technicals", {}))
     sentiment = sent_check.check(raw.get("sentiment", {}), raw.get("news", []), thresholds.get("sentiment", {}))
-    alerts = alert_check.check(raw.get("quote", {}), raw.get("financials", {}), cfg.get("alerts", {}))
+    alerts = alert_check.check(raw.get("quote", {}), merged_fin, cfg.get("alerts", {}))
 
     verdict = scoring.score_ticker(
         fundamentals, technicals, sentiment,
@@ -86,6 +111,8 @@ def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
     quote = raw.get("quote", {})
     return {
         "symbol": symbol,
+        "company": profile.get("companyName"),
+        "sector": profile.get("sector") or "Unknown",
         "price": quote.get("c"),
         "change_pct": quote.get("dp"),
         "verdict": verdict["verdict"],
@@ -96,10 +123,12 @@ def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
         "flags": sorted(set(verdict["flags"]) | set(alerts.get("flags", []))),
         "alerts": alerts.get("reasons", []),
         "details": {
-            "fundamentals": fundamentals.get("metrics", {}),
             "technicals": technicals.get("metrics", {}),
             "sentiment": sentiment.get("metrics", {}),
         },
+        # Raw normalized metric values; metrics.annotate_records turns these into
+        # the sector-relative `fundamentals` list and then removes this key.
+        "_metric_values": metrics.extract(fin_finnhub, fin_fmp),
         "sources": sources,
     }
 
@@ -136,6 +165,9 @@ def run(cfg: dict | None = None, rate_limit_cooldown: float = 65.0) -> dict:
         for i in limited:
             records[i] = attempt(records[i]["symbol"])
             time.sleep(1.5)
+
+    # Label each fundamental metric relative to its sector peers in the watchlist.
+    metrics.annotate_records(records)
 
     return {
         "generated_at": datetime.now(tz=timezone.utc).isoformat(),

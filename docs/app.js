@@ -114,11 +114,30 @@ function render(rows) {
     const flags = (t.flags || []).map((f) => `<span class="flag">${esc(f)}</span>`).join("");
     const s = t.scores || {};
 
+    const sector = t.sector && t.sector !== "Unknown" ? esc(t.sector) : "";
+    const peerNote = (t.peers_in_sector || 0) > 0
+      ? `vs ${t.peers_in_sector} sector peer${t.peers_in_sector > 1 ? "s" : ""}`
+      : "no sector peer in watchlist";
+    const funRows = (t.fundamentals || []).map((m) => {
+      const tone = m.tone || "neutral";
+      const word = m.word
+        ? `<span class="word ${tone}" title="${m.sector_benchmark != null ? "sector median " + m.sector_benchmark : ""}">${esc(m.word)}</span>`
+        : `<span class="word none">—</span>`;
+      return `<tr><td>${esc(m.label)}</td><td class="mval">${esc(m.display)}</td><td>${word}</td></tr>`;
+    }).join("");
+    const funBlock = (t.fundamentals || []).length
+      ? `<details>
+           <summary>Fundamentals (${peerNote})</summary>
+           <table class="fundamentals"><tbody>${funRows}</tbody></table>
+         </details>`
+      : "";
+
     card.innerHTML = `
       <div class="card-head">
         <span class="ticker">${esc(t.symbol)}</span>
         <span class="badge ${vclass}">${esc(t.verdict || "—")}</span>
       </div>
+      ${sector ? `<div class="sector">${esc(t.company || "")}${t.company ? " · " : ""}${sector}</div>` : ""}
       <div class="price-row">
         <span class="price">${typeof t.price === "number" ? "$" + t.price.toFixed(2) : "—"}</span>
         <span class="change ${changeClass}">${fmtPct(t.change_pct)}</span>
@@ -131,6 +150,7 @@ function render(rows) {
         <span title="Sentiment">S ${fmtScore(s.sentiment)}</span>
       </div>
       ${flags ? `<div class="flags">${flags}</div>` : ""}
+      ${funBlock}
       <details>
         <summary>Why? (${(t.reasons || []).length} reasons)</summary>
         <ul class="reasons">${reasons}</ul>

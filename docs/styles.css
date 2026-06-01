@@ -140,6 +140,24 @@ h1 { margin: 0.25rem 0; font-size: 1.5rem; }
   border-radius: 5px;
 }
 
+.sector { color: var(--muted); font-size: 0.78rem; margin-top: 0.15rem; }
+
+.fundamentals { width: 100%; border-collapse: collapse; margin-top: 0.5rem; font-size: 0.82rem; }
+.fundamentals td { padding: 0.18rem 0.3rem; border-bottom: 1px solid var(--border); }
+.fundamentals td:first-child { color: var(--muted); }
+.fundamentals .mval { text-align: right; font-variant-numeric: tabular-nums; }
+.word {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.08rem 0.4rem;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+.word.good { background: rgba(46, 204, 113, 0.18); color: var(--buy); }
+.word.bad { background: rgba(231, 76, 60, 0.18); color: var(--sell); }
+.word.neutral { background: rgba(149, 165, 166, 0.18); color: var(--neutral); }
+.word.none { color: var(--muted); background: none; }
+
 details { margin-top: 0.5rem; }
 summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 .reasons { margin: 0.5rem 0 0; padding-left: 1.1rem; font-size: 0.85rem; }

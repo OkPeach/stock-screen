@@ -1,31 +1,33 @@
 {
-  "generated_at": "2026-06-01T09:18:58.986154+00:00",
-  "count": 10,
+  "generated_at": "2026-06-01T09:44:22.250711+00:00",
+  "count": 5,
   "tickers": [
     {
       "symbol": "AAPL",
-      "price": 312.06,
-      "change_pct": -0.144,
+      "company": "Apple",
+      "sector": "Technology",
+      "price": 185.2,
+      "change_pct": 1.3,
       "verdict": "WATCH-BUY",
-      "composite": 0.5,
-      "coverage": 0.4,
+      "composite": 0.51,
+      "coverage": 1.0,
       "scores": {
         "fundamentals": 0.5,
-        "technicals": 0.0,
-        "sentiment": 0.0
+        "technicals": 0.4,
+        "sentiment": 0.681
       },
       "reasons": [
-        "[fundamentals] P/E 37.4 (fair)",
-        "[fundamentals] Revenue growth 12.8% YoY > 5%",
-        "[fundamentals] Debt/Equity 0.80 < 1.5",
-        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
-        "[sentiment] Sentiment unavailable (premium endpoint); 50 recent headlines, treated as neutral"
+        "[fundamentals] P/E 21.0 < 25 (attractive)",
+        "[fundamentals] Revenue growth 8.0% YoY > 5%",
+        "[fundamentals] Debt/Equity 1.50 > 1.5 (leveraged)",
+        "[technicals] SMA50 (173.80) above SMA200 (143.80) \u2014 uptrend",
+        "[technicals] RSI 100 > 70 (overbought)",
+        "[technicals] MACD above signal (bullish)",
+        "[sentiment] Headline sentiment +0.68 over 2 stories (2+ / 0-, VADER)"
       ],
       "flags": [
-        "near_52wk_high"
-      ],
-      "alerts": [
-        "Near 52-wk high (312.06 vs 315)"
+        "high_leverage",
+        "rsi_overbought"
       ],
       "details": {
         "fundamentals": {

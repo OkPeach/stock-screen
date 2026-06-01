@@ -98,44 +98,50 @@ def get_ohlcv(symbol: str, days: int = 400, session: requests.Session | None = N
 
 
 def get_fundamentals(symbol: str, session: requests.Session | None = None) -> dict:
-    """Fundamentals normalized to the keys checks/fundamentals.py looks up."""
+    """Merged TTM ratios + key-metrics + revenue growth (raw FMP keys).
+
+    pipeline.metrics.extract() knows the FMP key names, so we return the raw
+    dicts rather than renaming. freeCashFlowTTM is mapped from per-share FCF only
+    if an absolute value isn't present.
+    """
     session = session or requests.Session()
     metric: dict = {}
 
-    try:
-        ratios = _get(session, f"/ratios-ttm/{symbol}", {})
-        if isinstance(ratios, list) and ratios:
-            r = ratios[0]
-            pe = r.get("peRatioTTM") or r.get("priceEarningsRatioTTM")
-            if pe is not None:
-                metric["peTTM"] = pe
-            de = r.get("debtEquityRatioTTM") or r.get("debtToEquityTTM")
-            if de is not None:
-                metric["totalDebt/totalEquityQuarterly"] = de
-    except FMPError:
-        pass
+    for path in (f"/ratios-ttm/{symbol}", f"/key-metrics-ttm/{symbol}"):
+        try:
+            rows = _get(session, path, {})
+            if isinstance(rows, list) and rows and isinstance(rows[0], dict):
+                for k, v in rows[0].items():
+                    if v is not None and k not in metric:
+                        metric[k] = v
+        except FMPError:
+            pass
 
-    try:
-        km = _get(session, f"/key-metrics-ttm/{symbol}", {})
-        if isinstance(km, list) and km:
-            fcf = km[0].get("freeCashFlowPerShareTTM")
-            if fcf is not None:
-                metric["freeCashFlowTTM"] = fcf
-            if "peTTM" not in metric and km[0].get("peRatioTTM") is not None:
-                metric["peTTM"] = km[0]["peRatioTTM"]
-    except FMPError:
-        pass
+    if "freeCashFlowTTM" not in metric and metric.get("freeCashFlowPerShareTTM") is not None:
+        metric["freeCashFlowTTM"] = metric["freeCashFlowPerShareTTM"]
 
     try:
         growth = _get(session, f"/financial-growth/{symbol}", {"period": "annual", "limit": 1})
         if isinstance(growth, list) and growth and growth[0].get("revenueGrowth") is not None:
-            metric["revenueGrowthTTMYoy"] = growth[0]["revenueGrowth"]
+            metric["revenueGrowth"] = growth[0]["revenueGrowth"]
     except FMPError:
         pass
 
     if not metric:
         raise FMPError(f"No usable fundamentals for {symbol!r} from FMP.")
     return metric
+
+
+def get_profile(symbol: str, session: requests.Session | None = None) -> dict:
+    """Company profile -> {sector, industry, companyName}."""
+    session = session or requests.Session()
+    data = _get(session, f"/profile/{symbol}", {})
+    row = data[0] if isinstance(data, list) and data else (data if isinstance(data, dict) else {})
+    return {
+        "sector": row.get("sector"),
+        "industry": row.get("industry"),
+        "companyName": row.get("companyName"),
+    }
 
 
 def main(argv: list[str]) -> int:
