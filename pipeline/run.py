@@ -1,28 +1,110 @@
 """Orchestrator: load config -> fetch -> check -> score -> write docs/data/*.json.
 
-Wired up across Phases 1-2 (data + scoring) and Phase 4 (Actions cron).
-This skeleton just loads config.yaml and confirms the wiring point.
+Run from the repo root (needs FINNHUB_API_KEY in the environment):
+
+    FINNHUB_API_KEY=xxxx python -m pipeline.run
+
+Writes:
+  docs/data/latest.json              current scores for the whole watchlist
+  docs/data/history/YYYY-MM-DD.json  a dated snapshot for the trend view
+
+SECURITY: the API key is read from the environment only and is never written
+into the output payloads or anywhere under docs/.
 """
 from __future__ import annotations
 
+import json
+import time
+from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
 
-CONFIG_PATH = Path(__file__).resolve().parent.parent / "config.yaml"
+from pipeline.data import finnhub_client as fh
+from pipeline.checks import fundamentals as fund_check
+from pipeline.checks import technicals as tech_check
+from pipeline.checks import sentiment as sent_check
+from pipeline.checks import alerts as alert_check
+from pipeline import scoring
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+CONFIG_PATH = REPO_ROOT / "config.yaml"
+DATA_DIR = REPO_ROOT / "docs" / "data"
+HISTORY_DIR = DATA_DIR / "history"
 
 
 def load_config(path: Path = CONFIG_PATH) -> dict:
-    """Load the watchlist + thresholds + weights from config.yaml."""
-    with open(path, "r", encoding="utf-8") as fh:
-        return yaml.safe_load(fh)
+    with open(path, "r", encoding="utf-8") as fh_:
+        return yaml.safe_load(fh_)
+
+
+def score_one(symbol: str, cfg: dict) -> dict:
+    """Fetch + run all checks + score a single ticker into a dashboard record."""
+    raw = fh.fetch_ticker(symbol)
+    thresholds = cfg.get("thresholds", {})
+
+    fundamentals = fund_check.check(raw.get("financials", {}), thresholds.get("fundamentals", {}))
+    technicals = tech_check.check(raw.get("ohlcv", {}), thresholds.get("technicals", {}))
+    sentiment = sent_check.check(raw.get("sentiment", {}), raw.get("news", []), thresholds.get("sentiment", {}))
+    alerts = alert_check.check(raw.get("quote", {}), raw.get("financials", {}), cfg.get("alerts", {}))
+
+    verdict = scoring.score_ticker(
+        fundamentals, technicals, sentiment,
+        cfg.get("weights", {}), cfg.get("verdict_bands", {}),
+    )
+
+    quote = raw.get("quote", {})
+    return {
+        "symbol": symbol,
+        "price": quote.get("c"),
+        "change_pct": quote.get("dp"),
+        "verdict": verdict["verdict"],
+        "composite": verdict["composite"],
+        "coverage": verdict["coverage"],
+        "scores": verdict["scores"],
+        "reasons": verdict["reasons"],
+        "flags": sorted(set(verdict["flags"]) | set(alerts.get("flags", []))),
+        "alerts": alerts.get("reasons", []),
+        "details": {
+            "fundamentals": fundamentals.get("metrics", {}),
+            "technicals": technicals.get("metrics", {}),
+            "sentiment": sentiment.get("metrics", {}),
+        },
+    }
+
+
+def run(cfg: dict | None = None) -> dict:
+    cfg = cfg or load_config()
+    watchlist = cfg.get("watchlist", [])
+    records: list[dict] = []
+    for symbol in watchlist:
+        try:
+            records.append(score_one(symbol, cfg))
+        except fh.FinnhubError as exc:
+            records.append({"symbol": symbol, "error": str(exc)})
+        time.sleep(1.1)  # stay polite vs the 60 calls/min free tier
+
+    return {
+        "generated_at": datetime.now(tz=timezone.utc).isoformat(),
+        "count": len(records),
+        "tickers": records,
+    }
+
+
+def write_outputs(payload: dict) -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    HISTORY_DIR.mkdir(parents=True, exist_ok=True)
+    (DATA_DIR / "latest.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    stamp = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
+    (HISTORY_DIR / f"{stamp}.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
 def main() -> None:
-    config = load_config()
-    watchlist = config.get("watchlist", [])
-    print(f"Loaded config: {len(watchlist)} tickers in watchlist.")
-    print("Pipeline stages land in Phases 1-2. Skeleton OK.")
+    cfg = load_config()
+    payload = run(cfg)
+    write_outputs(payload)
+    ok = sum(1 for r in payload["tickers"] if "error" not in r)
+    print(f"Wrote docs/data/latest.json — {ok}/{payload['count']} tickers scored.")
 
 
 if __name__ == "__main__":

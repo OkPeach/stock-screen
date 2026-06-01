@@ -131,6 +131,33 @@ def get_company_news(
     return data
 
 
+def get_basic_financials(symbol: str, session: requests.Session | None = None) -> dict:
+    """Company basic financials (/stock/metric?metric=all).
+
+    Returns the `metric` sub-object (P/E, margins, growth, D/E, 52wk hi/lo, ...).
+    Field availability varies by plan; callers must look up keys defensively.
+    """
+    session = session or requests.Session()
+    data = _get(session, "/stock/metric", {"symbol": symbol, "metric": "all"})
+    if not isinstance(data, dict):
+        raise FinnhubError(f"Unexpected metric payload for {symbol!r}: {data!r}")
+    return data.get("metric", {}) if isinstance(data.get("metric"), dict) else {}
+
+
+def get_news_sentiment(symbol: str, session: requests.Session | None = None) -> dict:
+    """Finnhub news-sentiment (/news-sentiment).
+
+    Note: this endpoint is premium on current Finnhub plans and commonly
+    returns HTTP 403/401 on free keys. Callers should treat absence as
+    "no sentiment data" rather than an error (see checks/sentiment.py).
+    """
+    session = session or requests.Session()
+    data = _get(session, "/news-sentiment", {"symbol": symbol})
+    if not isinstance(data, dict):
+        raise FinnhubError(f"Unexpected sentiment payload for {symbol!r}: {data!r}")
+    return data
+
+
 def fetch_ticker(symbol: str, news_days: int = 7, ohlcv_days: int = 400) -> dict:
     """Aggregate quote + OHLCV + news for one ticker into a single dict.
 
@@ -147,6 +174,16 @@ def fetch_ticker(symbol: str, news_days: int = 7, ohlcv_days: int = 400) -> dict
         result["ohlcv"] = get_ohlcv(symbol, days=ohlcv_days, session=session)
     except FinnhubError as exc:
         result["ohlcv"] = {"error": str(exc)}
+
+    try:
+        result["financials"] = get_basic_financials(symbol, session=session)
+    except FinnhubError as exc:
+        result["financials"] = {"error": str(exc)}
+
+    try:
+        result["sentiment"] = get_news_sentiment(symbol, session=session)
+    except FinnhubError as exc:
+        result["sentiment"] = {"error": str(exc)}
 
     try:
         news = get_company_news(symbol, days=news_days, session=session)
