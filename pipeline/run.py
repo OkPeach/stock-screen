@@ -57,15 +57,15 @@ def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
     """
     raw = fh.fetch_ticker(symbol)
     thresholds = cfg.get("thresholds", {})
-    sources = {"primary": "finnhub"}
+    sources = {"primary": "finnhub", "fmp_enabled": use_fmp}
 
     slow_w = int(thresholds.get("technicals", {}).get("sma_slow", 200))
     if use_fmp and _candle_count(raw.get("ohlcv")) < slow_w:
         try:
             raw["ohlcv"] = fmp.get_ohlcv(symbol, days=max(slow_w + 50, 400))
             sources["ohlcv"] = "fmp"
-        except fmp.FMPError:
-            pass  # keep whatever Finnhub returned (possibly an error dict)
+        except fmp.FMPError as exc:
+            sources["ohlcv_error"] = str(exc)  # keep Finnhub's result, record why FMP failed
 
     # Keep the two providers' fundamentals separate so metrics.extract can
     # normalize by source (Finnhub=percent, FMP=fraction). A merged dict would
@@ -75,12 +75,14 @@ def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
     if use_fmp:
         try:
             fin_fmp = fmp.get_fundamentals(symbol)
-        except fmp.FMPError:
-            pass
+        except fmp.FMPError as exc:
+            sources["fundamentals_error"] = str(exc)
     if fin_finnhub and fin_fmp:
         sources["fundamentals"] = "finnhub+fmp"
     elif fin_fmp:
         sources["fundamentals"] = "fmp"
+    elif fin_finnhub:
+        sources["fundamentals"] = "finnhub"
 
     # Company sector for peer-relative labelling.
     profile = {}
