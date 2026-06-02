@@ -1,0 +1,170 @@
+{
+  "AAPL": {
+    "ts": "2026-06-02T23:01:28.344184+00:00",
+    "peers": 11,
+    "values": {
+      "pe": 36.1522,
+      "pb": 4.8204,
+      "ps": 6.0646,
+      "gross_margin": 40.77,
+      "net_margin": 6.015,
+      "roe": 18.22,
+      "roa": 6.58,
+      "current_ratio": 1.4365,
+      "debt_to_equity": 0.0536,
+      "rev_growth": 32.04,
+      "dividend_yield": 0.8492
+    }
+  },
+  "MSFT": {
+    "ts": "2026-06-02T23:01:33.428243+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 54.2036,
+      "pb": 9.1909,
+      "ps": 12.1598,
+      "gross_margin": 76.625,
+      "net_margin": 5.075,
+      "roe": 14.98,
+      "roa": 1.31,
+      "current_ratio": 1.3919,
+      "debt_to_equity": 0.1683,
+      "rev_growth": 21.715,
+      "dividend_yield": 1.3036
+    }
+  },
+  "GOOGL": {
+    "ts": "2026-06-02T23:01:38.381309+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 23.7389,
+      "pb": 5.9391,
+      "ps": 3.7235,
+      "gross_margin": 74.23,
+      "net_margin": 11.875,
+      "roe": 12.745,
+      "roa": 10.845,
+      "current_ratio": 2.9364,
+      "debt_to_equity": 0.2767,
+      "rev_growth": 6.325,
+      "dividend_yield": 1.2358
+    }
+  },
+  "AMZN": {
+    "ts": "2026-06-02T23:01:44.560961+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 23.101,
+      "pb": 3.9252,
+      "ps": 1.1538,
+      "gross_margin": 42.105,
+      "net_margin": 2.3,
+      "roe": 10.065,
+      "roa": 3.285,
+      "current_ratio": 1.4834,
+      "debt_to_equity": 0.7651,
+      "rev_growth": 6.31,
+      "dividend_yield": 1.1237
+    }
+  },
+  "NVDA": {
+    "ts": "2026-06-02T23:01:50.350864+00:00",
+    "peers": 11,
+    "values": {
+      "pe": 92.68,
+      "pb": 6.4549,
+      "ps": 20.2603,
+      "gross_margin": 57.32,
+      "net_margin": 26.01,
+      "roe": 19.21,
+      "roa": 14.88,
+      "current_ratio": 2.7249,
+      "debt_to_equity": 0.2724,
+      "rev_growth": 25.22,
+      "dividend_yield": 1.0927
+    }
+  },
+  "META": {
+    "ts": "2026-06-02T23:01:51.023969+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 27.4457,
+      "pb": 6.926,
+      "ps": 3.7235,
+      "gross_margin": 69.885,
+      "net_margin": 11.875,
+      "roe": 12.745,
+      "roa": 10.845,
+      "current_ratio": 2.7237,
+      "debt_to_equity": 0.237,
+      "rev_growth": 6.325,
+      "dividend_yield": 1.1778
+    }
+  },
+  "TSLA": {
+    "ts": "2026-06-02T23:01:57.256710+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 19.7317,
+      "pb": 1.3085,
+      "ps": 1.0271,
+      "gross_margin": -6.485,
+      "net_margin": -151.715,
+      "roe": -84.73,
+      "roa": -31.765,
+      "current_ratio": 1.4596,
+      "debt_to_equity": 0.9102,
+      "rev_growth": 4.61,
+      "dividend_yield": 3.1416
+    }
+  },
+  "JPM": {
+    "ts": "2026-06-02T23:02:01.994174+00:00",
+    "peers": 9,
+    "values": {
+      "pe": 11.7588,
+      "pb": 1.156,
+      "ps": 2.0958,
+      "net_margin": 21.1013,
+      "roe": 10.5,
+      "roa": 0.97,
+      "debt_to_equity": 1.2042,
+      "rev_growth": 72.5075,
+      "dividend_yield": 2.2733
+    }
+  },
+  "V": {
+    "ts": "2026-06-02T23:02:07.435278+00:00",
+    "peers": 11,
+    "values": {
+      "pe": 19.4685,
+      "pb": 4.0342,
+      "ps": 2.496,
+      "net_margin": 15.0,
+      "roe": 18.44,
+      "roa": 5.05,
+      "current_ratio": 1.2594,
+      "debt_to_equity": 0.991,
+      "rev_growth": 12.24,
+      "dividend_yield": 1.3252,
+      "gross_margin": 51.455
+    }
+  },
+  "JNJ": {
+    "ts": "2026-06-02T23:02:12.527101+00:00",
+    "peers": 9,
+    "values": {
+      "pe": 24.5257,
+      "pb": 6.1706,
+      "ps": 3.4194,
+      "gross_margin": 73.31,
+      "net_margin": 12.33,
+      "roe": 12.67,
+      "roa": 4.29,
+      "current_ratio": 1.4968,
+      "debt_to_equity": 1.3002,
+      "rev_growth": 2.89,
+      "dividend_yield": 2.9522
+    }
+  }
+}
