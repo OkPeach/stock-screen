@@ -22,6 +22,7 @@ import os
 import sys
 import json
 import time
+from datetime import datetime, timezone
 
 import requests
 
@@ -158,6 +159,22 @@ def get_profile(symbol: str, session: requests.Session | None = None) -> dict:
         "industry": row.get("industry"),
         "companyName": row.get("companyName"),
     }
+
+
+def get_sector_pe(sector: str, date: str | None = None, session: requests.Session | None = None) -> float:
+    """Whole-sector P/E for `sector` (FMP sector-PE snapshot). May be premium."""
+    session = session or requests.Session()
+    date = date or datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
+    data = _get(session, "/sector-pe-snapshot", "/sector_price_earning_ratio",
+                params={"date": date, "sector": sector},
+                legacy_params={"date": date, "exchange": "NYSE"})
+    rows = data if isinstance(data, list) else [data]
+    for row in rows:
+        if isinstance(row, dict) and str(row.get("sector", "")).lower() == sector.lower():
+            pe = _to_float(row.get("pe") or row.get("priceEarningRatio"))
+            if pe:
+                return pe
+    raise FMPError(f"no sector P/E for {sector!r}")
 
 
 def main(argv: list[str]) -> int:
