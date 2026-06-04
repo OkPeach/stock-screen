@@ -1,45 +1,45 @@
 {
-  "generated_at": "2026-06-04T10:37:35.325228+00:00",
+  "generated_at": "2026-06-04T22:19:54.644230+00:00",
   "count": 10,
   "tickers": [
     {
       "symbol": "AAPL",
       "company": "Apple Inc.",
       "sector": "Technology",
-      "price": 310.26,
-      "change_pct": -1.5673,
+      "price": 311.23,
+      "change_pct": 0.3126,
       "verdict": "WATCH-BUY",
-      "composite": 0.482,
+      "composite": 0.461,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.7,
         "technicals": 0.3,
-        "sentiment": 0.389
+        "sentiment": 0.306
       },
       "reasons": [
-        "[fundamentals] P/E 37.1 (fair)",
+        "[fundamentals] P/E 37.3 (fair)",
         "[fundamentals] Revenue growth 12.8% YoY > 5%",
         "[fundamentals] Debt/Equity 0.80 < 1.5",
         "[fundamentals] Positive free cash flow",
-        "[technicals] SMA50 (278.95) above SMA200 (264.41) \u2014 uptrend",
-        "[technicals] RSI 66 (neutral)",
+        "[technicals] SMA50 (280.14) above SMA200 (264.81) \u2014 uptrend",
+        "[technicals] RSI 67 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.39 over 50 stories (36+ / 6-, VADER)"
+        "[sentiment] Headline sentiment +0.31 over 50 stories (37+ / 7-, VADER)"
       ],
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 278.95,
-          "sma_slow": 264.41,
-          "rsi": 65.7,
-          "macd": 9.505,
-          "macd_signal": 9.746
+          "sma_fast": 280.14,
+          "sma_slow": 264.81,
+          "rsi": 66.5,
+          "macd": 9.154,
+          "macd_signal": 9.627
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.389
+          "avg": 0.306
         }
       },
       "history": {
@@ -384,9 +384,9 @@
         {
           "key": "pe",
           "label": "P/E",
-          "value": 37.0854,
-          "display": "37.1\u00d7",
-          "sector_benchmark": 62.0536,
+          "value": 37.3478,
+          "display": "37.3\u00d7",
+          "sector_benchmark": 59.9669,
           "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
@@ -404,7 +404,7 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 10.0694,
+          "value": 10.1406,
           "display": "10.1\u00d7",
           "sector_benchmark": 6.0646,
           "benchmark_source": "peers",
@@ -508,40 +508,40 @@
       "symbol": "MSFT",
       "company": "Microsoft Corporation",
       "sector": "Technology",
-      "price": 427.34,
-      "change_pct": -3.1656,
-      "verdict": "NEUTRAL",
-      "composite": 0.234,
+      "price": 428.05,
+      "change_pct": 0.1661,
+      "verdict": "WATCH-BUY",
+      "composite": 0.288,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.7,
         "technicals": -0.3,
-        "sentiment": 0.237
+        "sentiment": 0.451
       },
       "reasons": [
         "[fundamentals] P/E 25.6 (fair)",
         "[fundamentals] Revenue growth 17.9% YoY > 5%",
         "[fundamentals] Debt/Equity 0.25 < 1.5",
         "[fundamentals] Positive free cash flow",
-        "[technicals] SMA50 (406.33) below SMA200 (457.29) \u2014 downtrend",
+        "[technicals] SMA50 (407.44) below SMA200 (456.85) \u2014 downtrend",
         "[technicals] RSI 53 (neutral)",
         "[technicals] MACD above signal (bullish)",
-        "[sentiment] Headline sentiment +0.24 over 50 stories (29+ / 13-, VADER)"
+        "[sentiment] Headline sentiment +0.45 over 50 stories (40+ / 3-, VADER)"
       ],
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 406.33,
-          "sma_slow": 457.29,
-          "rsi": 52.6,
-          "macd": 7.858,
-          "macd_signal": 6.158
+          "sma_fast": 407.44,
+          "sma_slow": 456.85,
+          "rsi": 52.9,
+          "macd": 7.112,
+          "macd_signal": 6.349
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.237
+          "avg": 0.451
         }
       },
       "history": {
@@ -886,9 +886,9 @@
         {
           "key": "pe",
           "label": "P/E",
-          "value": 25.6468,
+          "value": 25.6411,
           "display": "25.6\u00d7",
-          "sector_benchmark": 62.0536,
+          "sector_benchmark": 59.9669,
           "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
@@ -906,7 +906,7 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 10.09,
+          "value": 10.0878,
           "display": "10.1\u00d7",
           "sector_benchmark": 12.1598,
           "benchmark_source": "peers",
@@ -1010,40 +1010,40 @@
       "symbol": "GOOGL",
       "company": "Alphabet Inc.",
       "sector": "Communication Services",
-      "price": 358.99,
-      "change_pct": -0.7904,
+      "price": 372.19,
+      "change_pct": 3.677,
       "verdict": "WATCH-BUY",
-      "composite": 0.452,
+      "composite": 0.465,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.7,
         "technicals": 0.3,
-        "sentiment": 0.268
+        "sentiment": 0.32
       },
       "reasons": [
-        "[fundamentals] P/E 27.4 (fair)",
+        "[fundamentals] P/E 28.1 (fair)",
         "[fundamentals] Revenue growth 17.4% YoY > 5%",
         "[fundamentals] Debt/Equity 0.16 < 1.5",
         "[fundamentals] Positive free cash flow",
-        "[technicals] SMA50 (351.32) above SMA200 (302.36) \u2014 uptrend",
-        "[technicals] RSI 39 (neutral)",
+        "[technicals] SMA50 (352.95) above SMA200 (303.21) \u2014 uptrend",
+        "[technicals] RSI 49 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.27 over 50 stories (32+ / 10-, VADER)"
+        "[sentiment] Headline sentiment +0.32 over 50 stories (37+ / 7-, VADER)"
       ],
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 351.32,
-          "sma_slow": 302.36,
-          "rsi": 38.8,
-          "macd": 3.342,
-          "macd_signal": 9.528
+          "sma_fast": 352.95,
+          "sma_slow": 303.21,
+          "rsi": 48.6,
+          "macd": 2.604,
+          "macd_signal": 8.143
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.268
+          "avg": 0.32
         }
       },
       "history": {
@@ -1388,9 +1388,9 @@
         {
           "key": "pe",
           "label": "P/E",
-          "value": 27.3534,
-          "display": "27.4\u00d7",
-          "sector_benchmark": 26.9434,
+          "value": 28.1377,
+          "display": "28.1\u00d7",
+          "sector_benchmark": 27.724,
           "benchmark_source": "sector",
           "word": "in line",
           "tone": "neutral"
@@ -1408,8 +1408,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 10.3722,
-          "display": "10.4\u00d7",
+          "value": 10.6696,
+          "display": "10.7\u00d7",
           "sector_benchmark": 3.7235,
           "benchmark_source": "peers",
           "word": "expensive",
@@ -1512,25 +1512,25 @@
       "symbol": "AMZN",
       "company": "Amazon.com, Inc.",
       "sector": "Consumer Cyclical",
-      "price": 250.02,
-      "change_pct": -2.5339,
+      "price": 253.79,
+      "change_pct": 1.5079,
       "verdict": "WATCH-BUY",
-      "composite": 0.316,
+      "composite": 0.303,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.3,
         "technicals": 0.3,
-        "sentiment": 0.363
+        "sentiment": 0.314
       },
       "reasons": [
-        "[fundamentals] P/E 30.4 (fair)",
+        "[fundamentals] P/E 30.0 (fair)",
         "[fundamentals] Revenue growth 14.2% YoY > 5%",
         "[fundamentals] Debt/Equity 0.27 < 1.5",
         "[fundamentals] Negative free cash flow",
-        "[technicals] SMA50 (249.54) above SMA200 (231.93) \u2014 uptrend",
-        "[technicals] RSI 39 (neutral)",
+        "[technicals] SMA50 (250.47) above SMA200 (232.04) \u2014 uptrend",
+        "[technicals] RSI 43 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.36 over 50 stories (33+ / 11-, VADER)"
+        "[sentiment] Headline sentiment +0.31 over 50 stories (38+ / 11-, VADER)"
       ],
       "flags": [
         "negative_fcf"
@@ -1538,16 +1538,16 @@
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 249.54,
-          "sma_slow": 231.93,
-          "rsi": 39.4,
-          "macd": 1.772,
-          "macd_signal": 4.714
+          "sma_fast": 250.47,
+          "sma_slow": 232.04,
+          "rsi": 43.5,
+          "macd": 0.896,
+          "macd_signal": 3.95
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.363
+          "avg": 0.314
         }
       },
       "history": {
@@ -1892,9 +1892,9 @@
         {
           "key": "pe",
           "label": "P/E",
-          "value": 30.3753,
-          "display": "30.4\u00d7",
-          "sector_benchmark": 88.1854,
+          "value": 30.0134,
+          "display": "30.0\u00d7",
+          "sector_benchmark": 87.314,
           "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
@@ -1912,7 +1912,7 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 3.7131,
+          "value": 3.6689,
           "display": "3.7\u00d7",
           "sector_benchmark": 1.1538,
           "benchmark_source": "peers",
@@ -2016,40 +2016,40 @@
       "symbol": "NVDA",
       "company": "NVIDIA Corporation",
       "sector": "Technology",
-      "price": 214.75,
-      "change_pct": -3.6218,
+      "price": 218.66,
+      "change_pct": 1.8207,
       "verdict": "WATCH-BUY",
-      "composite": 0.472,
+      "composite": 0.462,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.7,
         "technicals": 0.3,
-        "sentiment": 0.348
+        "sentiment": 0.307
       },
       "reasons": [
-        "[fundamentals] P/E 33.1 (fair)",
+        "[fundamentals] P/E 32.4 (fair)",
         "[fundamentals] Revenue growth 70.7% YoY > 5%",
         "[fundamentals] Debt/Equity 0.04 < 1.5",
         "[fundamentals] Positive free cash flow",
-        "[technicals] SMA50 (202.05) above SMA200 (188.24) \u2014 uptrend",
-        "[technicals] RSI 51 (neutral)",
+        "[technicals] SMA50 (202.92) above SMA200 (188.43) \u2014 uptrend",
+        "[technicals] RSI 54 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.35 over 50 stories (35+ / 11-, VADER)"
+        "[sentiment] Headline sentiment +0.31 over 50 stories (33+ / 9-, VADER)"
       ],
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 202.05,
-          "sma_slow": 188.24,
-          "rsi": 51.1,
-          "macd": 3.759,
-          "macd_signal": 5.044
+          "sma_fast": 202.92,
+          "sma_slow": 188.43,
+          "rsi": 54.2,
+          "macd": 3.57,
+          "macd_signal": 4.749
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.348
+          "avg": 0.307
         }
       },
       "history": {
@@ -2394,9 +2394,9 @@
         {
           "key": "pe",
           "label": "P/E",
-          "value": 33.1116,
-          "display": "33.1\u00d7",
-          "sector_benchmark": 62.0536,
+          "value": 32.3535,
+          "display": "32.4\u00d7",
+          "sector_benchmark": 59.9669,
           "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
@@ -2414,8 +2414,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 20.849,
-          "display": "20.8\u00d7",
+          "value": 20.3717,
+          "display": "20.4\u00d7",
           "sector_benchmark": 20.2603,
           "benchmark_source": "peers",
           "word": "in line",
@@ -2518,40 +2518,40 @@
       "symbol": "META",
       "company": "Meta Platforms, Inc.",
       "sector": "Communication Services",
-      "price": 622.98,
-      "change_pct": 4.2418,
+      "price": 627.57,
+      "change_pct": 0.7368,
       "verdict": "WATCH-BUY",
-      "composite": 0.337,
+      "composite": 0.383,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 1.0,
         "technicals": -0.3,
-        "sentiment": 0.167
+        "sentiment": 0.351
       },
       "reasons": [
-        "[fundamentals] P/E 21.5 < 25 (attractive)",
+        "[fundamentals] P/E 22.4 < 25 (attractive)",
         "[fundamentals] Revenue growth 26.2% YoY > 5%",
         "[fundamentals] Debt/Equity 0.24 < 1.5",
         "[fundamentals] Positive free cash flow",
-        "[technicals] SMA50 (618.87) below SMA200 (663.94) \u2014 downtrend",
-        "[technicals] RSI 51 (neutral)",
+        "[technicals] SMA50 (619.56) below SMA200 (663.24) \u2014 downtrend",
+        "[technicals] RSI 53 (neutral)",
         "[technicals] MACD above signal (bullish)",
-        "[sentiment] Headline sentiment +0.17 over 50 stories (26+ / 17-, VADER)"
+        "[sentiment] Headline sentiment +0.35 over 50 stories (36+ / 9-, VADER)"
       ],
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 618.87,
-          "sma_slow": 663.94,
-          "rsi": 51.5,
-          "macd": -3.083,
-          "macd_signal": -3.802
+          "sma_fast": 619.56,
+          "sma_slow": 663.24,
+          "rsi": 53.1,
+          "macd": -1.926,
+          "macd_signal": -3.427
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.167
+          "avg": 0.351
         }
       },
       "history": {
@@ -2896,9 +2896,9 @@
         {
           "key": "pe",
           "label": "P/E",
-          "value": 21.4917,
-          "display": "21.5\u00d7",
-          "sector_benchmark": 26.9434,
+          "value": 22.4034,
+          "display": "22.4\u00d7",
+          "sector_benchmark": 27.724,
           "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
@@ -2916,8 +2916,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 7.0572,
-          "display": "7.1\u00d7",
+          "value": 7.3566,
+          "display": "7.4\u00d7",
           "sector_benchmark": 3.7235,
           "benchmark_source": "peers",
           "word": "expensive",
@@ -3020,25 +3020,25 @@
       "symbol": "TSLA",
       "company": "Tesla, Inc.",
       "sector": "Consumer Cyclical",
-      "price": 423.7,
-      "change_pct": -0.0094,
+      "price": 418.45,
+      "change_pct": -1.2391,
       "verdict": "NEUTRAL",
-      "composite": -0.222,
+      "composite": -0.207,
       "coverage": 1.0,
       "scores": {
         "fundamentals": -0.1,
         "technicals": -0.7,
-        "sentiment": 0.25
+        "sentiment": 0.313
       },
       "reasons": [
         "[fundamentals] P/E 412.0 > 40 (rich)",
         "[fundamentals] Revenue growth 2.2% YoY (soft)",
         "[fundamentals] Debt/Equity 0.11 < 1.5",
         "[fundamentals] Positive free cash flow",
-        "[technicals] SMA50 (394.48) below SMA200 (413.42) \u2014 downtrend",
-        "[technicals] RSI 54 (neutral)",
+        "[technicals] SMA50 (395.19) below SMA200 (413.83) \u2014 downtrend",
+        "[technicals] RSI 51 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.25 over 50 stories (29+ / 12-, VADER)"
+        "[sentiment] Headline sentiment +0.31 over 50 stories (38+ / 11-, VADER)"
       ],
       "flags": [
         "high_pe"
@@ -3046,16 +3046,16 @@
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 394.48,
-          "sma_slow": 413.42,
-          "rsi": 53.6,
-          "macd": 8.495,
-          "macd_signal": 10.322
+          "sma_fast": 395.19,
+          "sma_slow": 413.83,
+          "rsi": 51.0,
+          "macd": 7.329,
+          "macd_signal": 9.723
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.25
+          "avg": 0.313
         }
       },
       "history": {
@@ -3402,7 +3402,7 @@
           "label": "P/E",
           "value": 412.0404,
           "display": "412.0\u00d7",
-          "sector_benchmark": 88.1854,
+          "sector_benchmark": 87.314,
           "benchmark_source": "sector",
           "word": "expensive",
           "tone": "bad"
@@ -3524,25 +3524,25 @@
       "symbol": "JPM",
       "company": "JPMorgan Chase & Co.",
       "sector": "Financial Services",
-      "price": 300.85,
-      "change_pct": -0.0365,
+      "price": 310.89,
+      "change_pct": 3.3372,
       "verdict": "NEUTRAL",
-      "composite": 0.111,
+      "composite": 0.243,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.7,
-        "technicals": -0.7,
-        "sentiment": 0.303
+        "technicals": -0.3,
+        "sentiment": 0.272
       },
       "reasons": [
-        "[fundamentals] P/E 13.7 < 25 (attractive)",
+        "[fundamentals] P/E 14.1 < 25 (attractive)",
         "[fundamentals] Revenue growth 109.0% YoY > 5%",
         "[fundamentals] Debt/Equity 3.39 > 1.5 (leveraged)",
         "[fundamentals] Positive free cash flow",
-        "[technicals] SMA50 (303.49) below SMA200 (305.89) \u2014 downtrend",
-        "[technicals] RSI 48 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.30 over 50 stories (32+ / 11-, VADER)"
+        "[technicals] SMA50 (303.86) below SMA200 (305.98) \u2014 downtrend",
+        "[technicals] RSI 58 (neutral)",
+        "[technicals] MACD above signal (bullish)",
+        "[sentiment] Headline sentiment +0.27 over 50 stories (32+ / 12-, VADER)"
       ],
       "flags": [
         "high_leverage"
@@ -3550,16 +3550,16 @@
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 303.49,
-          "sma_slow": 305.89,
-          "rsi": 48.2,
-          "macd": -1.498,
-          "macd_signal": -1.287
+          "sma_fast": 303.86,
+          "sma_slow": 305.98,
+          "rsi": 58.4,
+          "macd": -0.583,
+          "macd_signal": -1.146
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.303
+          "avg": 0.272
         }
       },
       "history": {
@@ -3706,9 +3706,9 @@
         {
           "key": "pe",
           "label": "P/E",
-          "value": 13.6751,
-          "display": "13.7\u00d7",
-          "sector_benchmark": 22.0938,
+          "value": 14.1116,
+          "display": "14.1\u00d7",
+          "sector_benchmark": 22.4738,
           "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
@@ -3830,40 +3830,40 @@
       "symbol": "V",
       "company": "Visa Inc.",
       "sector": "Financial Services",
-      "price": 312.4,
-      "change_pct": -1.5505,
+      "price": 320.18,
+      "change_pct": 2.4904,
       "verdict": "NEUTRAL",
-      "composite": 0.103,
+      "composite": 0.123,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.7,
         "technicals": -0.7,
-        "sentiment": 0.27
+        "sentiment": 0.353
       },
       "reasons": [
-        "[fundamentals] P/E 26.9 (fair)",
+        "[fundamentals] P/E 26.5 (fair)",
         "[fundamentals] Revenue growth 14.4% YoY > 5%",
         "[fundamentals] Debt/Equity 0.67 < 1.5",
         "[fundamentals] Positive free cash flow",
-        "[technicals] SMA50 (316.20) below SMA200 (330.38) \u2014 downtrend",
-        "[technicals] RSI 39 (neutral)",
+        "[technicals] SMA50 (316.53) below SMA200 (330.27) \u2014 downtrend",
+        "[technicals] RSI 48 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.27 over 50 stories (32+ / 12-, VADER)"
+        "[sentiment] Headline sentiment +0.35 over 50 stories (36+ / 6-, VADER)"
       ],
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 316.2,
-          "sma_slow": 330.38,
-          "rsi": 38.6,
-          "macd": 0.555,
-          "macd_signal": 2.577
+          "sma_fast": 316.53,
+          "sma_slow": 330.27,
+          "rsi": 48.1,
+          "macd": 0.308,
+          "macd_signal": 2.123
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.27
+          "avg": 0.353
         }
       },
       "history": {
@@ -4208,9 +4208,9 @@
         {
           "key": "pe",
           "label": "P/E",
-          "value": 26.8875,
-          "display": "26.9\u00d7",
-          "sector_benchmark": 22.0938,
+          "value": 26.4706,
+          "display": "26.5\u00d7",
+          "sector_benchmark": 22.4738,
           "benchmark_source": "sector",
           "word": "expensive",
           "tone": "bad"
@@ -4228,8 +4228,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 13.8952,
-          "display": "13.9\u00d7",
+          "value": 13.6798,
+          "display": "13.7\u00d7",
           "sector_benchmark": 2.496,
           "benchmark_source": "peers",
           "word": "expensive",
@@ -4332,40 +4332,40 @@
       "symbol": "JNJ",
       "company": "Johnson & Johnson",
       "sector": "Healthcare",
-      "price": 223.24,
-      "change_pct": 0.157,
+      "price": 228.17,
+      "change_pct": 2.2084,
       "verdict": "WATCH-BUY",
-      "composite": 0.445,
+      "composite": 0.44,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.7,
         "technicals": 0.3,
-        "sentiment": 0.241
+        "sentiment": 0.222
       },
       "reasons": [
-        "[fundamentals] P/E 25.6 (fair)",
+        "[fundamentals] P/E 26.1 (fair)",
         "[fundamentals] Revenue growth 7.9% YoY > 5%",
         "[fundamentals] Debt/Equity 0.68 < 1.5",
         "[fundamentals] Positive free cash flow",
-        "[technicals] SMA50 (231.74) above SMA200 (212.59) \u2014 uptrend",
-        "[technicals] RSI 40 (neutral)",
+        "[technicals] SMA50 (231.60) above SMA200 (212.85) \u2014 uptrend",
+        "[technicals] RSI 50 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.24 over 50 stories (33+ / 14-, VADER)"
+        "[sentiment] Headline sentiment +0.22 over 50 stories (33+ / 14-, VADER)"
       ],
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 231.74,
-          "sma_slow": 212.59,
-          "rsi": 40.3,
-          "macd": -1.426,
-          "macd_signal": -0.993
+          "sma_fast": 231.6,
+          "sma_slow": 212.85,
+          "rsi": 49.7,
+          "macd": -1.214,
+          "macd_signal": -1.037
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "avg": 0.241
+          "avg": 0.222
         }
       },
       "history": {
@@ -4710,9 +4710,9 @@
         {
           "key": "pe",
           "label": "P/E",
-          "value": 25.635,
-          "display": "25.6\u00d7",
-          "sector_benchmark": 25.4281,
+          "value": 26.0789,
+          "display": "26.1\u00d7",
+          "sector_benchmark": 26.0993,
           "benchmark_source": "sector",
           "word": "in line",
           "tone": "neutral"
@@ -4730,8 +4730,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 5.5972,
-          "display": "5.6\u00d7",
+          "value": 5.6942,
+          "display": "5.7\u00d7",
           "sector_benchmark": 3.4194,
           "benchmark_source": "peers",
           "word": "expensive",
