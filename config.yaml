@@ -11,9 +11,18 @@ watchlist:
   - NVDA
   - META
   - TSLA
-  - JPM
-  - V
-  - JNJ
+  - DELL
+  - PLTR
+  - TSM
+  - NOW
+  - MU
+  - AMD
+  - INTC
+  - IBM
+  - ASML
+  - SNDK
+  - KO
+  - MCD
 
 # Composite = w_fund*fund + w_tech*tech + w_sent*sent  (each check returns -1..+1)
 weights:
