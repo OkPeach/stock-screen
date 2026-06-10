@@ -190,15 +190,21 @@ def _save_cache(cache: dict) -> None:
     CACHE_PATH.write_text(json.dumps(cache, indent=2), encoding="utf-8")
 
 
-def annotate(records: list[dict], pause: float = 0.0) -> None:
+def annotate(records: list[dict], pause: float = 0.0, max_new: int | None = None) -> None:
     """Attach `ai` = {bull, bear, source} to each record, using the cache.
 
     Cached by input signature, so an LLM is only called when a ticker's screened
-    profile changed. Deterministic fallback never touches the network.
+    profile changed. To bound a cold run, at most `max_new` LLM generations
+    happen per run (default from AI_MAX_PER_RUN, 8); once that budget is spent,
+    remaining changed tickers fall back to the instant deterministic summary and
+    get the richer LLM version on a later run.
     """
+    if max_new is None:
+        max_new = int(os.environ.get("AI_MAX_PER_RUN", "8"))
     cache = _load_cache()
     session = requests.Session()
     have_llm = bool(os.environ.get("GEMINI_API_KEY") or os.environ.get("GROQ_API_KEY"))
+    generated = 0
 
     for rec in records:
         if "error" in rec:
@@ -208,10 +214,21 @@ def annotate(records: list[dict], pause: float = 0.0) -> None:
         if cached and cached.get("sig") == sig:
             rec["ai"] = {k: cached[k] for k in ("bull", "bear", "source")}
             continue
-        summary = _generate(rec, session)
-        rec["ai"] = summary
-        cache[rec["symbol"]] = {"sig": sig, **summary}
-        if have_llm and summary["source"] != "deterministic" and pause:
-            time.sleep(pause)  # stay within free-tier RPM on cold cache
 
+        # Spend the LLM budget first; afterwards (or on failure) use the
+        # deterministic fallback and DON'T cache it, so a later run can still
+        # upgrade that ticker via the LLM.
+        if have_llm and generated < max_new:
+            summary = _generate(rec, session)
+            rec["ai"] = summary
+            if summary["source"] != "deterministic":
+                generated += 1
+                cache[rec["symbol"]] = {"sig": sig, **summary}
+                if pause:
+                    time.sleep(pause)  # stay within free-tier RPM
+        else:
+            rec["ai"] = deterministic(rec)
+
+    if generated:
+        print(f"ai: generated {generated} new summary(ies)", flush=True)
     _save_cache(cache)

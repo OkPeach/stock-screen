@@ -124,3 +124,16 @@ class TestCache:
         recs = [{"symbol": "ZZZ", "error": "rate limited"}]
         ai.annotate(recs)
         assert "ai" not in recs[0]
+
+    def test_per_run_cap_bounds_cold_llm_cost(self, monkeypatch, tmp_path):
+        monkeypatch.setenv("GEMINI_API_KEY", "x")
+        monkeypatch.setattr(ai, "CACHE_PATH", tmp_path / "ai.json")
+        calls = {"n": 0}
+        monkeypatch.setattr(ai, "_gemini",
+                            lambda p, s: calls.__setitem__("n", calls["n"] + 1) or '{"bull":"b","bear":"r"}')
+        recs = [_rec(symbol=s) for s in ("A", "B", "C", "D", "E")]
+        ai.annotate(recs, max_new=2)
+        assert calls["n"] == 2                                   # LLM budget honoured
+        sources = [r["ai"]["source"] for r in recs]
+        assert sources.count("gemini") == 2                     # first two via LLM
+        assert sources.count("deterministic") == 3              # rest fall back instantly
