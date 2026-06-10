@@ -202,7 +202,10 @@ function cardEl(t) {
   const changeCls = (t.change_pct || 0) >= 0 ? "up" : "down";
   const s = t.scores || {};
   const ed = earningsDays(t.next_earnings);
-  const flags = (t.flags || []).slice(0, 3).map((f) => `<span class="flag">${esc(f.replace(/_/g, " "))}</span>`).join("");
+  let flags = (t.flags || []).slice(0, 3).map((f) => `<span class="flag">${esc(f.replace(/_/g, " "))}</span>`).join("");
+  if (Array.isArray(t.missing) && t.missing.length) {
+    flags = `<span class="flag gap" title="These fields couldn't be fetched this run — see the run log">⚠ partial data: ${esc(t.missing.join(", "))}</span>` + flags;
+  }
   const hasAi = t.ai && t.ai.bull;
 
   card.innerHTML = `

@@ -248,6 +248,7 @@ button { font-family: inherit; }
 
 .flags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.7rem; }
 .flag { font-size: 0.68rem; background: color-mix(in srgb, var(--warn) 16%, transparent); color: var(--warn); padding: 0.12rem 0.45rem; border-radius: 6px; }
+.flag.gap { background: color-mix(in srgb, var(--sell) 14%, transparent); color: var(--sell); }
 .card-cta { margin-top: 0.8rem; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.78rem; }
 .card-cta .ai-hint { color: var(--accent); font-weight: 600; }
 
