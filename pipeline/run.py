@@ -207,8 +207,12 @@ def run(cfg: dict | None = None, rate_limit_cooldown: float = 65.0) -> dict:
             return {"symbol": symbol, "error": str(exc)}
 
     records: list[dict] = []
-    for symbol in watchlist:
-        records.append(attempt(symbol))
+    total = len(watchlist)
+    for i, symbol in enumerate(watchlist, 1):
+        rec = attempt(symbol)
+        records.append(rec)
+        state = "error" if "error" in rec else "ok"
+        print(f"[{i}/{total}] fetched {symbol} ({state})", flush=True)
         # Finnhub calls are paced globally by finnhub_client._throttle(); no
         # extra per-ticker sleep needed.
 
@@ -227,6 +231,7 @@ def run(cfg: dict | None = None, rate_limit_cooldown: float = 65.0) -> dict:
     # then layer the whole-sector P/E from FMP on top of the peer P/E where we
     # can get it. Falls back to peer P/E if FMP is unavailable.
     ok_symbols = [r["symbol"] for r in records if "error" not in r]
+    print("building peer benchmarks…", flush=True)
     benchmarks = peers.build_benchmarks(ok_symbols)
     if use_fmp:
         sector_pe: dict[str, float | None] = {}
@@ -283,12 +288,15 @@ def main() -> None:
     # "What changed since the last run" — verdict flips, new flags, movers.
     payload["changes"] = changes.diff(previous, payload)
     # Pre-generate the "Ask AI" buy/not-buy summaries (cached; best-effort).
+    print("generating AI summaries…", flush=True)
     ai_summary.annotate(payload["tickers"], pause=float(os.environ.get("AI_PAUSE", "4")))
     write_outputs(payload)
     ok = sum(1 for r in payload["tickers"] if "error" not in r)
-    print(f"Wrote docs/data/latest.json — {ok}/{payload['count']} tickers scored.")
+    print(f"Wrote docs/data/latest.json — {ok}/{payload['count']} tickers scored.", flush=True)
     # Grade past verdicts against real forward returns (best-effort).
+    print("grading track record…", flush=True)
     track_record.update()
+    print("done.", flush=True)
 
 
 if __name__ == "__main__":
