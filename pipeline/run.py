@@ -23,6 +23,7 @@ import yaml
 
 from pipeline.data import finnhub_client as fh
 from pipeline.data import fmp_client as fmp
+from pipeline.data import yahoo_client as yahoo
 from pipeline.checks import fundamentals as fund_check
 from pipeline.checks import technicals as tech_check
 from pipeline.checks import sentiment as sent_check
@@ -60,13 +61,23 @@ def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
     thresholds = cfg.get("thresholds", {})
     sources = {"primary": "finnhub", "fmp_enabled": use_fmp}
 
+    # OHLCV: Finnhub gates /stock/candle on free plans, so Yahoo (keyless, no
+    # quota) is the primary price source, with FMP as a secondary fallback.
     slow_w = int(thresholds.get("technicals", {}).get("sma_slow", 200))
-    if use_fmp and _candle_count(raw.get("ohlcv")) < slow_w:
+    want = max(slow_w + 50, 400)
+    if _candle_count(raw.get("ohlcv")) < slow_w:
         try:
-            raw["ohlcv"] = fmp.get_ohlcv(symbol, days=max(slow_w + 50, 400))
-            sources["ohlcv"] = "fmp"
-        except fmp.FMPError as exc:
-            sources["ohlcv_error"] = str(exc)  # keep Finnhub's result, record why FMP failed
+            raw["ohlcv"] = yahoo.get_ohlcv(symbol, days=want)
+            sources["ohlcv"] = "yahoo"
+        except yahoo.YahooError as exc:
+            sources["ohlcv_error"] = str(exc)
+            if use_fmp:
+                try:
+                    raw["ohlcv"] = fmp.get_ohlcv(symbol, days=want)
+                    sources["ohlcv"] = "fmp"
+                    sources.pop("ohlcv_error", None)
+                except fmp.FMPError as exc2:
+                    sources["ohlcv_error"] = f"yahoo: {exc} | fmp: {exc2}"
 
     # Keep the two providers' fundamentals separate so metrics.extract can
     # normalize by source (Finnhub=percent, FMP=fraction). A merged dict would
