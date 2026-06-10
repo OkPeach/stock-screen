@@ -35,6 +35,7 @@ from pipeline import track_record
 from pipeline import sentiment_baseline
 from pipeline import changes
 from pipeline import ai_summary
+from pipeline import briefing
 from pipeline import fetch_cache
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -422,6 +423,12 @@ def main() -> None:
     # Pre-generate the "Ask AI" buy/not-buy summaries (cached; best-effort).
     print("generating AI summaries…", flush=True)
     ai_summary.annotate(payload["tickers"], pause=float(os.environ.get("AI_PAUSE", "4")))
+    # Daily brief: what changed / what to buy / what to sell (no neutrals).
+    print("writing daily brief…", flush=True)
+    try:
+        payload["briefing"] = briefing.build(payload["tickers"], payload.get("changes"))
+    except Exception as exc:
+        print(f"briefing: skipped ({exc})", flush=True)
     write_outputs(payload)
     ok = sum(1 for r in payload["tickers"] if "error" not in r)
     print(f"Wrote docs/data/latest.json — {ok}/{payload['count']} tickers scored.", flush=True)

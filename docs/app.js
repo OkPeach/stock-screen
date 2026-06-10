@@ -25,6 +25,7 @@ async function load() {
     state.tickers = Array.isArray(data.tickers) ? data.tickers : [];
     setUpdated(data);
     renderTape();
+    renderBrief(data.briefing);
     renderChanges(data.changes);
     status.style.display = "none";
     apply();
@@ -60,6 +61,23 @@ function monogram(sym) {
   for (const ch of sym || "?") h = (h * 31 + ch.charCodeAt(0)) % 360;
   const h2 = (h + 50) % 360;
   return `<span class="mono-logo" style="background:linear-gradient(135deg,hsl(${h} 70% 48%),hsl(${h2} 75% 38%))" aria-hidden="true">${esc((sym || "?").slice(0, 2))}</span>`;
+}
+
+// Daily brief: plain-English summary + buy / sell chips (no neutrals).
+function renderBrief(brief) {
+  const el = document.getElementById("brief");
+  if (!brief || !brief.text) { el.hidden = true; return; }
+  const chips = (list, cls) => (list || []).map((p) =>
+    `<button class="brief-chip ${cls}" data-sym="${esc(p.symbol)}" title="${esc(p.line || "")}">${esc(p.symbol)}</button>`).join("");
+  const buys = brief.buy && brief.buy.length
+    ? `<div class="brief-row"><span class="brief-tag up">▲ Buy</span>${chips(brief.buy, "up")}</div>` : "";
+  const sells = brief.sell && brief.sell.length
+    ? `<div class="brief-row"><span class="brief-tag down">▼ Avoid / trim</span>${chips(brief.sell, "down")}</div>` : "";
+  el.innerHTML = `
+    <div class="brief-head"><span class="brief-icon">📋</span><h3>Today's brief</h3></div>
+    <p class="brief-text">${esc(brief.text)}</p>
+    ${buys}${sells}`;
+  el.hidden = false;
 }
 
 // Scrolling ticker tape (duplicated content for a seamless loop).
@@ -303,11 +321,12 @@ function openDrawer(symbol) {
   const vcls = VCLASS[t.verdict] || "neutral";
   const changeCls = (t.change_pct || 0) >= 0 ? "up" : "down";
 
-  const ai = t.ai && t.ai.bull ? `<div class="section"><h3>Ask AI — why buy / why not</h3>
+  const ai = t.ai && t.ai.bull ? `<div class="section"><h3>In plain English</h3>
       <div class="ai-card">
-        <p class="ai-bull"><span class="ai-tag up">Bull</span>${esc(t.ai.bull)}</p>
-        <p class="ai-bear"><span class="ai-tag down">Bear</span>${esc(t.ai.bear)}</p>
-        <p class="ai-src">${t.ai.source === "deterministic" ? "rule-based summary" : "AI · " + esc(t.ai.source)} · grounded in screener data · not financial advice</p>
+        ${t.ai.takeaway ? `<p class="ai-take">${esc(t.ai.takeaway)}</p>` : ""}
+        <p class="ai-bull"><span class="ai-tag up">Good</span>${esc(t.ai.bull)}</p>
+        <p class="ai-bear"><span class="ai-tag down">Risks</span>${esc(t.ai.bear)}</p>
+        <p class="ai-src">${t.ai.source === "deterministic" ? "auto-summary" : "AI · " + esc(t.ai.source)} · based on the data above · not financial advice</p>
       </div></div>` : "";
 
   const history = t.history || {};
@@ -462,6 +481,10 @@ document.getElementById("scrim").addEventListener("click", closeDrawer);
 document.getElementById("tape").addEventListener("click", (e) => {
   const item = e.target.closest(".tape-item");
   if (item) openDrawer(item.dataset.sym);
+});
+document.getElementById("brief").addEventListener("click", (e) => {
+  const chip = e.target.closest(".brief-chip");
+  if (chip) openDrawer(chip.dataset.sym);
 });
 document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeDrawer(); });
