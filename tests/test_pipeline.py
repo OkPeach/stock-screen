@@ -56,6 +56,7 @@ def wired(monkeypatch, tmp_path):
         "news": [{"headline": "Company beats earnings and raises guidance"}],
     })
     monkeypatch.setattr(runner.fh, "get_profile", lambda s, **k: {"sector": SECTOR[s], "companyName": s})
+    monkeypatch.setattr(runner.fh, "get_next_earnings", lambda s, **k: "2026-07-30")
     monkeypatch.setattr(runner.yahoo, "get_ohlcv", lambda s, **k: {"c": _uptrend(), "s": "ok"})
     fmp_fail = lambda *a, **k: (_ for _ in ()).throw(runner.fmp.FMPError("fmp down"))
     monkeypatch.setattr(runner.fmp, "get_ohlcv", fmp_fail)
@@ -82,6 +83,8 @@ def test_end_to_end_record_shape(wired):
         assert r["details"]["sentiment"]["baseline"] == 0.1  # baseline-relative sentiment
         assert r["fundamentals"], "sector-relative labels attached"
         assert r["history"]["pe"], "chart history attached"
+        assert len(r["spark"]) == 63 and r["spark"][-1] > 0  # sparkline closes
+        assert r["next_earnings"] == "2026-07-30"
         # finalize_one must clean up its scratch keys
         for hidden in ("_metric_values", "_tech", "_sent", "_merged_fin"):
             assert hidden not in r
