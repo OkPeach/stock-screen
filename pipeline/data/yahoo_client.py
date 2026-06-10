@@ -15,6 +15,7 @@ from __future__ import annotations
 import sys
 import json
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
 import requests
@@ -60,6 +61,23 @@ def get_ohlcv(symbol: str, days: int = 400, session: requests.Session | None = N
             raise YahooError(f"HTTP {resp.status_code}: {resp.text[:160]}")
         return _parse(resp.json(), symbol, days)
     raise YahooError(f"{symbol}: failed after retries: {last_exc}")
+
+
+def get_many(symbols: list[str], days: int = 400, workers: int = 8) -> dict[str, dict]:
+    """Fetch OHLCV for many symbols in parallel (Yahoo has no rate limit).
+
+    Returns {symbol: ohlcv_dict} where a failed fetch is {"error": "..."} so the
+    caller can degrade per-ticker rather than abort.
+    """
+    def one(sym: str):
+        try:
+            return sym, get_ohlcv(sym, days=days)
+        except YahooError as exc:
+            return sym, {"error": str(exc)}
+    if not symbols:
+        return {}
+    with ThreadPoolExecutor(max_workers=min(workers, len(symbols))) as ex:
+        return dict(ex.map(one, symbols))
 
 
 def _parse(payload: dict, symbol: str, days: int) -> dict:

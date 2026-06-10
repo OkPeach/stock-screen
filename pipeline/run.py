@@ -16,7 +16,7 @@ from __future__ import annotations
 import os
 import json
 import time
-from datetime import datetime, timezone
+from datetime import datetime, date, timezone
 from pathlib import Path
 
 import yaml
@@ -35,11 +35,13 @@ from pipeline import track_record
 from pipeline import sentiment_baseline
 from pipeline import changes
 from pipeline import ai_summary
+from pipeline import fetch_cache
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = REPO_ROOT / "config.yaml"
 DATA_DIR = REPO_ROOT / "docs" / "data"
 HISTORY_DIR = DATA_DIR / "history"
+FETCH_CACHE_PATH = REPO_ROOT / "cache" / "fetches.json"
 
 
 def load_config(path: Path = CONFIG_PATH) -> dict:
@@ -47,55 +49,106 @@ def load_config(path: Path = CONFIG_PATH) -> dict:
         return yaml.safe_load(fh_)
 
 
-def _has_error(obj) -> bool:
-    return not isinstance(obj, dict) or "error" in obj or not obj
+# How long cached fetches stay fresh (days). Fundamentals/series move
+# quarterly, profiles ~never, earnings until the date passes.
+TTL_FUND = 7
+TTL_PROFILE = 30
+TTL_EARN = 5
 
 
-def _candle_count(ohlcv) -> int:
-    return len(ohlcv.get("c", [])) if isinstance(ohlcv, dict) else 0
+def _metric_bundle(symbol: str, fc) -> dict:
+    """Finnhub /stock/metric (metric + series), cached — the heaviest call."""
+    v = fc.get(f"metric:{symbol}", TTL_FUND)
+    if v is not None:
+        return v
+    try:
+        v = fh.get_company_metrics(symbol)
+        fc.set(f"metric:{symbol}", v)
+        return v
+    except fh.FinnhubError:
+        return {"metric": {}, "series": {}}
+
+
+def _fmp_fundamentals(symbol: str, fc, use_fmp: bool) -> dict:
+    if not use_fmp:
+        return {}
+    v = fc.get(f"fmpfund:{symbol}", TTL_FUND)
+    if v is not None:
+        return v
+    try:
+        v = fmp.get_fundamentals(symbol)
+        fc.set(f"fmpfund:{symbol}", v)
+        return v
+    except fmp.FMPError:
+        return {}
+
+
+def _profile(symbol: str, fc, use_fmp: bool) -> dict:
+    """Sector/company name, cached long (profiles change ~never)."""
+    v = fc.get(f"profile:{symbol}", TTL_PROFILE)
+    if v is not None:
+        return v
+    prof: dict = {}
+    if use_fmp:
+        try:
+            prof = fmp.get_profile(symbol)
+        except fmp.FMPError:
+            pass
+    if not prof.get("sector"):
+        try:
+            prof = {**prof, **fh.get_profile(symbol)}
+        except fh.FinnhubError:
+            pass
+    if prof.get("sector") or prof.get("companyName"):
+        fc.set(f"profile:{symbol}", prof)
+    return prof
+
+
+def _earnings(symbol: str, fc) -> str | None:
+    """Next earnings date, cached until it passes."""
+    today = date.today().isoformat()
+    v = fc.get(f"earn:{symbol}", TTL_EARN)
+    if isinstance(v, dict):
+        d = v.get("date")
+        if not d or d >= today:        # still upcoming (or "none known") -> reuse
+            return d
+    try:
+        d = fh.get_next_earnings(symbol)
+    except Exception:
+        d = None
+    fc.set(f"earn:{symbol}", {"date": d})
+    return d
 
 
 def assemble_one(symbol: str, cfg: dict, use_fmp: bool = True,
-                 sent_baseline: float | None = None) -> dict:
+                 sent_baseline: float | None = None,
+                 ohlcv: dict | None = None, fc=None) -> dict:
     """Fetch data + run the peer-independent checks for one ticker.
 
-    Produces a partial record with technicals/sentiment/alerts and the raw
-    metric values, but NOT the fundamentals score or verdict — those need the
-    sector peer benchmarks, which are computed across the whole watchlist first
-    (see finalize_one).
+    Speed-tuned: OHLCV is pre-fetched in parallel (Yahoo) and passed in; the
+    quote is derived from the latest close (cron runs after the US close);
+    slow-moving fundamentals / profile / earnings come from the TTL fetch cache;
+    and the always-403 Finnhub candle / news-sentiment probes are gone. The only
+    fresh Finnhub call left is company news.
     """
-    raw = fh.fetch_ticker(symbol)
     thresholds = cfg.get("thresholds", {})
-    sources = {"primary": "finnhub", "fmp_enabled": use_fmp}
+    sources = {"price": "yahoo", "fmp_enabled": use_fmp}
+    fc = fc or fetch_cache.FetchCache(None)   # memory-only if not supplied
+    ohlcv = ohlcv if isinstance(ohlcv, dict) else {"error": "no OHLCV prefetched"}
+    if "error" in ohlcv:
+        sources["ohlcv_error"] = ohlcv["error"]
 
-    # OHLCV: Finnhub gates /stock/candle on free plans, so Yahoo (keyless, no
-    # quota) is the primary price source, with FMP as a secondary fallback.
-    slow_w = int(thresholds.get("technicals", {}).get("sma_slow", 200))
-    want = max(slow_w + 50, 400)
-    if _candle_count(raw.get("ohlcv")) < slow_w:
-        try:
-            raw["ohlcv"] = yahoo.get_ohlcv(symbol, days=want)
-            sources["ohlcv"] = "yahoo"
-        except yahoo.YahooError as exc:
-            sources["ohlcv_error"] = str(exc)
-            if use_fmp:
-                try:
-                    raw["ohlcv"] = fmp.get_ohlcv(symbol, days=want)
-                    sources["ohlcv"] = "fmp"
-                    sources.pop("ohlcv_error", None)
-                except fmp.FMPError as exc2:
-                    sources["ohlcv_error"] = f"yahoo: {exc} | fmp: {exc2}"
+    # Quote derived from daily closes (after-close cron): price = last close,
+    # change = close-to-close.
+    closes = ohlcv.get("c") or []
+    price = round(float(closes[-1]), 2) if closes else None
+    change_pct = (round((closes[-1] / closes[-2] - 1) * 100, 2)
+                  if len(closes) >= 2 and closes[-2] else None)
 
-    # Keep the two providers' fundamentals separate so metrics.extract can
-    # normalize by source (Finnhub=percent, FMP=fraction). A merged dict would
-    # lose that provenance on shared key names.
-    fin_finnhub = raw["financials"] if not _has_error(raw.get("financials")) else {}
-    fin_fmp: dict = {}
-    if use_fmp:
-        try:
-            fin_fmp = fmp.get_fundamentals(symbol)
-        except fmp.FMPError as exc:
-            sources["fundamentals_error"] = str(exc)
+    bundle = _metric_bundle(symbol, fc)
+    fin_finnhub = bundle.get("metric") or {}
+    series = bundle.get("series") or {}
+    fin_fmp = _fmp_fundamentals(symbol, fc, use_fmp)
     if fin_finnhub and fin_fmp:
         sources["fundamentals"] = "finnhub+fmp"
     elif fin_fmp:
@@ -103,42 +156,29 @@ def assemble_one(symbol: str, cfg: dict, use_fmp: bool = True,
     elif fin_finnhub:
         sources["fundamentals"] = "finnhub"
 
-    # Company sector for peer-relative labelling.
-    profile = {}
-    if use_fmp:
-        try:
-            profile = fmp.get_profile(symbol)
-        except fmp.FMPError:
-            pass
-    if not profile.get("sector"):
-        try:
-            profile = {**profile, **fh.get_profile(symbol)}
-        except fh.FinnhubError:
-            pass
+    profile = _profile(symbol, fc, use_fmp)
+
+    try:
+        news = fh.get_company_news(symbol)
+    except fh.FinnhubError:
+        news = []
 
     # Peer-independent checks now; fundamentals scoring waits for benchmarks.
     merged_fin = {**fin_fmp, **fin_finnhub}
-    technicals = tech_check.check(raw.get("ohlcv", {}), thresholds.get("technicals", {}))
-    sentiment = sent_check.check(raw.get("sentiment", {}), raw.get("news", []),
-                                 thresholds.get("sentiment", {}), baseline=sent_baseline)
-    alerts = alert_check.check(raw.get("quote", {}), merged_fin, cfg.get("alerts", {}))
+    technicals = tech_check.check(ohlcv, thresholds.get("technicals", {}))
+    # No premium news-sentiment probe — VADER over the free headlines.
+    sentiment = sent_check.check({}, news, thresholds.get("sentiment", {}), baseline=sent_baseline)
+    alerts = alert_check.check({"c": price, "dp": change_pct}, merged_fin, cfg.get("alerts", {}))
 
-    # Decoration for the dashboard: ~3 months of closes for the sparkline, and
-    # the next earnings date. Both best-effort, never block scoring.
-    closes = (raw.get("ohlcv") or {}).get("c") or []
     spark = [round(float(c), 2) for c in closes[-63:]]  # ~one quarter of trading days
-    try:
-        next_earnings = fh.get_next_earnings(symbol)
-    except Exception:
-        next_earnings = None
+    next_earnings = _earnings(symbol, fc)
 
-    quote = raw.get("quote", {})
     return {
         "symbol": symbol,
         "company": profile.get("companyName"),
         "sector": profile.get("sector") or "Unknown",
-        "price": quote.get("c"),
-        "change_pct": quote.get("dp"),
+        "price": price,
+        "change_pct": change_pct,
         "spark": spark,
         "next_earnings": next_earnings,
         "flags": sorted(alerts.get("flags", [])),
@@ -150,7 +190,7 @@ def assemble_one(symbol: str, cfg: dict, use_fmp: bool = True,
         # Raw normalized metric values; metrics.annotate_records turns these into
         # the sector-relative `fundamentals` list and then removes this key.
         "_metric_values": metrics.extract(fin_finnhub, fin_fmp),
-        "history": metrics.history_from_series(raw.get("series")),
+        "history": metrics.history_from_series(series),
         "sources": sources,
         # Stashed for finalize_one (removed before output).
         "_tech": technicals,
@@ -199,10 +239,18 @@ def run(cfg: dict | None = None, rate_limit_cooldown: float = 65.0) -> dict:
     # scored as deviation from a ticker's own typical level, not absolute VADER.
     baselines = sentiment_baseline.load_baselines()
 
+    # Slow-moving fetches (fundamentals/profile/earnings) come from this TTL
+    # cache; prices are pre-fetched from Yahoo in parallel (no rate limit).
+    fc = fetch_cache.FetchCache(FETCH_CACHE_PATH)
+    slow_w = int(cfg.get("thresholds", {}).get("technicals", {}).get("sma_slow", 200))
+    print(f"fetching prices for {len(watchlist)} tickers (parallel)…", flush=True)
+    ohlcv_map = yahoo.get_many(watchlist, days=max(slow_w + 50, 400))
+
     def attempt(symbol: str) -> dict:
         try:
             return assemble_one(symbol, cfg, use_fmp=use_fmp,
-                                sent_baseline=baselines.get(symbol))
+                                sent_baseline=baselines.get(symbol),
+                                ohlcv=ohlcv_map.get(symbol), fc=fc)
         except fh.FinnhubError as exc:
             return {"symbol": symbol, "error": str(exc)}
 
@@ -212,9 +260,10 @@ def run(cfg: dict | None = None, rate_limit_cooldown: float = 65.0) -> dict:
         rec = attempt(symbol)
         records.append(rec)
         state = "error" if "error" in rec else "ok"
-        print(f"[{i}/{total}] fetched {symbol} ({state})", flush=True)
-        # Finnhub calls are paced globally by finnhub_client._throttle(); no
-        # extra per-ticker sleep needed.
+        print(f"[{i}/{total}] {symbol} ({state})", flush=True)
+        # Finnhub calls are paced globally by finnhub_client._throttle().
+
+    fc.save()
 
     # Run-level retry: any ticker that failed *because of* a rate limit gets one
     # more pass after a cooldown that lets the per-minute quota refill. Other

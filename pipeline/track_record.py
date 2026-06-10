@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 import glob
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, date, timedelta, timezone
 from pathlib import Path
 
@@ -81,8 +82,13 @@ def _forward_return(index, entry_date: date, horizon: int) -> float | None:
 
 def evaluate(price_fetch=_price_index) -> dict:
     snapshots = _load_snapshots()
-    symbols = {t["symbol"] for _, ts in snapshots for t in ts if "symbol" in t}
-    indices = {s: price_fetch(s) for s in symbols}
+    symbols = sorted({t["symbol"] for _, ts in snapshots for t in ts if "symbol" in t})
+    # Fetch price histories in parallel — Yahoo has no rate limit.
+    if symbols:
+        with ThreadPoolExecutor(max_workers=min(8, len(symbols))) as ex:
+            indices = dict(zip(symbols, ex.map(price_fetch, symbols)))
+    else:
+        indices = {}
 
     # observation: one (symbol, date, verdict, return) per horizon
     buckets: dict[int, dict[str, list[float]]] = {h: {} for h in HORIZONS}
