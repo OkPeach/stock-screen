@@ -1,96 +1,25 @@
 {
-  "generated_at": "2026-06-10T07:09:28.205830+00:00",
+  "generated_at": "2026-06-10T20:05:09.028120+00:00",
   "count": 19,
   "tickers": [
     {
       "symbol": "AAPL",
       "company": "Apple Inc.",
       "sector": "Technology",
-      "price": 290.55,
-      "change_pct": -3.6446,
-      "spark": [
-        260.81,
-        255.76,
-        250.12,
-        252.82,
-        254.23,
-        249.94,
-        248.96,
-        247.99,
-        251.49,
-        251.64,
-        252.62,
-        252.89,
-        248.8,
-        246.63,
-        253.79,
-        255.63,
-        255.92,
-        258.86,
-        253.5,
-        258.9,
-        260.49,
-        260.48,
-        259.2,
-        258.83,
-        266.43,
-        263.4,
-        270.23,
-        273.05,
-        266.17,
-        273.17,
-        273.43,
-        271.06,
-        267.61,
-        270.71,
-        270.22,
-        271.35,
-        280.14,
-        276.83,
-        284.18,
-        287.51,
-        287.44,
-        293.32,
-        292.68,
-        294.8,
-        298.87,
-        298.21,
-        300.23,
-        297.84,
-        298.97,
-        302.25,
-        304.99,
-        308.82,
-        308.33,
-        310.85,
-        312.51,
-        312.06,
-        306.31,
-        315.2,
-        310.26,
-        311.23,
-        307.34,
-        301.54,
-        290.55
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-07-29",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 283.05,
-          "sma_slow": 265.9,
-          "rsi": 42.6,
-          "macd": 5.542,
-          "macd_signal": 8.299,
-          "momentum_12_1": 0.4529
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.315,
+          "stories": 247,
+          "raw": 0.319,
           "baseline": 0.349,
-          "deviation": -0.034
+          "deviation": -0.03
         }
       },
       "history": {
@@ -426,9 +355,9 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "AAPL: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -437,10 +366,10 @@
           "label": "P/E",
           "value": 34.7548,
           "display": "34.8\u00d7",
-          "sector_benchmark": 36.1522,
-          "benchmark_source": "peers",
-          "word": "in line",
-          "tone": "neutral"
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
+          "word": "cheap",
+          "tone": "good"
         },
         {
           "key": "pb",
@@ -555,14 +484,15 @@
       ],
       "peers_in_sector": 11,
       "verdict": "NEUTRAL",
-      "composite": 0.127,
-      "coverage": 1.0,
+      "composite": -0.029,
+      "coverage": 0.65,
       "scores": {
-        "fundamentals": -0.111,
-        "technicals": 0.55,
-        "sentiment": -0.084
+        "fundamentals": 0.0,
+        "technicals": 0.0,
+        "sentiment": -0.075
       },
       "reasons": [
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
@@ -572,102 +502,33 @@
         "[fundamentals] Current ratio weak vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
-        "[technicals] 12-1 momentum +45% (positive)",
-        "[technicals] SMA50 (283.05) above SMA200 (265.90) \u2014 uptrend",
-        "[technicals] RSI 43 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.32 vs own baseline +0.35 (deviation -0.03, 50 stories: 33+ / 12-)"
-      ]
+        "[technicals] technicals: unavailable (AAPL: failed after retries: HTTP 429)",
+        "[sentiment] Headline sentiment +0.32 vs own baseline +0.35 (deviation -0.03, 247 stories: 162+ / 49-)"
+      ],
+      "ai": {
+        "bull": "AAPL's strong gross margin, net margin, ROE, and ROA compared to peers are positive factors. Its P/E is also cheap compared to the sector.",
+        "bear": "AAPL's P/B and P/S are expensive compared to peers, and it has a weak current ratio and heavy debt-to-equity ratio, with weak revenue growth YoY compared to peers.",
+        "source": "groq"
+      }
     },
     {
       "symbol": "MSFT",
       "company": "Microsoft Corporation",
       "sector": "Technology",
-      "price": 403.41,
-      "change_pct": -2.0231,
-      "spark": [
-        404.88,
-        401.86,
-        395.55,
-        399.95,
-        399.41,
-        391.79,
-        389.02,
-        381.87,
-        383.0,
-        372.74,
-        371.04,
-        365.97,
-        356.77,
-        358.96,
-        370.17,
-        369.37,
-        373.46,
-        372.88,
-        372.29,
-        374.33,
-        373.07,
-        370.87,
-        384.37,
-        393.11,
-        411.22,
-        420.26,
-        422.79,
-        418.07,
-        424.16,
-        432.92,
-        415.75,
-        424.62,
-        424.82,
-        429.25,
-        424.46,
-        407.78,
-        414.44,
-        413.62,
-        411.38,
-        413.96,
-        420.77,
-        415.12,
-        412.66,
-        407.77,
-        405.21,
-        409.43,
-        421.92,
-        423.54,
-        417.42,
-        421.06,
-        419.09,
-        418.57,
-        416.03,
-        412.67,
-        426.99,
-        450.24,
-        460.52,
-        441.31,
-        427.34,
-        428.05,
-        416.67,
-        411.74,
-        403.41
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-07-28",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 410.2,
-          "sma_slow": 455.41,
-          "rsi": 41.8,
-          "macd": 1.82,
-          "macd_signal": 4.94,
-          "momentum_12_1": -0.1271
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.275,
+          "stories": 250,
+          "raw": 0.306,
           "baseline": 0.273,
-          "deviation": 0.002
+          "deviation": 0.033
         }
       },
       "history": {
@@ -1003,19 +864,19 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "MSFT: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 24.3392,
-          "display": "24.3\u00d7",
-          "sector_benchmark": 54.2036,
-          "benchmark_source": "peers",
+          "value": 23.8848,
+          "display": "23.9\u00d7",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
         },
@@ -1032,8 +893,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 9.5756,
-          "display": "9.6\u00d7",
+          "value": 9.3968,
+          "display": "9.4\u00d7",
           "sector_benchmark": 12.1598,
           "benchmark_source": "peers",
           "word": "cheap",
@@ -1132,15 +993,15 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": -0.082,
-      "coverage": 1.0,
+      "composite": 0.237,
+      "coverage": 0.65,
       "scores": {
         "fundamentals": 0.333,
-        "technicals": -0.619,
-        "sentiment": 0.006
+        "technicals": 0.0,
+        "sentiment": 0.083
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] P/B cheap vs peers",
         "[fundamentals] P/S cheap vs peers",
         "[fundamentals] Net margin strong vs peers",
@@ -1149,102 +1010,33 @@
         "[fundamentals] Gross margin weak vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
-        "[technicals] 12-1 momentum -13% (negative)",
-        "[technicals] SMA50 (410.20) below SMA200 (455.41) \u2014 downtrend",
-        "[technicals] RSI 42 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.27 vs own baseline +0.27 (deviation +0.00, 50 stories: 36+ / 12-)"
-      ]
+        "[technicals] technicals: unavailable (MSFT: failed after retries: HTTP 429)",
+        "[sentiment] Headline sentiment +0.31 vs own baseline +0.27 (deviation +0.03, 250 stories: 168+ / 59-)"
+      ],
+      "ai": {
+        "bull": "Microsoft's fundamentals appear strong with cheap P/E, P/B, and P/S ratios, as well as high net margin, ROE, and ROA. Additionally, its headline sentiment is slightly positive.",
+        "bear": "However, the company's gross margin is weak, debt-to-equity ratio is high, and revenue growth is slow compared to peers, which could be concerns for investors.",
+        "source": "groq"
+      }
     },
     {
       "symbol": "GOOGL",
       "company": "Alphabet Inc.",
       "sector": "Communication Services",
-      "price": 364.26,
-      "change_pct": 0.2615,
-      "spark": [
-        308.7,
-        303.55,
-        302.28,
-        305.56,
-        310.92,
-        307.69,
-        307.13,
-        301.0,
-        302.06,
-        290.44,
-        290.93,
-        280.92,
-        274.34,
-        273.5,
-        287.56,
-        297.39,
-        295.77,
-        299.99,
-        305.46,
-        317.32,
-        318.49,
-        317.24,
-        321.31,
-        332.91,
-        337.12,
-        336.02,
-        341.68,
-        337.42,
-        332.29,
-        339.32,
-        338.89,
-        344.4,
-        350.34,
-        349.78,
-        349.94,
-        384.8,
-        385.69,
-        383.25,
-        388.43,
-        398.04,
-        397.99,
-        400.8,
-        388.64,
-        387.35,
-        402.62,
-        401.07,
-        396.78,
-        396.94,
-        387.66,
-        388.91,
-        387.66,
-        382.97,
-        388.88,
-        388.83,
-        390.13,
-        380.34,
-        376.37,
-        361.85,
-        358.99,
-        372.19,
-        368.53,
-        363.31,
-        364.26
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-07-21",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 357.95,
-          "sma_slow": 305.68,
-          "rsi": 44.1,
-          "macd": -0.263,
-          "macd_signal": 4.424,
-          "momentum_12_1": 1.2071
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.366,
+          "stories": 248,
+          "raw": 0.301,
           "baseline": 0.343,
-          "deviation": 0.023
+          "deviation": -0.042
         }
       },
       "history": {
@@ -1580,9 +1372,9 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "GOOGL: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -1591,10 +1383,10 @@
           "label": "P/E",
           "value": 27.4669,
           "display": "27.5\u00d7",
-          "sector_benchmark": 23.7389,
-          "benchmark_source": "peers",
-          "word": "expensive",
-          "tone": "bad"
+          "sector_benchmark": 26.3597,
+          "benchmark_source": "sector",
+          "word": "in line",
+          "tone": "neutral"
         },
         {
           "key": "pb",
@@ -1709,12 +1501,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": 0.207,
-      "coverage": 1.0,
+      "composite": 0.028,
+      "coverage": 0.65,
       "scores": {
-        "fundamentals": 0.0,
-        "technicals": 0.55,
-        "sentiment": 0.057
+        "fundamentals": 0.111,
+        "technicals": 0.0,
+        "sentiment": -0.105
       },
       "reasons": [
         "[fundamentals] Net margin strong vs peers",
@@ -1722,107 +1514,37 @@
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
-        "[fundamentals] P/E expensive vs peers",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Gross margin weak vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] 12-1 momentum +121% (positive)",
-        "[technicals] SMA50 (357.95) above SMA200 (305.68) \u2014 uptrend",
-        "[technicals] RSI 44 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.37 vs own baseline +0.34 (deviation +0.02, 50 stories: 40+ / 7-)"
-      ]
+        "[technicals] technicals: unavailable (GOOGL: failed after retries: HTTP 429)",
+        "[sentiment] Headline sentiment +0.30 vs own baseline +0.34 (deviation -0.04, 248 stories: 165+ / 54-)"
+      ],
+      "ai": {
+        "bull": "GOOGL's strong net margin, ROE, ROA, and revenue growth YoY are positives. Its lean debt-to-equity ratio is also a favorable factor.",
+        "bear": "GOOGL's gross margin and current ratio are weak compared to peers, and its price-to-book and price-to-sales ratios are expensive, which are negatives.",
+        "source": "groq"
+      }
     },
     {
       "symbol": "AMZN",
       "company": "Amazon.com, Inc.",
       "sector": "Consumer Cyclical",
-      "price": 244.19,
-      "change_pct": -0.42,
-      "spark": [
-        212.65,
-        209.53,
-        207.67,
-        211.74,
-        215.2,
-        209.87,
-        208.76,
-        205.37,
-        210.14,
-        207.24,
-        211.71,
-        207.54,
-        199.34,
-        200.95,
-        208.27,
-        210.57,
-        209.77,
-        212.79,
-        213.77,
-        221.25,
-        233.65,
-        238.38,
-        239.89,
-        249.02,
-        248.5,
-        249.7,
-        250.56,
-        248.28,
-        249.91,
-        255.36,
-        255.08,
-        263.99,
-        261.12,
-        259.7,
-        263.04,
-        265.06,
-        268.26,
-        272.05,
-        273.55,
-        274.99,
-        271.17,
-        272.68,
-        268.99,
-        265.82,
-        270.13,
-        267.22,
-        264.14,
-        264.86,
-        259.34,
-        265.01,
-        268.46,
-        266.32,
-        265.29,
-        271.85,
-        274.0,
-        270.64,
-        261.26,
-        256.52,
-        250.02,
-        253.79,
-        246.03,
-        245.22,
-        244.19
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-07-29",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 252.81,
-          "sma_slow": 232.35,
-          "rsi": 36.5,
-          "macd": -2.429,
-          "macd_signal": 1.242,
-          "momentum_12_1": 0.2397
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.465,
+          "stories": 249,
+          "raw": 0.426,
           "baseline": 0.356,
-          "deviation": 0.108
+          "deviation": 0.07
         }
       },
       "history": {
@@ -2158,21 +1880,21 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "AMZN: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 29.4831,
-          "display": "29.5\u00d7",
-          "sector_benchmark": 23.101,
-          "benchmark_source": "peers",
-          "word": "expensive",
-          "tone": "bad"
+          "value": 28.7161,
+          "display": "28.7\u00d7",
+          "sector_benchmark": 79.8466,
+          "benchmark_source": "sector",
+          "word": "cheap",
+          "tone": "good"
         },
         {
           "key": "pb",
@@ -2187,8 +1909,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 3.6041,
-          "display": "3.6\u00d7",
+          "value": 3.5103,
+          "display": "3.5\u00d7",
           "sector_benchmark": 1.1538,
           "benchmark_source": "peers",
           "word": "expensive",
@@ -2287,120 +2009,51 @@
       ],
       "peers_in_sector": 10,
       "verdict": "WATCH-BUY",
-      "composite": 0.312,
-      "coverage": 1.0,
+      "composite": 0.313,
+      "coverage": 0.65,
       "scores": {
-        "fundamentals": 0.2,
-        "technicals": 0.47,
-        "sentiment": 0.271
+        "fundamentals": 0.4,
+        "technicals": 0.0,
+        "sentiment": 0.174
       },
       "reasons": [
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
-        "[fundamentals] P/E expensive vs peers",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] 12-1 momentum +24% (positive)",
-        "[technicals] SMA50 (252.81) above SMA200 (232.35) \u2014 uptrend",
-        "[technicals] RSI 37 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.46 vs own baseline +0.36 (deviation +0.11, 50 stories: 40+ / 6-)"
-      ]
+        "[technicals] technicals: unavailable (AMZN: failed after retries: HTTP 429)",
+        "[sentiment] Headline sentiment +0.43 vs own baseline +0.36 (deviation +0.07, 249 stories: 188+ / 44-)"
+      ],
+      "ai": {
+        "bull": "Amazon's strong fundamentals, including high gross and net margins, return on equity, and return on assets, suggest a solid financial foundation. Its revenue growth is also strong compared to peers.",
+        "bear": "The company's price-to-book and price-to-sales ratios are expensive compared to peers, and its current ratio is weak, which could indicate potential liquidity issues.",
+        "source": "groq"
+      }
     },
     {
       "symbol": "NVDA",
       "company": "NVIDIA Corporation",
       "sector": "Technology",
-      "price": 208.19,
-      "change_pct": -0.2157,
-      "spark": [
-        186.03,
-        183.14,
-        180.25,
-        183.22,
-        181.93,
-        180.4,
-        178.56,
-        172.7,
-        175.64,
-        175.2,
-        178.68,
-        171.24,
-        167.52,
-        165.17,
-        174.4,
-        175.75,
-        177.39,
-        177.64,
-        178.1,
-        182.08,
-        183.91,
-        188.63,
-        189.31,
-        196.51,
-        198.87,
-        198.35,
-        201.68,
-        202.06,
-        199.88,
-        202.5,
-        199.64,
-        208.27,
-        216.61,
-        213.17,
-        209.25,
-        199.57,
-        198.45,
-        198.48,
-        196.5,
-        207.83,
-        211.5,
-        215.2,
-        219.44,
-        220.78,
-        225.83,
-        235.74,
-        225.32,
-        222.32,
-        220.61,
-        223.47,
-        219.51,
-        215.33,
-        214.86,
-        212.6,
-        214.25,
-        211.14,
-        224.36,
-        222.82,
-        214.75,
-        218.66,
-        205.1,
-        208.64,
-        208.19
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-08-25",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 205.01,
-          "sma_slow": 188.91,
-          "rsi": 46.4,
-          "macd": 0.928,
-          "macd_signal": 3.161,
-          "momentum_12_1": 0.5385
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.274,
+          "stories": 250,
+          "raw": 0.288,
           "baseline": 0.3,
-          "deviation": -0.026
+          "deviation": -0.012
         }
       },
       "history": {
@@ -2736,19 +2389,19 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "NVDA: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 31.8926,
-          "display": "31.9\u00d7",
-          "sector_benchmark": 92.68,
-          "benchmark_source": "peers",
+          "value": 31.2982,
+          "display": "31.3\u00d7",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
         },
@@ -2765,8 +2418,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 20.0815,
-          "display": "20.1\u00d7",
+          "value": 19.7072,
+          "display": "19.7\u00d7",
           "sector_benchmark": 20.2603,
           "benchmark_source": "peers",
           "word": "in line",
@@ -2865,15 +2518,15 @@
       ],
       "peers_in_sector": 11,
       "verdict": "WATCH-BUY",
-      "composite": 0.487,
-      "coverage": 1.0,
+      "composite": 0.467,
+      "coverage": 0.65,
       "scores": {
         "fundamentals": 0.778,
-        "technicals": 0.55,
-        "sentiment": -0.065
+        "technicals": 0.0,
+        "sentiment": -0.031
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
@@ -2882,102 +2535,33 @@
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
         "[fundamentals] P/B expensive vs peers",
-        "[technicals] 12-1 momentum +54% (positive)",
-        "[technicals] SMA50 (205.01) above SMA200 (188.91) \u2014 uptrend",
-        "[technicals] RSI 46 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.27 vs own baseline +0.30 (deviation -0.03, 50 stories: 32+ / 9-)"
-      ]
+        "[technicals] technicals: unavailable (NVDA: failed after retries: HTTP 429)",
+        "[sentiment] Headline sentiment +0.29 vs own baseline +0.30 (deviation -0.01, 250 stories: 159+ / 55-)"
+      ],
+      "ai": {
+        "bull": "NVIDIA's strong fundamentals, including cheap P/E, strong gross and net margins, and high ROE and ROA, are positive factors. Revenue growth is also strong compared to peers.",
+        "bear": "The P/B ratio is expensive compared to peers, and technical analysis is unavailable due to data retrieval issues. Sentiment is slightly below the baseline, with a small negative deviation.",
+        "source": "groq"
+      }
     },
     {
       "symbol": "META",
       "company": "Meta Platforms, Inc.",
       "sector": "Communication Services",
-      "price": 584.59,
-      "change_pct": -0.1367,
-      "spark": [
-        654.86,
-        638.18,
-        613.71,
-        627.45,
-        622.66,
-        615.68,
-        606.7,
-        593.66,
-        604.06,
-        592.92,
-        594.89,
-        547.54,
-        525.72,
-        536.38,
-        572.13,
-        579.23,
-        574.46,
-        573.02,
-        575.05,
-        612.42,
-        628.39,
-        629.86,
-        634.53,
-        662.49,
-        671.58,
-        676.87,
-        688.55,
-        670.91,
-        668.84,
-        674.72,
-        659.15,
-        675.03,
-        678.62,
-        671.34,
-        669.12,
-        611.91,
-        608.75,
-        610.41,
-        604.96,
-        612.88,
-        616.81,
-        609.63,
-        598.86,
-        603.0,
-        616.63,
-        618.43,
-        614.23,
-        611.21,
-        602.61,
-        605.06,
-        607.38,
-        610.26,
-        612.34,
-        635.26,
-        635.29,
-        632.51,
-        600.47,
-        597.63,
-        622.98,
-        627.57,
-        593.0,
-        585.39,
-        584.59
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-07-28",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 621.45,
-          "sma_slow": 660.86,
-          "rsi": 39.3,
-          "macd": -7.315,
-          "macd_signal": -4.619,
-          "momentum_12_1": -0.1372
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.405,
+          "stories": 247,
+          "raw": 0.296,
           "baseline": 0.301,
-          "deviation": 0.103
+          "deviation": -0.006
         }
       },
       "history": {
@@ -3313,19 +2897,19 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "META: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 21.0516,
-          "display": "21.1\u00d7",
-          "sector_benchmark": 27.4457,
-          "benchmark_source": "peers",
+          "value": 21.0228,
+          "display": "21.0\u00d7",
+          "sector_benchmark": 26.3597,
+          "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
         },
@@ -3342,7 +2926,7 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 6.9127,
+          "value": 6.9033,
           "display": "6.9\u00d7",
           "sector_benchmark": 3.7235,
           "benchmark_source": "peers",
@@ -3441,16 +3025,16 @@
         }
       ],
       "peers_in_sector": 10,
-      "verdict": "NEUTRAL",
-      "composite": 0.065,
-      "coverage": 1.0,
+      "verdict": "WATCH-BUY",
+      "composite": 0.336,
+      "coverage": 0.65,
       "scores": {
         "fundamentals": 0.556,
-        "technicals": -0.633,
-        "sentiment": 0.258
+        "technicals": 0.0,
+        "sentiment": -0.015
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] P/B cheap vs peers",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
@@ -3459,102 +3043,33 @@
         "[fundamentals] Rev growth YoY strong vs peers",
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] 12-1 momentum -14% (negative)",
-        "[technicals] SMA50 (621.45) below SMA200 (660.86) \u2014 downtrend",
-        "[technicals] RSI 39 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.40 vs own baseline +0.30 (deviation +0.10, 50 stories: 39+ / 5-)"
-      ]
+        "[technicals] technicals: unavailable (META: failed after retries: HTTP 429)",
+        "[sentiment] Headline sentiment +0.30 vs own baseline +0.30 (deviation -0.01, 247 stories: 164+ / 54-)"
+      ],
+      "ai": {
+        "bull": "META's strong fundamentals, including low P/E and P/B ratios, high gross and net margins, and strong ROE and ROA, are positives. Revenue growth is also strong compared to peers.",
+        "bear": "The current ratio is weak compared to peers and the P/S ratio is expensive, which are negatives. Additionally, technical analysis is unavailable and sentiment deviation is slightly negative.",
+        "source": "groq"
+      }
     },
     {
       "symbol": "TSLA",
       "company": "Tesla, Inc.",
       "sector": "Consumer Cyclical",
-      "price": 396.68,
-      "change_pct": -3.0004,
-      "spark": [
-        407.82,
-        395.01,
-        391.2,
-        395.56,
-        399.27,
-        392.78,
-        380.3,
-        367.96,
-        380.85,
-        383.03,
-        385.95,
-        372.11,
-        361.83,
-        355.28,
-        371.75,
-        381.26,
-        360.59,
-        352.82,
-        346.65,
-        343.25,
-        345.62,
-        348.95,
-        352.42,
-        364.2,
-        391.95,
-        388.9,
-        400.62,
-        392.5,
-        386.42,
-        387.51,
-        373.72,
-        376.3,
-        378.67,
-        376.02,
-        372.8,
-        381.63,
-        390.82,
-        392.51,
-        389.37,
-        398.73,
-        411.79,
-        428.35,
-        445.0,
-        433.45,
-        445.27,
-        443.3,
-        422.24,
-        409.99,
-        404.11,
-        417.26,
-        417.85,
-        426.01,
-        433.59,
-        440.36,
-        442.1,
-        435.79,
-        415.88,
-        423.74,
-        423.7,
-        418.45,
-        391.0,
-        408.95,
-        396.68
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-07-21",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 396.72,
-          "sma_slow": 414.95,
-          "rsi": 43.9,
-          "macd": 1.147,
-          "macd_signal": 6.223,
-          "momentum_12_1": 0.4421
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.34,
+          "stories": 243,
+          "raw": 0.276,
           "baseline": 0.265,
-          "deviation": 0.075
+          "deviation": 0.011
         }
       },
       "history": {
@@ -3890,9 +3405,9 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "TSLA: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -3901,8 +3416,8 @@
           "label": "P/E",
           "value": 385.764,
           "display": "385.8\u00d7",
-          "sector_benchmark": 19.7317,
-          "benchmark_source": "peers",
+          "sector_benchmark": 79.8466,
+          "benchmark_source": "sector",
           "word": "expensive",
           "tone": "bad"
         },
@@ -4019,12 +3534,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": 0.11,
-      "coverage": 1.0,
+      "composite": 0.133,
+      "coverage": 0.65,
       "scores": {
         "fundamentals": 0.2,
-        "technicals": -0.05,
-        "sentiment": 0.188
+        "technicals": 0.0,
+        "sentiment": 0.027
       },
       "reasons": [
         "[fundamentals] Gross margin strong vs peers",
@@ -4033,23 +3548,25 @@
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Current ratio strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
-        "[fundamentals] P/E expensive vs peers",
+        "[fundamentals] P/E expensive vs sector",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
-        "[technicals] 12-1 momentum +44% (positive)",
-        "[technicals] SMA50 (396.72) below SMA200 (414.95) \u2014 downtrend",
-        "[technicals] RSI 44 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.34 vs own baseline +0.27 (deviation +0.08, 50 stories: 34+ / 10-)"
-      ]
+        "[technicals] technicals: unavailable (TSLA: failed after retries: HTTP 429)",
+        "[sentiment] Headline sentiment +0.28 vs own baseline +0.27 (deviation +0.01, 243 stories: 159+ / 54-)"
+      ],
+      "ai": {
+        "bull": "Tesla's strong gross margin, net margin, ROE, ROA, and current ratio are positives, with the company also having a lean debt-to-equity ratio compared to peers.",
+        "bear": "The stock's expensive valuation metrics, such as P/E, P/B, and P/S ratios, along with weak revenue growth year-over-year compared to peers, are concerns.",
+        "source": "groq"
+      }
     },
     {
       "symbol": "DELL",
       "company": "Dell Technologies Inc.",
       "sector": "Technology",
-      "price": 381.78,
-      "change_pct": -4.7384,
+      "price": null,
+      "change_pct": null,
       "spark": [],
       "next_earnings": null,
       "flags": [],
@@ -4058,8 +3575,8 @@
         "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.35
+          "stories": 136,
+          "raw": 0.425
         }
       },
       "history": {
@@ -4391,10 +3908,9 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv_error": "yahoo: DELL: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/DELL]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
-        "fundamentals_error": "no usable fundamentals for 'DELL'",
+        "ohlcv_error": "DELL: failed after retries: HTTP 429",
         "fundamentals": "finnhub"
       },
       "fundamentals": [
@@ -4403,8 +3919,8 @@
           "label": "P/E",
           "value": 29.621,
           "display": "29.6\u00d7",
-          "sector_benchmark": 34.7548,
-          "benchmark_source": "peers",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
         },
@@ -4519,7 +4035,7 @@
         "sentiment": 0.0
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] P/S cheap vs peers",
         "[fundamentals] ROE strong vs peers",
         "[fundamentals] ROA strong vs peers",
@@ -4529,97 +4045,31 @@
         "[fundamentals] Gross margin weak vs peers",
         "[fundamentals] Net margin weak vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.35 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (DELL: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.43 over 136 stories)"
+      ],
+      "ai": {
+        "bull": "Dell's strong ROE and ROA, along with its lean debt-to-equity ratio, suggest a solid financial foundation. Its revenue growth is also strong compared to peers.",
+        "bear": "Dell's gross and net margins are weak compared to peers, and its current ratio is also a concern. Additionally, its P/B ratio is expensive versus peers.",
+        "source": "groq"
+      }
     },
     {
       "symbol": "PLTR",
       "company": "Palantir Technologies Inc.",
       "sector": "Technology",
-      "price": 132.07,
-      "change_pct": -3.2242,
-      "spark": [
-        151.6,
-        153.5,
-        150.95,
-        152.72,
-        155.08,
-        152.77,
-        155.68,
-        150.68,
-        160.84,
-        154.78,
-        154.96,
-        147.56,
-        143.06,
-        137.55,
-        146.28,
-        146.49,
-        148.46,
-        147.93,
-        150.07,
-        140.76,
-        130.49,
-        128.06,
-        132.37,
-        135.7,
-        142.15,
-        142.76,
-        146.39,
-        145.89,
-        145.97,
-        152.62,
-        141.57,
-        143.09,
-        143.1,
-        141.18,
-        137.97,
-        139.11,
-        144.07,
-        146.03,
-        135.91,
-        133.79,
-        137.05,
-        137.8,
-        136.89,
-        136.0,
-        130.05,
-        133.73,
-        133.99,
-        135.14,
-        135.26,
-        137.15,
-        137.42,
-        136.88,
-        136.6,
-        132.51,
-        143.34,
-        156.54,
-        160.65,
-        152.17,
-        142.2,
-        141.7,
-        135.53,
-        136.47,
-        132.07
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-08-03",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 140.46,
-          "sma_slow": 160.86,
-          "rsi": 42.2,
-          "macd": -0.273,
-          "macd_signal": 0.538,
-          "momentum_12_1": 0.0366
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.246
+          "stories": 156,
+          "raw": 0.209
         }
       },
       "history": {
@@ -4955,9 +4405,9 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "PLTR: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -4966,8 +4416,8 @@
           "label": "P/E",
           "value": 138.7723,
           "display": "138.8\u00d7",
-          "sector_benchmark": 41.9229,
-          "benchmark_source": "peers",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
           "word": "expensive",
           "tone": "bad"
         },
@@ -5083,12 +4533,12 @@
         }
       ],
       "peers_in_sector": 10,
-      "verdict": "NEUTRAL",
-      "composite": -0.01,
-      "coverage": 0.75,
+      "verdict": "WATCH-BUY",
+      "composite": 0.333,
+      "coverage": 0.4,
       "scores": {
         "fundamentals": 0.333,
-        "technicals": -0.401,
+        "technicals": 0.0,
         "sentiment": 0.0
       },
       "reasons": [
@@ -5098,107 +4548,34 @@
         "[fundamentals] Current ratio strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
-        "[fundamentals] P/E expensive vs peers",
+        "[fundamentals] P/E expensive vs sector",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
-        "[technicals] 12-1 momentum +4% (positive)",
-        "[technicals] SMA50 (140.46) below SMA200 (160.86) \u2014 downtrend",
-        "[technicals] RSI 42 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.25 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (PLTR: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.21 over 156 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, Net margin strong, ROE strong, ROA strong and Current ratio strong.",
+        "bear": "Bear case: versus peers, P/E expensive, P/B expensive and P/S expensive.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "TSM",
       "company": "Taiwan Semiconductor Manufacturing Company Limited",
       "sector": "Technology",
-      "price": 427.92,
-      "change_pct": 0.2624,
-      "spark": [
-        354.56,
-        336.71,
-        338.31,
-        340.23,
-        345.98,
-        339.57,
-        338.79,
-        329.24,
-        338.45,
-        343.25,
-        347.75,
-        326.11,
-        326.74,
-        316.5,
-        337.95,
-        341.49,
-        339.04,
-        341.76,
-        345.32,
-        365.9,
-        365.49,
-        370.6,
-        369.57,
-        379.89,
-        375.1,
-        363.35,
-        370.5,
-        366.24,
-        368.08,
-        387.44,
-        382.66,
-        402.46,
-        404.98,
-        392.34,
-        393.83,
-        396.06,
-        397.67,
-        401.61,
-        394.41,
-        419.5,
-        414.15,
-        411.68,
-        404.54,
-        397.28,
-        399.8,
-        417.72,
-        404.35,
-        395.95,
-        392.61,
-        401.62,
-        407.15,
-        404.52,
-        412.32,
-        422.73,
-        424.86,
-        418.45,
-        435.63,
-        446.69,
-        436.69,
-        444.92,
-        415.17,
-        426.8,
-        427.92
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-07-15",
-      "flags": [
-        "near_52wk_low"
-      ],
-      "alerts": [
-        "Near 52-wk low (427.92 vs 970)"
-      ],
+      "flags": [],
+      "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 393.07,
-          "sma_slow": 328.29,
-          "rsi": 56.0,
-          "macd": 10.756,
-          "macd_signal": 11.307,
-          "momentum_12_1": 0.9543
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 37,
-          "raw": 0.307
+          "stories": 44,
+          "raw": 0.32
         }
       },
       "history": {
@@ -5534,19 +4911,19 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "TSM: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 30.8559,
-          "display": "30.9\u00d7",
-          "sector_benchmark": 105.1067,
-          "benchmark_source": "peers",
+          "value": 30.9903,
+          "display": "31.0\u00d7",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
         },
@@ -5563,8 +4940,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 14.502,
-          "display": "14.5\u00d7",
+          "value": 14.5652,
+          "display": "14.6\u00d7",
           "sector_benchmark": 36.2075,
           "benchmark_source": "peers",
           "word": "cheap",
@@ -5643,7 +5020,7 @@
         {
           "key": "dividend_yield",
           "label": "Dividend yield",
-          "value": 0.9545,
+          "value": 0.9756,
           "display": "1.0%",
           "sector_benchmark": 0.7162,
           "benchmark_source": "peers",
@@ -5663,15 +5040,15 @@
       ],
       "peers_in_sector": 12,
       "verdict": "WATCH-BUY",
-      "composite": 0.523,
-      "coverage": 0.75,
+      "composite": 0.5,
+      "coverage": 0.4,
       "scores": {
         "fundamentals": 0.5,
-        "technicals": 0.55,
+        "technicals": 0.0,
         "sentiment": 0.0
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] P/B cheap vs peers",
         "[fundamentals] P/S cheap vs peers",
         "[fundamentals] Gross margin strong vs peers",
@@ -5679,33 +5056,31 @@
         "[fundamentals] Current ratio strong vs peers",
         "[fundamentals] ROE weak vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
-        "[technicals] 12-1 momentum +95% (positive)",
-        "[technicals] SMA50 (393.07) above SMA200 (328.29) \u2014 uptrend",
-        "[technicals] RSI 56 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.31 over 37 stories)"
-      ]
+        "[technicals] technicals: unavailable (TSM: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.32 over 44 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, P/E cheap, P/B cheap, P/S cheap and Gross margin strong.",
+        "bear": "Bear case: versus peers, ROE weak and Debt/Equity heavy.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "NOW",
       "company": "ServiceNow, Inc.",
       "sector": "Technology",
-      "price": 106.97,
-      "change_pct": -6.3228,
+      "price": null,
+      "change_pct": null,
       "spark": [],
       "next_earnings": "2026-07-21",
-      "flags": [
-        "big_daily_move"
-      ],
-      "alerts": [
-        "Daily move -6.3% (>= 5%)"
-      ],
+      "flags": [],
+      "alerts": [],
       "details": {
         "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.306
+          "stories": 79,
+          "raw": 0.238
         }
       },
       "history": {
@@ -6041,20 +5416,19 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv_error": "yahoo: NOW: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/NOW]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
-        "fundamentals_error": "no usable fundamentals for 'NOW'",
+        "ohlcv_error": "NOW: failed after retries: HTTP 429",
         "fundamentals": "finnhub"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 67.0262,
-          "display": "67.0\u00d7",
-          "sector_benchmark": 31.3687,
-          "benchmark_source": "peers",
+          "value": 62.7883,
+          "display": "62.8\u00d7",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
           "word": "expensive",
           "tone": "bad"
         },
@@ -6071,8 +5445,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 8.4359,
-          "display": "8.4\u00d7",
+          "value": 7.9025,
+          "display": "7.9\u00d7",
           "sector_benchmark": 10.0384,
           "benchmark_source": "peers",
           "word": "cheap",
@@ -6162,20 +5536,25 @@
         "[fundamentals] P/S cheap vs peers",
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
-        "[fundamentals] P/E expensive vs peers",
+        "[fundamentals] P/E expensive vs sector",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] ROE weak vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.31 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (NOW: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.24 over 79 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, P/S cheap, ROA strong and Debt/Equity lean.",
+        "bear": "Bear case: versus peers, P/E expensive, P/B expensive, ROE weak and Current ratio weak.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "MU",
       "company": "Micron Technology, Inc.",
       "sector": "Technology",
-      "price": 935.89,
-      "change_pct": -1.4105,
+      "price": null,
+      "change_pct": null,
       "spark": [],
       "next_earnings": "2026-06-24",
       "flags": [],
@@ -6184,8 +5563,8 @@
         "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.105
+          "stories": 248,
+          "raw": 0.13
         }
       },
       "history": {
@@ -6521,20 +5900,19 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv_error": "yahoo: MU: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/MU]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
-        "fundamentals_error": "no usable fundamentals for 'MU'",
+        "ohlcv_error": "MU: failed after retries: HTTP 429",
         "fundamentals": "finnhub"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 42.4611,
-          "display": "42.5\u00d7",
-          "sector_benchmark": 62.8562,
-          "benchmark_source": "peers",
+          "value": 41.7221,
+          "display": "41.7\u00d7",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
         },
@@ -6551,8 +5929,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 17.6152,
-          "display": "17.6\u00d7",
+          "value": 17.3086,
+          "display": "17.3\u00d7",
           "sector_benchmark": 20.3915,
           "benchmark_source": "peers",
           "word": "cheap",
@@ -6649,7 +6027,7 @@
         "sentiment": 0.0
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] P/B cheap vs peers",
         "[fundamentals] P/S cheap vs peers",
         "[fundamentals] Net margin strong vs peers",
@@ -6657,97 +6035,31 @@
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
-        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.11 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (MU: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.13 over 248 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, P/E cheap, P/B cheap, P/S cheap and Net margin strong.",
+        "bear": "Bear case: no clear red flags in the screened data, but valuation/timing still warrant a look.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "AMD",
       "company": "Advanced Micro Devices, Inc.",
       "sector": "Technology",
-      "price": 475.505,
-      "change_pct": -3.0235,
-      "spark": [
-        204.83,
-        197.74,
-        193.39,
-        196.58,
-        196.31,
-        199.46,
-        205.27,
-        201.33,
-        202.68,
-        205.37,
-        220.27,
-        203.77,
-        201.99,
-        196.04,
-        203.43,
-        210.21,
-        217.5,
-        220.18,
-        221.53,
-        231.82,
-        236.64,
-        245.04,
-        246.83,
-        255.07,
-        258.12,
-        278.26,
-        278.39,
-        274.95,
-        284.49,
-        303.46,
-        305.33,
-        347.81,
-        334.63,
-        323.21,
-        337.11,
-        354.49,
-        360.54,
-        341.54,
-        355.26,
-        421.39,
-        408.46,
-        455.19,
-        458.79,
-        448.29,
-        445.5,
-        449.7,
-        424.1,
-        420.99,
-        414.05,
-        447.58,
-        449.59,
-        467.51,
-        503.89,
-        495.54,
-        518.09,
-        516.1,
-        510.13,
-        521.54,
-        542.52,
-        523.2,
-        466.38,
-        490.33,
-        475.5
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-08-03",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 369.92,
-          "sma_slow": 249.16,
-          "rsi": 55.3,
-          "macd": 35.849,
-          "macd_signal": 44.04,
-          "momentum_12_1": 2.7689
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.209
+          "stories": 246,
+          "raw": 0.244
         }
       },
       "history": {
@@ -7083,9 +6395,9 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "AMD: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -7094,8 +6406,8 @@
           "label": "P/E",
           "value": 154.7931,
           "display": "154.8\u00d7",
-          "sector_benchmark": 58.5487,
-          "benchmark_source": "peers",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
           "word": "expensive",
           "tone": "bad"
         },
@@ -7211,118 +6523,49 @@
         }
       ],
       "peers_in_sector": 10,
-      "verdict": "NEUTRAL",
-      "composite": 0.079,
-      "coverage": 0.75,
+      "verdict": "WATCH-SELL",
+      "composite": -0.333,
+      "coverage": 0.4,
       "scores": {
         "fundamentals": -0.333,
-        "technicals": 0.55,
+        "technicals": 0.0,
         "sentiment": 0.0
       },
       "reasons": [
         "[fundamentals] P/B cheap vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
-        "[fundamentals] P/E expensive vs peers",
+        "[fundamentals] P/E expensive vs sector",
         "[fundamentals] Gross margin weak vs peers",
         "[fundamentals] Net margin weak vs peers",
         "[fundamentals] ROE weak vs peers",
         "[fundamentals] ROA weak vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] 12-1 momentum +277% (positive)",
-        "[technicals] SMA50 (369.92) above SMA200 (249.16) \u2014 uptrend",
-        "[technicals] RSI 55 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.21 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (AMD: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.24 over 246 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, P/B cheap, Debt/Equity lean and Rev growth YoY strong.",
+        "bear": "Bear case: versus peers, P/E expensive, Gross margin weak, Net margin weak and ROE weak.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "INTC",
       "company": "Intel Corporation",
       "sector": "Technology",
-      "price": 107.92,
-      "change_pct": -2.1311,
-      "spark": [
-        47.98,
-        45.25,
-        45.77,
-        45.76,
-        44.06,
-        45.03,
-        46.18,
-        43.87,
-        44.01,
-        44.06,
-        47.18,
-        44.1,
-        43.13,
-        41.19,
-        44.13,
-        48.03,
-        50.38,
-        50.78,
-        52.91,
-        58.95,
-        61.72,
-        62.38,
-        65.18,
-        63.81,
-        64.94,
-        68.5,
-        68.5,
-        65.7,
-        66.26,
-        65.27,
-        66.78,
-        82.54,
-        84.99,
-        84.52,
-        94.75,
-        94.48,
-        99.62,
-        95.78,
-        108.15,
-        113.01,
-        109.62,
-        124.92,
-        129.44,
-        120.61,
-        120.29,
-        115.93,
-        108.77,
-        108.17,
-        110.8,
-        118.96,
-        118.5,
-        119.84,
-        123.52,
-        121.77,
-        120.89,
-        114.68,
-        109.33,
-        107.93,
-        112.71,
-        111.78,
-        99.17,
-        110.27,
-        107.92
-      ],
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-07-22",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 91.38,
-          "sma_slow": 52.13,
-          "rsi": 51.1,
-          "macd": 3.64,
-          "macd_signal": 6.693,
-          "momentum_12_1": 5.3203
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.245
+          "stories": 250,
+          "raw": 0.251
         }
       },
       "history": {
@@ -7658,9 +6901,9 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "INTC: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -7677,8 +6920,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 9.8392,
-          "display": "9.8\u00d7",
+          "value": 9.8677,
+          "display": "9.9\u00d7",
           "sector_benchmark": 20.3915,
           "benchmark_source": "peers",
           "word": "cheap",
@@ -7776,12 +7019,12 @@
         }
       ],
       "peers_in_sector": 10,
-      "verdict": "NEUTRAL",
-      "composite": -0.04,
-      "coverage": 0.75,
+      "verdict": "WATCH-SELL",
+      "composite": -0.556,
+      "coverage": 0.4,
       "scores": {
         "fundamentals": -0.556,
-        "technicals": 0.55,
+        "technicals": 0.0,
         "sentiment": 0.0
       },
       "reasons": [
@@ -7794,19 +7037,21 @@
         "[fundamentals] Current ratio weak vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
-        "[technicals] 12-1 momentum +532% (positive)",
-        "[technicals] SMA50 (91.38) above SMA200 (52.13) \u2014 uptrend",
-        "[technicals] RSI 51 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.25 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (INTC: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.25 over 250 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, P/B cheap and P/S cheap.",
+        "bear": "Bear case: versus peers, Gross margin weak, Net margin weak, ROE weak and ROA weak.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "IBM",
       "company": "International Business Machines Corporation",
       "sector": "Technology",
-      "price": 277.49,
-      "change_pct": -1.1858,
+      "price": null,
+      "change_pct": null,
       "spark": [],
       "next_earnings": "2026-07-22",
       "flags": [],
@@ -7815,8 +7060,8 @@
         "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.122
+          "stories": 151,
+          "raw": 0.225
         }
       },
       "history": {
@@ -8152,22 +7397,21 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv_error": "yahoo: IBM: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/IBM]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
-        "fundamentals_error": "no usable fundamentals for 'IBM'",
+        "ohlcv_error": "IBM: failed after retries: HTTP 429",
         "fundamentals": "finnhub"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 24.2358,
-          "display": "24.2\u00d7",
-          "sector_benchmark": 13.7832,
-          "benchmark_source": "peers",
-          "word": "expensive",
-          "tone": "bad"
+          "value": 23.9574,
+          "display": "24.0\u00d7",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
+          "word": "cheap",
+          "tone": "good"
         },
         {
           "key": "pb",
@@ -8182,8 +7426,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 3.7814,
-          "display": "3.8\u00d7",
+          "value": 3.738,
+          "display": "3.7\u00d7",
           "sector_benchmark": 1.1638,
           "benchmark_source": "peers",
           "word": "expensive",
@@ -8272,49 +7516,51 @@
       ],
       "peers_in_sector": 9,
       "verdict": "NEUTRAL",
-      "composite": 0.0,
+      "composite": 0.2,
       "coverage": 0.4,
       "scores": {
-        "fundamentals": 0.0,
+        "fundamentals": 0.2,
         "technicals": 0.0,
         "sentiment": 0.0
       },
       "reasons": [
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
-        "[fundamentals] P/E expensive vs peers",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Current ratio weak vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
-        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.12 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (IBM: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.23 over 151 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, P/E cheap, Gross margin strong, Net margin strong and ROE strong.",
+        "bear": "Bear case: versus peers, P/B expensive, P/S expensive, Current ratio weak and Debt/Equity heavy.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "ASML",
       "company": "ASML Holding N.V.",
       "sector": "Technology",
-      "price": 1777.77,
-      "change_pct": 1.6426,
+      "price": null,
+      "change_pct": null,
       "spark": [],
       "next_earnings": "2026-07-15",
       "flags": [
-        "high_pe",
-        "near_52wk_high"
+        "high_pe"
       ],
-      "alerts": [
-        "Near 52-wk high (1777.77 vs 1532.6)"
-      ],
+      "alerts": [],
       "details": {
         "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.177
+          "stories": 64,
+          "raw": 0.265
         }
       },
       "history": {
@@ -8650,22 +7896,21 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv_error": "yahoo: ASML: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/ASML]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
-        "fundamentals_error": "no usable fundamentals for 'ASML'",
+        "ohlcv_error": "ASML: failed after retries: HTTP 429",
         "fundamentals": "finnhub"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 56.6488,
-          "display": "56.6\u00d7",
-          "sector_benchmark": null,
-          "benchmark_source": null,
-          "word": null,
-          "tone": null
+          "value": 56.4169,
+          "display": "56.4\u00d7",
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
+          "word": "in line",
+          "tone": "neutral"
         },
         {
           "key": "pb",
@@ -8680,8 +7925,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 17.7105,
-          "display": "17.7\u00d7",
+          "value": 17.638,
+          "display": "17.6\u00d7",
           "sector_benchmark": null,
           "benchmark_source": null,
           "word": null,
@@ -8778,19 +8023,24 @@
         "sentiment": 0.0
       },
       "reasons": [
-        "[fundamentals] P/E 56.6 > 40 (rich)",
+        "[fundamentals] P/E 56.4 > 40 (rich)",
         "[fundamentals] Revenue growth 15.6% YoY > 5%",
         "[fundamentals] Debt/Equity 0.19 < 1.5",
-        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.18 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (ASML: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.27 over 64 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: no clearly favourable factors stand out in the screened data.",
+        "bear": "Bear case: high pe.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "SNDK",
       "company": "Sandisk Corporation",
       "sector": "Technology",
-      "price": 1646.54,
-      "change_pct": 0.2765,
+      "price": null,
+      "change_pct": null,
       "spark": [],
       "next_earnings": "2026-08-12",
       "flags": [],
@@ -8799,8 +8049,8 @@
         "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.152
+          "stories": 156,
+          "raw": 0.19
         }
       },
       "history": {
@@ -9076,10 +8326,9 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv_error": "yahoo: SNDK: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/SNDK]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
-        "fundamentals_error": "no usable fundamentals for 'SNDK'",
+        "ohlcv_error": "SNDK: failed after retries: HTTP 429",
         "fundamentals": "finnhub"
       },
       "fundamentals": [
@@ -9088,10 +8337,10 @@
           "label": "P/E",
           "value": 54.1016,
           "display": "54.1\u00d7",
-          "sector_benchmark": 29.621,
-          "benchmark_source": "peers",
-          "word": "expensive",
-          "tone": "bad"
+          "sector_benchmark": 53.5097,
+          "benchmark_source": "sector",
+          "word": "in line",
+          "tone": "neutral"
         },
         {
           "key": "pb",
@@ -9186,10 +8435,10 @@
       ],
       "peers_in_sector": 11,
       "verdict": "WATCH-BUY",
-      "composite": 0.4,
+      "composite": 0.556,
       "coverage": 0.4,
       "scores": {
-        "fundamentals": 0.4,
+        "fundamentals": 0.556,
         "technicals": 0.0,
         "sentiment": 0.0
       },
@@ -9201,100 +8450,33 @@
         "[fundamentals] Current ratio strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
-        "[fundamentals] P/E expensive vs peers",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
-        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.15 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (SNDK: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.19 over 156 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, Gross margin strong, Net margin strong, ROE strong and ROA strong.",
+        "bear": "Bear case: versus peers, P/B expensive and P/S expensive.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "KO",
-      "company": "Coca-Cola Co",
-      "sector": "Beverages",
-      "price": 81.34,
-      "change_pct": 2.263,
-      "spark": [
-        77.63,
-        77.61,
-        77.34,
-        77.82,
-        77.58,
-        75.97,
-        75.55,
-        74.75,
-        75.11,
-        74.67,
-        75.25,
-        74.69,
-        75.71,
-        76.27,
-        76.05,
-        76.08,
-        76.72,
-        77.22,
-        75.91,
-        77.29,
-        78.18,
-        77.47,
-        76.41,
-        75.9,
-        75.31,
-        75.18,
-        75.74,
-        75.48,
-        74.7,
-        74.63,
-        76.28,
-        76.63,
-        75.44,
-        78.35,
-        78.87,
-        78.76,
-        78.58,
-        78.19,
-        78.48,
-        79.17,
-        78.43,
-        78.42,
-        78.66,
-        80.03,
-        80.26,
-        80.45,
-        80.82,
-        81.2,
-        81.92,
-        81.55,
-        81.17,
-        81.48,
-        80.46,
-        81.62,
-        80.41,
-        79.01,
-        78.64,
-        78.41,
-        78.76,
-        76.82,
-        79.48,
-        79.54,
-        81.34
-      ],
+      "company": "The Coca-Cola Company",
+      "sector": "Consumer Defensive",
+      "price": null,
+      "change_pct": null,
+      "spark": [],
       "next_earnings": "2026-07-20",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 78.24,
-          "sma_slow": 73.27,
-          "rsi": 58.8,
-          "macd": 0.26,
-          "macd_signal": 0.393,
-          "momentum_12_1": 0.096
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.354
+          "stories": 77,
+          "raw": 0.328
         }
       },
       "history": {
@@ -9630,21 +8812,21 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
+        "ohlcv_error": "KO: failed after retries: HTTP 429",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 24.984,
-          "display": "25.0\u00d7",
-          "sector_benchmark": 23.379,
-          "benchmark_source": "peers",
-          "word": "in line",
-          "tone": "neutral"
+          "value": 26.2652,
+          "display": "26.3\u00d7",
+          "sector_benchmark": 38.1082,
+          "benchmark_source": "sector",
+          "word": "cheap",
+          "tone": "good"
         },
         {
           "key": "pb",
@@ -9659,8 +8841,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 6.9456,
-          "display": "6.9\u00d7",
+          "value": 7.3018,
+          "display": "7.3\u00d7",
           "sector_benchmark": 1.841,
           "benchmark_source": "peers",
           "word": "expensive",
@@ -9759,14 +8941,15 @@
       ],
       "peers_in_sector": 11,
       "verdict": "NEUTRAL",
-      "composite": 0.071,
-      "coverage": 0.75,
+      "composite": 0.0,
+      "coverage": 0.4,
       "scores": {
-        "fundamentals": -0.111,
-        "technicals": 0.278,
+        "fundamentals": 0.0,
+        "technicals": 0.0,
         "sentiment": 0.0
       },
       "reasons": [
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
@@ -9776,19 +8959,21 @@
         "[fundamentals] Current ratio weak vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
-        "[technicals] 12-1 momentum +10% (positive)",
-        "[technicals] SMA50 (78.24) above SMA200 (73.27) \u2014 uptrend",
-        "[technicals] RSI 59 (neutral)",
-        "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.35 over 50 stories)"
-      ]
+        "[technicals] technicals: unavailable (KO: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.33 over 77 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, P/E cheap, Gross margin strong, Net margin strong and ROE strong.",
+        "bear": "Bear case: versus peers, P/B expensive, P/S expensive, Current ratio weak and Debt/Equity heavy.",
+        "source": "deterministic"
+      }
     },
     {
       "symbol": "MCD",
-      "company": "McDonald's Corp",
-      "sector": "Hotels, Restaurants & Leisure",
-      "price": 282.25,
-      "change_pct": 1.6092,
+      "company": "McDonald's Corporation",
+      "sector": "Consumer Cyclical",
+      "price": null,
+      "change_pct": null,
       "spark": [],
       "next_earnings": "2026-08-04",
       "flags": [],
@@ -9797,8 +8982,8 @@
         "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 45,
-          "raw": 0.373
+          "stories": 51,
+          "raw": 0.293
         }
       },
       "history": {
@@ -10134,20 +9319,19 @@
         ]
       },
       "sources": {
-        "primary": "finnhub",
+        "price": "yahoo",
         "fmp_enabled": true,
-        "ohlcv_error": "yahoo: MCD: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/MCD]: failed after 3 attempts: HTTP 429",
-        "fundamentals_error": "no usable fundamentals for 'MCD'",
+        "ohlcv_error": "MCD: failed after retries: HTTP 429",
         "fundamentals": "finnhub"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 22.7379,
-          "display": "22.7\u00d7",
-          "sector_benchmark": 34.2184,
-          "benchmark_source": "peers",
+          "value": 23.4184,
+          "display": "23.4\u00d7",
+          "sector_benchmark": 79.8466,
+          "benchmark_source": "sector",
           "word": "cheap",
           "tone": "good"
         },
@@ -10164,8 +9348,8 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 7.1883,
-          "display": "7.2\u00d7",
+          "value": 7.4034,
+          "display": "7.4\u00d7",
           "sector_benchmark": 3.1549,
           "benchmark_source": "peers",
           "word": "expensive",
@@ -10262,7 +9446,7 @@
         "sentiment": 0.0
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
@@ -10272,92 +9456,40 @@
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
-        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.37 over 45 stories)"
-      ]
+        "[technicals] technicals: unavailable (MCD: failed after retries: HTTP 429)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.29 over 51 stories)"
+      ],
+      "ai": {
+        "bull": "Bull case: versus peers, P/E cheap, Gross margin strong, Net margin strong and ROE strong.",
+        "bear": "Bear case: versus peers, P/B expensive, P/S expensive, Debt/Equity heavy and Rev growth YoY weak.",
+        "source": "deterministic"
+      }
     }
   ],
   "changes": [
     {
-      "symbol": "GOOGL",
-      "type": "verdict",
-      "text": "GOOGL WATCH-BUY \u2192 NEUTRAL",
-      "to": "NEUTRAL"
-    },
-    {
       "symbol": "AMD",
-      "type": "added",
-      "text": "AMD added to watchlist"
-    },
-    {
-      "symbol": "ASML",
-      "type": "added",
-      "text": "ASML added to watchlist"
-    },
-    {
-      "symbol": "DELL",
-      "type": "added",
-      "text": "DELL added to watchlist"
-    },
-    {
-      "symbol": "IBM",
-      "type": "added",
-      "text": "IBM added to watchlist"
+      "type": "verdict",
+      "text": "AMD NEUTRAL \u2192 WATCH-SELL",
+      "to": "WATCH-SELL"
     },
     {
       "symbol": "INTC",
-      "type": "added",
-      "text": "INTC added to watchlist"
+      "type": "verdict",
+      "text": "INTC NEUTRAL \u2192 WATCH-SELL",
+      "to": "WATCH-SELL"
     },
     {
-      "symbol": "KO",
-      "type": "added",
-      "text": "KO added to watchlist"
-    },
-    {
-      "symbol": "MCD",
-      "type": "added",
-      "text": "MCD added to watchlist"
-    },
-    {
-      "symbol": "MU",
-      "type": "added",
-      "text": "MU added to watchlist"
-    },
-    {
-      "symbol": "NOW",
-      "type": "added",
-      "text": "NOW added to watchlist"
+      "symbol": "META",
+      "type": "verdict",
+      "text": "META NEUTRAL \u2192 WATCH-BUY",
+      "to": "WATCH-BUY"
     },
     {
       "symbol": "PLTR",
-      "type": "added",
-      "text": "PLTR added to watchlist"
-    },
-    {
-      "symbol": "SNDK",
-      "type": "added",
-      "text": "SNDK added to watchlist"
-    },
-    {
-      "symbol": "TSM",
-      "type": "added",
-      "text": "TSM added to watchlist"
-    },
-    {
-      "symbol": "JNJ",
-      "type": "removed",
-      "text": "JNJ removed from watchlist"
-    },
-    {
-      "symbol": "JPM",
-      "type": "removed",
-      "text": "JPM removed from watchlist"
-    },
-    {
-      "symbol": "V",
-      "type": "removed",
-      "text": "V removed from watchlist"
+      "type": "verdict",
+      "text": "PLTR NEUTRAL \u2192 WATCH-BUY",
+      "to": "WATCH-BUY"
     }
   ]
 }
