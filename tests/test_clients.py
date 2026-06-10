@@ -40,6 +40,18 @@ class TestYahooParse:
         with pytest.raises(yahoo_client.YahooError):
             yahoo_client._parse({"chart": {"result": []}}, "X", days=10)
 
+    def test_get_many_parallel_collects_all(self, monkeypatch):
+        monkeypatch.setattr(yahoo_client, "get_ohlcv",
+                            lambda s, **k: {"c": [1.0, 2.0], "s": "ok"} if s != "BAD"
+                            else (_ for _ in ()).throw(yahoo_client.YahooError("no data")))
+        out = yahoo_client.get_many(["AAA", "BBB", "BAD"])
+        assert out["AAA"]["c"] == [1.0, 2.0]
+        assert "error" in out["BAD"]          # failures are per-ticker, not fatal
+        assert set(out) == {"AAA", "BBB", "BAD"}
+
+    def test_get_many_empty(self):
+        assert yahoo_client.get_many([]) == {}
+
 
 class TestPeerBenchmarks:
     @pytest.fixture

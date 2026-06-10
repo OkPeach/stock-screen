@@ -47,24 +47,23 @@ def _uptrend(n=260):
 @pytest.fixture
 def wired(monkeypatch, tmp_path):
     """Wire every external provider to deterministic fakes."""
-    monkeypatch.setattr(runner.fh, "fetch_ticker", lambda s, **k: {
-        "symbol": s, "quote": {"c": 200.0, "dp": 0.5},
-        "ohlcv": {"error": "HTTP 403 finnhub gated"},
-        "financials": FIN[s],
+    monkeypatch.setattr(runner.fh, "get_company_metrics", lambda s, **k: {
+        "metric": FIN[s],
         "series": {"quarterly": {"pe": [{"period": "2025-09-30", "v": 28}, {"period": "2025-12-31", "v": 30}]}},
-        "sentiment": {"error": "403"},
-        "news": [{"headline": "Company beats earnings and raises guidance"}],
     })
+    monkeypatch.setattr(runner.fh, "get_company_news", lambda s, **k: [
+        {"headline": "Company beats earnings and raises guidance"}])
     monkeypatch.setattr(runner.fh, "get_profile", lambda s, **k: {"sector": SECTOR[s], "companyName": s})
     monkeypatch.setattr(runner.fh, "get_next_earnings", lambda s, **k: "2026-07-30")
+    # Yahoo OHLCV is fetched via get_many -> get_ohlcv; mock the leaf.
     monkeypatch.setattr(runner.yahoo, "get_ohlcv", lambda s, **k: {"c": _uptrend(), "s": "ok"})
     fmp_fail = lambda *a, **k: (_ for _ in ()).throw(runner.fmp.FMPError("fmp down"))
-    monkeypatch.setattr(runner.fmp, "get_ohlcv", fmp_fail)
     monkeypatch.setattr(runner.fmp, "get_profile", fmp_fail)
     monkeypatch.setattr(runner.fmp, "get_sector_pe", fmp_fail)
     monkeypatch.setattr(peers.fh, "get_peers", lambda s, **k: PEERS[s])
     monkeypatch.setattr(peers.fh, "get_basic_financials", lambda s, **k: PEER_FIN.get(s, {}))
     monkeypatch.setattr(peers, "CACHE_PATH", tmp_path / "benchmarks.json")
+    monkeypatch.setattr(runner, "FETCH_CACHE_PATH", tmp_path / "fetches.json")
     monkeypatch.setattr("time.sleep", lambda *a: None)
     monkeypatch.delenv("FMP_API_KEY", raising=False)
     # Pin sentiment baselines (don't read the repo's live history snapshots).
@@ -78,7 +77,7 @@ def test_end_to_end_record_shape(wired):
     for r in out["tickers"]:
         assert "error" not in r
         assert r["verdict"] in ("WATCH-BUY", "NEUTRAL", "WATCH-SELL")
-        assert r["sources"]["ohlcv"] == "yahoo"          # fallback chain landed on yahoo
+        assert r["sources"]["price"] == "yahoo"          # quote derived from Yahoo closes
         assert r["details"]["technicals"]["sma_fast"] > 0  # technicals actually computed
         assert r["details"]["sentiment"]["baseline"] == 0.1  # baseline-relative sentiment
         assert r["fundamentals"], "sector-relative labels attached"
