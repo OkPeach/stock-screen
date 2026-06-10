@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Run tests
+        run: pytest -q
+
+      - name: No secrets under docs/
+        run: |
+          if grep -rniE "token=|apikey=|api_key=|FINNHUB_API_KEY|FMP_API_KEY" docs/; then
+            echo "::error::Key-like string found under docs/ — the published site must never contain secrets."
+            exit 1
+          fi
+          echo "docs/ clean."
