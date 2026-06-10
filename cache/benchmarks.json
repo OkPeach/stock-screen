@@ -166,5 +166,197 @@
       "rev_growth": 2.89,
       "dividend_yield": 2.9522
     }
+  },
+  "DELL": {
+    "ts": "2026-06-10T07:07:15.765053+00:00",
+    "peers": 11,
+    "values": {
+      "pe": 34.7548,
+      "pb": 4.8204,
+      "ps": 7.6698,
+      "gross_margin": 46.645,
+      "net_margin": 12.09,
+      "roe": 18.22,
+      "roa": 6.58,
+      "current_ratio": 1.4365,
+      "debt_to_equity": 0.1633,
+      "rev_growth": 22.58,
+      "dividend_yield": 0.7763
+    }
+  },
+  "PLTR": {
+    "ts": "2026-06-10T07:07:19.852014+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 41.9229,
+      "pb": 7.2821,
+      "ps": 8.4956,
+      "gross_margin": 79.925,
+      "net_margin": 19.11,
+      "roe": 18.005,
+      "roa": 9.555,
+      "current_ratio": 1.4437,
+      "debt_to_equity": 0.445,
+      "rev_growth": 14.245,
+      "dividend_yield": 1.3772
+    }
+  },
+  "TSM": {
+    "ts": "2026-06-10T07:07:24.579386+00:00",
+    "peers": 12,
+    "values": {
+      "pe": 105.1067,
+      "pb": 36.1388,
+      "ps": 36.2075,
+      "gross_margin": 51.57,
+      "net_margin": 27.925,
+      "roe": 43.985,
+      "roa": 27.505,
+      "current_ratio": 2.2096,
+      "debt_to_equity": 0.0557,
+      "rev_growth": 29.32,
+      "dividend_yield": 0.7162
+    }
+  },
+  "NOW": {
+    "ts": "2026-06-10T07:07:28.594477+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 31.3687,
+      "pb": 6.6336,
+      "ps": 10.0384,
+      "gross_margin": 77.08,
+      "net_margin": 13.705,
+      "roe": 17.29,
+      "roa": 4.475,
+      "current_ratio": 1.439,
+      "debt_to_equity": 0.249,
+      "rev_growth": 21.34,
+      "dividend_yield": 0.9718
+    }
+  },
+  "MU": {
+    "ts": "2026-06-10T07:07:32.726326+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 62.8562,
+      "pb": 9.1981,
+      "ps": 20.3915,
+      "gross_margin": 56.25,
+      "net_margin": 26.365,
+      "roe": 19.77,
+      "roa": 15.82,
+      "current_ratio": 3.0016,
+      "debt_to_equity": 0.2649,
+      "rev_growth": 31.02,
+      "dividend_yield": 0.8752
+    }
+  },
+  "AMD": {
+    "ts": "2026-06-10T07:07:33.190670+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 58.5487,
+      "pb": 9.1981,
+      "ps": 18.8483,
+      "gross_margin": 57.88,
+      "net_margin": 27.855,
+      "roe": 26.41,
+      "roa": 16.645,
+      "current_ratio": 3.0876,
+      "debt_to_equity": 0.2649,
+      "rev_growth": 31.02,
+      "dividend_yield": 0.663
+    }
+  },
+  "INTC": {
+    "ts": "2026-06-10T07:07:33.283483+00:00",
+    "peers": 10,
+    "values": {
+      "pe": 60.7024,
+      "pb": 9.1981,
+      "ps": 20.3915,
+      "gross_margin": 57.88,
+      "net_margin": 27.855,
+      "roe": 26.41,
+      "roa": 16.645,
+      "current_ratio": 3.0876,
+      "debt_to_equity": 0.1987,
+      "rev_growth": 33.18,
+      "dividend_yield": 0.5926
+    }
+  },
+  "IBM": {
+    "ts": "2026-06-10T07:07:37.191370+00:00",
+    "peers": 9,
+    "values": {
+      "pe": 13.7832,
+      "pb": 2.0949,
+      "ps": 1.1638,
+      "gross_margin": 28.65,
+      "net_margin": 2.46,
+      "roe": 10.67,
+      "roa": 2.6,
+      "current_ratio": 2.1846,
+      "debt_to_equity": 0.2166,
+      "rev_growth": 0.23,
+      "dividend_yield": 2.4934
+    }
+  },
+  "ASML": {
+    "ts": "2026-06-10T07:07:38.473803+00:00",
+    "peers": 3,
+    "values": {}
+  },
+  "SNDK": {
+    "ts": "2026-06-10T07:07:38.934847+00:00",
+    "peers": 11,
+    "values": {
+      "pe": 29.621,
+      "pb": 5.7614,
+      "ps": 5.3433,
+      "gross_margin": 40.77,
+      "net_margin": 6.015,
+      "roe": 18.22,
+      "roa": 6.58,
+      "current_ratio": 1.0884,
+      "debt_to_equity": 0.1633,
+      "rev_growth": 22.58,
+      "dividend_yield": 0.6601
+    }
+  },
+  "KO": {
+    "ts": "2026-06-10T07:08:11.831476+00:00",
+    "peers": 11,
+    "values": {
+      "pe": 23.379,
+      "pb": 4.2205,
+      "ps": 1.841,
+      "gross_margin": 50.71,
+      "net_margin": 8.435,
+      "roe": 16.205,
+      "roa": 5.6,
+      "current_ratio": 1.7242,
+      "debt_to_equity": 0.9974,
+      "rev_growth": 9.475,
+      "dividend_yield": 2.4878
+    }
+  },
+  "MCD": {
+    "ts": "2026-06-10T07:08:16.564798+00:00",
+    "peers": 11,
+    "values": {
+      "pe": 34.2184,
+      "pb": 11.8559,
+      "ps": 3.1549,
+      "gross_margin": 31.71,
+      "net_margin": 6.85,
+      "roe": 28.21,
+      "roa": 4.99,
+      "current_ratio": 0.989,
+      "debt_to_equity": 0.2884,
+      "rev_growth": 9.65,
+      "dividend_yield": 2.5056
+    }
   }
 }

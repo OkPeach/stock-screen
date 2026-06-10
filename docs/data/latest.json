@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-10T06:25:24.049381+00:00",
-  "count": 10,
+  "generated_at": "2026-06-10T07:09:28.205830+00:00",
+  "count": 19,
   "tickers": [
     {
       "symbol": "AAPL",
@@ -437,10 +437,10 @@
           "label": "P/E",
           "value": 34.7548,
           "display": "34.8\u00d7",
-          "sector_benchmark": 54.9186,
-          "benchmark_source": "sector",
-          "word": "cheap",
-          "tone": "good"
+          "sector_benchmark": 36.1522,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
         },
         {
           "key": "pb",
@@ -555,15 +555,14 @@
       ],
       "peers_in_sector": 11,
       "verdict": "NEUTRAL",
-      "composite": 0.172,
+      "composite": 0.127,
       "coverage": 1.0,
       "scores": {
-        "fundamentals": 0.0,
+        "fundamentals": -0.111,
         "technicals": 0.55,
         "sentiment": -0.084
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
@@ -587,7 +586,6 @@
       "price": 403.41,
       "change_pct": -2.0231,
       "spark": [
-        405.76,
         404.88,
         401.86,
         395.55,
@@ -649,19 +647,20 @@
         427.34,
         428.05,
         416.67,
-        411.74
+        411.74,
+        403.41
       ],
       "next_earnings": "2026-07-28",
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 409.27,
-          "sma_slow": 455.91,
-          "rsi": 45.3,
-          "macd": 3.851,
-          "macd_signal": 5.72,
-          "momentum_12_1": -0.1175
+          "sma_fast": 410.2,
+          "sma_slow": 455.41,
+          "rsi": 41.8,
+          "macd": 1.82,
+          "macd_signal": 4.94,
+          "momentum_12_1": -0.1271
         },
         "sentiment": {
           "source": "vader_headlines",
@@ -1006,7 +1005,7 @@
       "sources": {
         "primary": "finnhub",
         "fmp_enabled": true,
-        "ohlcv": "yahoo",
+        "ohlcv": "fmp",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -1015,8 +1014,8 @@
           "label": "P/E",
           "value": 24.3392,
           "display": "24.3\u00d7",
-          "sector_benchmark": 54.9186,
-          "benchmark_source": "sector",
+          "sector_benchmark": 54.2036,
+          "benchmark_source": "peers",
           "word": "cheap",
           "tone": "good"
         },
@@ -1133,15 +1132,15 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": -0.078,
+      "composite": -0.082,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.333,
-        "technicals": -0.607,
+        "technicals": -0.619,
         "sentiment": 0.006
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs sector",
+        "[fundamentals] P/E cheap vs peers",
         "[fundamentals] P/B cheap vs peers",
         "[fundamentals] P/S cheap vs peers",
         "[fundamentals] Net margin strong vs peers",
@@ -1150,9 +1149,9 @@
         "[fundamentals] Gross margin weak vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
-        "[technicals] 12-1 momentum -12% (negative)",
-        "[technicals] SMA50 (409.27) below SMA200 (455.91) \u2014 downtrend",
-        "[technicals] RSI 45 (neutral)",
+        "[technicals] 12-1 momentum -13% (negative)",
+        "[technicals] SMA50 (410.20) below SMA200 (455.41) \u2014 downtrend",
+        "[technicals] RSI 42 (neutral)",
         "[technicals] MACD below signal (bearish)",
         "[sentiment] Headline sentiment +0.27 vs own baseline +0.27 (deviation +0.00, 50 stories: 36+ / 12-)"
       ]
@@ -1164,7 +1163,6 @@
       "price": 364.26,
       "change_pct": 0.2615,
       "spark": [
-        307.04,
         308.7,
         303.55,
         302.28,
@@ -1226,26 +1224,27 @@
         358.99,
         372.19,
         368.53,
-        363.31
+        363.31,
+        364.26
       ],
       "next_earnings": "2026-07-21",
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 356.15,
-          "sma_slow": 304.86,
-          "rsi": 43.4,
-          "macd": 0.562,
-          "macd_signal": 5.596,
-          "momentum_12_1": 1.3077
+          "sma_fast": 357.95,
+          "sma_slow": 305.68,
+          "rsi": 44.1,
+          "macd": -0.263,
+          "macd_signal": 4.424,
+          "momentum_12_1": 1.2071
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
           "raw": 0.366,
-          "baseline": 0.344,
-          "deviation": 0.021
+          "baseline": 0.343,
+          "deviation": 0.023
         }
       },
       "history": {
@@ -1583,7 +1582,7 @@
       "sources": {
         "primary": "finnhub",
         "fmp_enabled": true,
-        "ohlcv": "yahoo",
+        "ohlcv": "fmp",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -1592,10 +1591,10 @@
           "label": "P/E",
           "value": 27.4669,
           "display": "27.5\u00d7",
-          "sector_benchmark": 26.8286,
-          "benchmark_source": "sector",
-          "word": "in line",
-          "tone": "neutral"
+          "sector_benchmark": 23.7389,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
         },
         {
           "key": "pb",
@@ -1709,13 +1708,13 @@
         }
       ],
       "peers_in_sector": 10,
-      "verdict": "WATCH-BUY",
-      "composite": 0.25,
+      "verdict": "NEUTRAL",
+      "composite": 0.207,
       "coverage": 1.0,
       "scores": {
-        "fundamentals": 0.111,
+        "fundamentals": 0.0,
         "technicals": 0.55,
-        "sentiment": 0.053
+        "sentiment": 0.057
       },
       "reasons": [
         "[fundamentals] Net margin strong vs peers",
@@ -1723,13 +1722,14 @@
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
+        "[fundamentals] P/E expensive vs peers",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Gross margin weak vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] 12-1 momentum +131% (positive)",
-        "[technicals] SMA50 (356.15) above SMA200 (304.86) \u2014 uptrend",
-        "[technicals] RSI 43 (neutral)",
+        "[technicals] 12-1 momentum +121% (positive)",
+        "[technicals] SMA50 (357.95) above SMA200 (305.68) \u2014 uptrend",
+        "[technicals] RSI 44 (neutral)",
         "[technicals] MACD below signal (bearish)",
         "[sentiment] Headline sentiment +0.37 vs own baseline +0.34 (deviation +0.02, 50 stories: 40+ / 7-)"
       ]
@@ -1741,7 +1741,6 @@
       "price": 244.19,
       "change_pct": -0.42,
       "spark": [
-        214.33,
         212.65,
         209.53,
         207.67,
@@ -1803,19 +1802,20 @@
         250.02,
         253.79,
         246.03,
-        245.22
+        245.22,
+        244.19
       ],
       "next_earnings": "2026-07-29",
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 251.91,
-          "sma_slow": 232.24,
-          "rsi": 37.3,
-          "macd": -1.51,
-          "macd_signal": 2.159,
-          "momentum_12_1": 0.2768
+          "sma_fast": 252.81,
+          "sma_slow": 232.35,
+          "rsi": 36.5,
+          "macd": -2.429,
+          "macd_signal": 1.242,
+          "momentum_12_1": 0.2397
         },
         "sentiment": {
           "source": "vader_headlines",
@@ -2160,7 +2160,7 @@
       "sources": {
         "primary": "finnhub",
         "fmp_enabled": true,
-        "ohlcv": "yahoo",
+        "ohlcv": "fmp",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -2169,10 +2169,10 @@
           "label": "P/E",
           "value": 29.4831,
           "display": "29.5\u00d7",
-          "sector_benchmark": 82.9423,
-          "benchmark_source": "sector",
-          "word": "cheap",
-          "tone": "good"
+          "sector_benchmark": 23.101,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
         },
         {
           "key": "pb",
@@ -2287,26 +2287,26 @@
       ],
       "peers_in_sector": 10,
       "verdict": "WATCH-BUY",
-      "composite": 0.409,
+      "composite": 0.312,
       "coverage": 1.0,
       "scores": {
-        "fundamentals": 0.4,
-        "technicals": 0.519,
+        "fundamentals": 0.2,
+        "technicals": 0.47,
         "sentiment": 0.271
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs sector",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
+        "[fundamentals] P/E expensive vs peers",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] 12-1 momentum +28% (positive)",
-        "[technicals] SMA50 (251.91) above SMA200 (232.24) \u2014 uptrend",
+        "[technicals] 12-1 momentum +24% (positive)",
+        "[technicals] SMA50 (252.81) above SMA200 (232.35) \u2014 uptrend",
         "[technicals] RSI 37 (neutral)",
         "[technicals] MACD below signal (bearish)",
         "[sentiment] Headline sentiment +0.46 vs own baseline +0.36 (deviation +0.11, 50 stories: 40+ / 6-)"
@@ -2319,7 +2319,6 @@
       "price": 208.19,
       "change_pct": -0.2157,
       "spark": [
-        184.77,
         186.03,
         183.14,
         180.25,
@@ -2381,19 +2380,20 @@
         214.75,
         218.66,
         205.1,
-        208.64
+        208.64,
+        208.19
       ],
       "next_earnings": "2026-08-25",
       "flags": [],
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 204.2,
-          "sma_slow": 188.74,
-          "rsi": 46.7,
-          "macd": 1.561,
-          "macd_signal": 3.719,
-          "momentum_12_1": 0.5185
+          "sma_fast": 205.01,
+          "sma_slow": 188.91,
+          "rsi": 46.4,
+          "macd": 0.928,
+          "macd_signal": 3.161,
+          "momentum_12_1": 0.5385
         },
         "sentiment": {
           "source": "vader_headlines",
@@ -2738,7 +2738,7 @@
       "sources": {
         "primary": "finnhub",
         "fmp_enabled": true,
-        "ohlcv": "yahoo",
+        "ohlcv": "fmp",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -2747,8 +2747,8 @@
           "label": "P/E",
           "value": 31.8926,
           "display": "31.9\u00d7",
-          "sector_benchmark": 54.9186,
-          "benchmark_source": "sector",
+          "sector_benchmark": 92.68,
+          "benchmark_source": "peers",
           "word": "cheap",
           "tone": "good"
         },
@@ -2873,7 +2873,7 @@
         "sentiment": -0.065
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs sector",
+        "[fundamentals] P/E cheap vs peers",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
@@ -2882,9 +2882,9 @@
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
         "[fundamentals] P/B expensive vs peers",
-        "[technicals] 12-1 momentum +52% (positive)",
-        "[technicals] SMA50 (204.20) above SMA200 (188.74) \u2014 uptrend",
-        "[technicals] RSI 47 (neutral)",
+        "[technicals] 12-1 momentum +54% (positive)",
+        "[technicals] SMA50 (205.01) above SMA200 (188.91) \u2014 uptrend",
+        "[technicals] RSI 46 (neutral)",
         "[technicals] MACD below signal (bearish)",
         "[sentiment] Headline sentiment +0.27 vs own baseline +0.30 (deviation -0.03, 50 stories: 32+ / 9-)"
       ]
@@ -3324,8 +3324,8 @@
           "label": "P/E",
           "value": 21.0516,
           "display": "21.1\u00d7",
-          "sector_benchmark": 26.8286,
-          "benchmark_source": "sector",
+          "sector_benchmark": 27.4457,
+          "benchmark_source": "peers",
           "word": "cheap",
           "tone": "good"
         },
@@ -3450,7 +3450,7 @@
         "sentiment": 0.258
       },
       "reasons": [
-        "[fundamentals] P/E cheap vs sector",
+        "[fundamentals] P/E cheap vs peers",
         "[fundamentals] P/B cheap vs peers",
         "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
@@ -3901,8 +3901,8 @@
           "label": "P/E",
           "value": 385.764,
           "display": "385.8\u00d7",
-          "sector_benchmark": 82.9423,
-          "benchmark_source": "sector",
+          "sector_benchmark": 19.7317,
+          "benchmark_source": "peers",
           "word": "expensive",
           "tone": "bad"
         },
@@ -4033,7 +4033,7 @@
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Current ratio strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
-        "[fundamentals] P/E expensive vs sector",
+        "[fundamentals] P/E expensive vs peers",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
@@ -4045,253 +4045,375 @@
       ]
     },
     {
-      "symbol": "JPM",
-      "company": "JPMorgan Chase & Co.",
-      "sector": "Financial Services",
-      "price": 312.7,
-      "change_pct": 0.5111,
-      "spark": [
-        287.52,
-        282.89,
-        283.44,
-        286.16,
-        286.89,
-        287.74,
-        287.97,
-        286.56,
-        289.91,
-        292.4,
-        295.42,
-        291.66,
-        282.84,
-        283.77,
-        294.16,
-        295.38,
-        294.6,
-        295.45,
-        297.4,
-        307.97,
-        310.33,
-        309.87,
-        313.68,
-        311.12,
-        305.93,
-        309.95,
-        310.29,
-        316.99,
-        313.0,
-        313.02,
-        311.69,
-        308.28,
-        311.63,
-        311.45,
-        309.25,
-        313.23,
-        312.47,
-        307.65,
-        309.4,
-        314.9,
-        306.27,
-        302.1,
-        300.0,
-        304.88,
-        300.25,
-        299.91,
-        297.81,
-        300.73,
-        295.7,
-        301.98,
-        303.0,
-        306.38,
-        306.74,
-        299.28,
-        296.73,
-        299.31,
-        296.58,
-        300.96,
-        300.85,
-        310.89,
-        312.37,
-        311.11,
-        312.7
-      ],
-      "next_earnings": "2026-07-13",
+      "symbol": "DELL",
+      "company": "Dell Technologies Inc.",
+      "sector": "Technology",
+      "price": 381.78,
+      "change_pct": -4.7384,
+      "spark": [],
+      "next_earnings": null,
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 305.19,
-          "sma_slow": 306.29,
-          "rsi": 59.5,
-          "macd": 1.367,
-          "macd_signal": -0.15,
-          "momentum_12_1": 0.1247
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
-          "raw": 0.338,
-          "baseline": 0.326,
-          "deviation": 0.013
+          "raw": 0.35
         }
       },
       "history": {
         "pb": [
           [
-            "2003-09-30",
-            1.555
+            "2021-10-29",
+            9.399
           ],
           [
-            "2003-06-30",
-            1.549
+            "2021-07-30",
+            15.293
           ],
           [
-            "2003-03-31",
-            1.102
+            "2021-04-30",
+            18.564
           ],
           [
-            "2002-12-31",
-            1.133
+            "2021-01-29",
+            18.52
           ],
           [
-            "2002-09-30",
-            0.872
+            "2020-10-30",
+            31.913
           ],
           [
-            "2002-06-30",
-            1.461
+            "2020-07-31",
+            232.058
           ],
           [
-            "2002-03-31",
-            1.708
+            "2018-11-02",
+            1.877
           ],
           [
-            "2001-12-31",
-            1.745
+            "2018-08-03",
+            1.748
           ],
           [
-            "2001-09-30",
-            1.58
+            "2018-05-04",
+            1.284
           ],
           [
-            "2001-06-30",
-            2.143
+            "2018-02-02",
+            1.168
           ],
           [
-            "2001-03-31",
-            2.03
+            "2017-11-03",
+            1.663
           ],
           [
-            "2000-12-31",
-            1.406
+            "2017-08-04",
+            1.16
           ],
           [
-            "2000-09-30",
-            1.49
+            "2017-05-05",
+            1.163
           ],
           [
-            "2000-06-30",
-            1.555
+            "2017-02-03",
+            1.032
           ],
           [
-            "2000-03-31",
-            2.003
+            "2016-10-28",
+            0.775
+          ]
+        ],
+        "gross_margin": [
+          [
+            "2018-08-03",
+            0.267
           ],
           [
-            "1999-12-31",
-            0.36
+            "2018-05-04",
+            0.275
+          ],
+          [
+            "2018-02-02",
+            0.268
+          ],
+          [
+            "2017-11-03",
+            0.267
+          ],
+          [
+            "2017-08-04",
+            0.255
+          ],
+          [
+            "2017-05-05",
+            0.248
+          ],
+          [
+            "2017-02-03",
+            0.254
+          ],
+          [
+            "2016-10-28",
+            0.24
+          ],
+          [
+            "2016-07-29",
+            0.179
+          ],
+          [
+            "2016-04-29",
+            0.179
+          ],
+          [
+            "2016-01-29",
+            0.178
+          ],
+          [
+            "2015-10-30",
+            0.168
+          ],
+          [
+            "2015-07-31",
+            0.147
+          ],
+          [
+            "2015-05-01",
+            0.166
+          ],
+          [
+            "2015-01-30",
+            0.165
+          ],
+          [
+            "2014-10-31",
+            0.176
+          ]
+        ],
+        "net_margin": [
+          [
+            "2018-08-03",
+            -0.022
+          ],
+          [
+            "2018-05-04",
+            -0.03
+          ],
+          [
+            "2018-02-02",
+            -0.005
+          ],
+          [
+            "2017-11-03",
+            -0.043
+          ],
+          [
+            "2017-08-04",
+            -0.037
+          ],
+          [
+            "2017-05-05",
+            -0.065
+          ],
+          [
+            "2017-02-03",
+            0.013
+          ],
+          [
+            "2016-10-28",
+            -0.127
+          ],
+          [
+            "2016-07-29",
+            0.044
+          ],
+          [
+            "2016-04-29",
+            0.004
+          ],
+          [
+            "2016-01-29",
+            -0.012
+          ],
+          [
+            "2015-10-30",
+            -0.014
+          ],
+          [
+            "2015-07-31",
+            -0.021
+          ],
+          [
+            "2015-05-01",
+            -0.039
+          ],
+          [
+            "2015-01-30",
+            -0.024
+          ],
+          [
+            "2014-10-31",
+            -0.018
+          ]
+        ],
+        "current_ratio": [
+          [
+            "2019-08-02",
+            0.751
+          ],
+          [
+            "2019-05-03",
+            0.774
+          ],
+          [
+            "2019-02-01",
+            0.804
+          ],
+          [
+            "2018-11-02",
+            0.903
+          ],
+          [
+            "2018-08-03",
+            0.877
+          ],
+          [
+            "2018-05-04",
+            0.935
+          ],
+          [
+            "2018-02-02",
+            0.88
+          ],
+          [
+            "2017-11-03",
+            0.847
+          ],
+          [
+            "2017-08-04",
+            0.764
+          ],
+          [
+            "2017-05-05",
+            0.829
+          ],
+          [
+            "2017-02-03",
+            0.807
+          ],
+          [
+            "2016-10-28",
+            0.88
+          ],
+          [
+            "2016-07-29",
+            0.939
+          ],
+          [
+            "2016-04-29",
+            0.867
+          ],
+          [
+            "2016-01-29",
+            0.931
+          ],
+          [
+            "2015-10-30",
+            0.833
           ]
         ],
         "debt_to_equity": [
           [
-            "1993-12-31",
-            2.963
+            "2021-01-29",
+            13.291
           ],
           [
-            "1993-09-30",
-            3.513
+            "2020-10-30",
+            35.362
           ],
           [
-            "1993-06-30",
-            3.41
+            "2020-07-31",
+            282.476
           ],
           [
-            "1993-03-31",
-            3.788
+            "2018-11-02",
+            5.023
           ],
           [
-            "1992-12-31",
-            3.348
+            "2018-08-03",
+            4.667
           ],
           [
-            "1992-09-30",
-            3.825
+            "2018-05-04",
+            4.581
           ],
           [
-            "1992-06-30",
-            3.887
+            "2018-02-02",
+            4.286
           ],
           [
-            "1992-03-31",
-            3.591
+            "2017-11-03",
+            5.227
           ],
           [
-            "1991-12-31",
-            4.008
+            "2017-08-04",
+            4.349
           ],
           [
-            "1991-09-30",
-            3.93
+            "2017-05-05",
+            4.208
           ],
           [
-            "1991-06-30",
-            3.939
+            "2017-02-03",
+            3.666
           ],
           [
-            "1991-03-31",
-            4.024
+            "2016-10-28",
+            3.958
           ],
           [
-            "1990-12-31",
-            4.011
+            "2016-07-29",
+            16.192
           ],
           [
-            "1990-09-30",
-            4.486
+            "2016-04-29",
+            8.179
           ],
           [
-            "1990-06-30",
-            4.201
+            "2016-01-29",
+            8.671
           ],
           [
-            "1990-03-31",
-            4.145
+            "2015-10-30",
+            7.942
           ]
         ]
       },
       "sources": {
         "primary": "finnhub",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
-        "fundamentals": "finnhub+fmp"
+        "ohlcv_error": "yahoo: DELL: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/DELL]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
+        "fundamentals_error": "no usable fundamentals for 'DELL'",
+        "fundamentals": "finnhub"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 14.209,
-          "display": "14.2\u00d7",
-          "sector_benchmark": 21.5356,
-          "benchmark_source": "sector",
+          "value": 29.621,
+          "display": "29.6\u00d7",
+          "sector_benchmark": 34.7548,
+          "benchmark_source": "peers",
           "word": "cheap",
           "tone": "good"
         },
         {
           "key": "pb",
           "label": "P/B",
-          "value": 2.1674,
-          "display": "2.2\u00d7",
-          "sector_benchmark": 1.156,
+          "value": 9.3986,
+          "display": "9.4\u00d7",
+          "sector_benchmark": 4.8204,
           "benchmark_source": "peers",
           "word": "expensive",
           "tone": "bad"
@@ -4299,39 +4421,39 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 2.896,
-          "display": "2.9\u00d7",
-          "sector_benchmark": 2.0958,
+          "value": 1.8588,
+          "display": "1.9\u00d7",
+          "sector_benchmark": 7.6698,
           "benchmark_source": "peers",
-          "word": "expensive",
-          "tone": "bad"
+          "word": "cheap",
+          "tone": "good"
         },
         {
           "key": "gross_margin",
           "label": "Gross margin",
-          "value": 60.8653,
-          "display": "60.9%",
-          "sector_benchmark": null,
-          "benchmark_source": null,
-          "word": null,
-          "tone": null
+          "value": 19.07,
+          "display": "19.1%",
+          "sector_benchmark": 46.645,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
         },
         {
           "key": "net_margin",
           "label": "Net margin",
-          "value": 33.2645,
-          "display": "33.3%",
-          "sector_benchmark": 21.1013,
+          "value": 6.28,
+          "display": "6.3%",
+          "sector_benchmark": 12.09,
           "benchmark_source": "peers",
-          "word": "strong",
-          "tone": "good"
+          "word": "weak",
+          "tone": "bad"
         },
         {
           "key": "roe",
           "label": "ROE",
-          "value": 16.32,
-          "display": "16.3%",
-          "sector_benchmark": 10.5,
+          "value": 130.7,
+          "display": "130.7%",
+          "sector_benchmark": 18.22,
           "benchmark_source": "peers",
           "word": "strong",
           "tone": "good"
@@ -4339,9 +4461,9 @@
         {
           "key": "roa",
           "label": "ROA",
-          "value": 1.28,
-          "display": "1.3%",
-          "sector_benchmark": 0.97,
+          "value": 8.56,
+          "display": "8.6%",
+          "sector_benchmark": 6.58,
           "benchmark_source": "peers",
           "word": "strong",
           "tone": "good"
@@ -4349,582 +4471,9 @@
         {
           "key": "current_ratio",
           "label": "Current ratio",
-          "value": 0.6179,
-          "display": "0.6\u00d7",
-          "sector_benchmark": null,
-          "benchmark_source": null,
-          "word": null,
-          "tone": null
-        },
-        {
-          "key": "debt_to_equity",
-          "label": "Debt/Equity",
-          "value": 3.3882,
-          "display": "3.4\u00d7",
-          "sector_benchmark": 1.2042,
-          "benchmark_source": "peers",
-          "word": "heavy",
-          "tone": "bad"
-        },
-        {
-          "key": "rev_growth",
-          "label": "Rev growth YoY",
-          "value": 108.9793,
-          "display": "109.0%",
-          "sector_benchmark": 72.5075,
-          "benchmark_source": "peers",
-          "word": "strong",
-          "tone": "good"
-        },
-        {
-          "key": "dividend_yield",
-          "label": "Dividend yield",
-          "value": 1.9188,
-          "display": "1.9%",
-          "sector_benchmark": 2.2733,
-          "benchmark_source": "peers",
-          "word": "low",
-          "tone": "neutral"
-        },
-        {
-          "key": "fcf",
-          "label": "Free cash flow",
-          "value": 50.5415,
-          "display": "50.54",
-          "sector_benchmark": null,
-          "benchmark_source": null,
-          "word": null,
-          "tone": null
-        }
-      ],
-      "peers_in_sector": 9,
-      "verdict": "WATCH-BUY",
-      "composite": 0.254,
-      "coverage": 1.0,
-      "scores": {
-        "fundamentals": 0.6,
-        "technicals": 0.016,
-        "sentiment": 0.032
-      },
-      "reasons": [
-        "[fundamentals] P/E cheap vs sector",
-        "[fundamentals] Net margin strong vs peers",
-        "[fundamentals] ROE strong vs peers",
-        "[fundamentals] Rev growth YoY strong vs peers",
-        "[fundamentals] P/B expensive vs peers",
-        "[technicals] 12-1 momentum +12% (positive)",
-        "[technicals] SMA50 (305.19) below SMA200 (306.29) \u2014 downtrend",
-        "[technicals] RSI 59 (neutral)",
-        "[technicals] MACD above signal (bullish)",
-        "[sentiment] Headline sentiment +0.34 vs own baseline +0.33 (deviation +0.01, 50 stories: 31+ / 10-)"
-      ]
-    },
-    {
-      "symbol": "V",
-      "company": "Visa Inc.",
-      "sector": "Financial Services",
-      "price": 325.05,
-      "change_pct": 1.683,
-      "spark": [
-        308.96,
-        306.5,
-        307.14,
-        310.11,
-        308.46,
-        299.02,
-        299.71,
-        301.62,
-        304.44,
-        303.76,
-        304.91,
-        305.53,
-        295.52,
-        299.54,
-        302.24,
-        298.51,
-        300.8,
-        303.33,
-        302.55,
-        308.96,
-        308.29,
-        304.36,
-        309.39,
-        311.37,
-        315.91,
-        315.1,
-        317.02,
-        313.94,
-        309.94,
-        311.29,
-        308.88,
-        309.42,
-        309.65,
-        309.3,
-        334.86,
-        329.84,
-        328.03,
-        326.85,
-        322.03,
-        318.8,
-        321.28,
-        318.79,
-        323.86,
-        326.42,
-        320.31,
-        322.52,
-        325.75,
-        332.64,
-        329.91,
-        330.75,
-        331.12,
-        328.88,
-        326.48,
-        327.61,
-        324.95,
-        326.36,
-        322.77,
-        317.32,
-        312.4,
-        320.18,
-        323.57,
-        319.67,
-        325.05
-      ],
-      "next_earnings": "2026-07-27",
-      "flags": [],
-      "alerts": [],
-      "details": {
-        "technicals": {
-          "sma_fast": 317.78,
-          "sma_slow": 329.96,
-          "rsi": 53.0,
-          "macd": 0.35,
-          "macd_signal": 1.226,
-          "momentum_12_1": -0.1167
-        },
-        "sentiment": {
-          "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.393,
-          "baseline": 0.346,
-          "deviation": 0.046
-        }
-      },
-      "history": {
-        "pb": [
-          [
-            "2011-12-31",
-            2.596
-          ],
-          [
-            "2011-09-30",
-            2.241
-          ],
-          [
-            "2011-06-30",
-            2.278
-          ],
-          [
-            "2011-03-31",
-            2.006
-          ],
-          [
-            "2010-12-31",
-            1.975
-          ],
-          [
-            "2010-09-30",
-            2.17
-          ],
-          [
-            "2010-06-30",
-            2.114
-          ],
-          [
-            "2010-03-31",
-            2.808
-          ],
-          [
-            "2009-12-31",
-            2.767
-          ],
-          [
-            "2009-09-30",
-            2.217
-          ],
-          [
-            "2009-06-30",
-            2.063
-          ],
-          [
-            "2009-03-31",
-            1.898
-          ],
-          [
-            "2008-12-31",
-            1.881
-          ],
-          [
-            "2008-09-30",
-            2.696
-          ],
-          [
-            "2008-06-30",
-            3.509
-          ],
-          [
-            "2008-03-31",
-            2.73
-          ]
-        ],
-        "gross_margin": [
-          [
-            "2010-06-30",
-            0.809
-          ],
-          [
-            "2010-03-31",
-            0.792
-          ],
-          [
-            "2009-12-31",
-            0.807
-          ],
-          [
-            "2009-09-30",
-            0.752
-          ],
-          [
-            "2009-06-30",
-            0.77
-          ],
-          [
-            "2009-03-31",
-            0.767
-          ],
-          [
-            "2008-12-31",
-            0.775
-          ],
-          [
-            "2008-09-30",
-            0.759
-          ],
-          [
-            "2008-06-30",
-            0.756
-          ],
-          [
-            "2008-03-31",
-            0.747
-          ],
-          [
-            "2007-12-31",
-            0.754
-          ],
-          [
-            "2007-09-30",
-            0.738
-          ],
-          [
-            "2007-06-30",
-            0.728
-          ],
-          [
-            "2007-03-31",
-            0.72
-          ],
-          [
-            "2006-12-31",
-            0.733
-          ],
-          [
-            "2006-09-30",
-            0.633
-          ]
-        ],
-        "net_margin": [
-          [
-            "2010-06-30",
-            0.353
-          ],
-          [
-            "2010-03-31",
-            0.364
-          ],
-          [
-            "2009-12-31",
-            0.389
-          ],
-          [
-            "2009-09-30",
-            0.274
-          ],
-          [
-            "2009-06-30",
-            0.443
-          ],
-          [
-            "2009-03-31",
-            0.325
-          ],
-          [
-            "2008-12-31",
-            0.33
-          ],
-          [
-            "2008-09-30",
-            -0.208
-          ],
-          [
-            "2008-06-30",
-            0.262
-          ],
-          [
-            "2008-03-31",
-            0.216
-          ],
-          [
-            "2007-12-31",
-            0.285
-          ],
-          [
-            "2007-09-30",
-            -1.699
-          ],
-          [
-            "2007-06-30",
-            0.237
-          ],
-          [
-            "2007-03-31",
-            0.221
-          ],
-          [
-            "2006-12-31",
-            0.243
-          ],
-          [
-            "2006-09-30",
-            0.154
-          ]
-        ],
-        "current_ratio": [
-          [
-            "2011-03-31",
-            2.772
-          ],
-          [
-            "2010-12-31",
-            2.543
-          ],
-          [
-            "2010-09-30",
-            2.497
-          ],
-          [
-            "2010-06-30",
-            2.829
-          ],
-          [
-            "2010-03-31",
-            2.577
-          ],
-          [
-            "2009-12-31",
-            2.407
-          ],
-          [
-            "2009-09-30",
-            2.08
-          ],
-          [
-            "2009-06-30",
-            2.156
-          ],
-          [
-            "2009-03-31",
-            1.938
-          ],
-          [
-            "2008-12-31",
-            1.754
-          ],
-          [
-            "2008-09-30",
-            1.56
-          ],
-          [
-            "2008-06-30",
-            1.774
-          ],
-          [
-            "2008-03-31",
-            1.727
-          ],
-          [
-            "2007-12-31",
-            1.122
-          ],
-          [
-            "2007-09-30",
-            0.764
-          ],
-          [
-            "2007-06-30",
-            1.674
-          ]
-        ],
-        "debt_to_equity": [
-          [
-            "2011-06-30",
-            0.001
-          ],
-          [
-            "2011-03-31",
-            0.001
-          ],
-          [
-            "2010-12-31",
-            0.002
-          ],
-          [
-            "2010-09-30",
-            0.002
-          ],
-          [
-            "2010-06-30",
-            0.002
-          ],
-          [
-            "2010-03-31",
-            0.002
-          ],
-          [
-            "2009-12-31",
-            0.002
-          ],
-          [
-            "2009-09-30",
-            0.002
-          ],
-          [
-            "2009-06-30",
-            0.004
-          ],
-          [
-            "2009-03-31",
-            0.005
-          ],
-          [
-            "2008-12-31",
-            0.005
-          ],
-          [
-            "2008-09-30",
-            0.072
-          ],
-          [
-            "2008-06-30",
-            0.071
-          ],
-          [
-            "2008-03-31",
-            0.073
-          ],
-          [
-            "2007-12-31",
-            0.007
-          ],
-          [
-            "2007-06-30",
-            0.041
-          ]
-        ]
-      },
-      "sources": {
-        "primary": "finnhub",
-        "fmp_enabled": true,
-        "ohlcv": "fmp",
-        "fundamentals": "finnhub+fmp"
-      },
-      "fundamentals": [
-        {
-          "key": "pe",
-          "label": "P/E",
-          "value": 27.0866,
-          "display": "27.1\u00d7",
-          "sector_benchmark": 21.5356,
-          "benchmark_source": "sector",
-          "word": "expensive",
-          "tone": "bad"
-        },
-        {
-          "key": "pb",
-          "label": "P/B",
-          "value": 16.1541,
-          "display": "16.2\u00d7",
-          "sector_benchmark": 4.0342,
-          "benchmark_source": "peers",
-          "word": "expensive",
-          "tone": "bad"
-        },
-        {
-          "key": "ps",
-          "label": "P/S",
-          "value": 13.9981,
-          "display": "14.0\u00d7",
-          "sector_benchmark": 2.496,
-          "benchmark_source": "peers",
-          "word": "expensive",
-          "tone": "bad"
-        },
-        {
-          "key": "gross_margin",
-          "label": "Gross margin",
-          "value": 81.29,
-          "display": "81.3%",
-          "sector_benchmark": 51.455,
-          "benchmark_source": "peers",
-          "word": "strong",
-          "tone": "good"
-        },
-        {
-          "key": "net_margin",
-          "label": "Net margin",
-          "value": 51.68,
-          "display": "51.7%",
-          "sector_benchmark": 15.0,
-          "benchmark_source": "peers",
-          "word": "strong",
-          "tone": "good"
-        },
-        {
-          "key": "roe",
-          "label": "ROE",
-          "value": 58.9,
-          "display": "58.9%",
-          "sector_benchmark": 18.44,
-          "benchmark_source": "peers",
-          "word": "strong",
-          "tone": "good"
-        },
-        {
-          "key": "roa",
-          "label": "ROA",
-          "value": 22.72,
-          "display": "22.7%",
-          "sector_benchmark": 5.05,
-          "benchmark_source": "peers",
-          "word": "strong",
-          "tone": "good"
-        },
-        {
-          "key": "current_ratio",
-          "label": "Current ratio",
-          "value": 1.0877,
-          "display": "1.1\u00d7",
-          "sector_benchmark": 1.2594,
+          "value": 0.9465,
+          "display": "0.9\u00d7",
+          "sector_benchmark": 1.4365,
           "benchmark_source": "peers",
           "word": "weak",
           "tone": "bad"
@@ -4932,9 +4481,9 @@
         {
           "key": "debt_to_equity",
           "label": "Debt/Equity",
-          "value": 0.6723,
-          "display": "0.7\u00d7",
-          "sector_benchmark": 0.991,
+          "value": 0.0536,
+          "display": "0.1\u00d7",
+          "sector_benchmark": 0.1633,
           "benchmark_source": "peers",
           "word": "lean",
           "tone": "good"
@@ -4942,9 +4491,9 @@
         {
           "key": "rev_growth",
           "label": "Rev growth YoY",
-          "value": 14.37,
-          "display": "14.4%",
-          "sector_benchmark": 12.24,
+          "value": 38.57,
+          "display": "38.6%",
+          "sector_benchmark": 22.58,
           "benchmark_source": "peers",
           "word": "strong",
           "tone": "good"
@@ -4952,9 +4501,572 @@
         {
           "key": "dividend_yield",
           "label": "Dividend yield",
-          "value": 0.8367,
-          "display": "0.8%",
-          "sector_benchmark": 1.3252,
+          "value": 0.6601,
+          "display": "0.7%",
+          "sector_benchmark": 0.7763,
+          "benchmark_source": "peers",
+          "word": "low",
+          "tone": "neutral"
+        }
+      ],
+      "peers_in_sector": 11,
+      "verdict": "NEUTRAL",
+      "composite": 0.2,
+      "coverage": 0.4,
+      "scores": {
+        "fundamentals": 0.2,
+        "technicals": 0.0,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/S cheap vs peers",
+        "[fundamentals] ROE strong vs peers",
+        "[fundamentals] ROA strong vs peers",
+        "[fundamentals] Debt/Equity lean vs peers",
+        "[fundamentals] Rev growth YoY strong vs peers",
+        "[fundamentals] P/B expensive vs peers",
+        "[fundamentals] Gross margin weak vs peers",
+        "[fundamentals] Net margin weak vs peers",
+        "[fundamentals] Current ratio weak vs peers",
+        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.35 over 50 stories)"
+      ]
+    },
+    {
+      "symbol": "PLTR",
+      "company": "Palantir Technologies Inc.",
+      "sector": "Technology",
+      "price": 132.07,
+      "change_pct": -3.2242,
+      "spark": [
+        151.6,
+        153.5,
+        150.95,
+        152.72,
+        155.08,
+        152.77,
+        155.68,
+        150.68,
+        160.84,
+        154.78,
+        154.96,
+        147.56,
+        143.06,
+        137.55,
+        146.28,
+        146.49,
+        148.46,
+        147.93,
+        150.07,
+        140.76,
+        130.49,
+        128.06,
+        132.37,
+        135.7,
+        142.15,
+        142.76,
+        146.39,
+        145.89,
+        145.97,
+        152.62,
+        141.57,
+        143.09,
+        143.1,
+        141.18,
+        137.97,
+        139.11,
+        144.07,
+        146.03,
+        135.91,
+        133.79,
+        137.05,
+        137.8,
+        136.89,
+        136.0,
+        130.05,
+        133.73,
+        133.99,
+        135.14,
+        135.26,
+        137.15,
+        137.42,
+        136.88,
+        136.6,
+        132.51,
+        143.34,
+        156.54,
+        160.65,
+        152.17,
+        142.2,
+        141.7,
+        135.53,
+        136.47,
+        132.07
+      ],
+      "next_earnings": "2026-08-03",
+      "flags": [],
+      "alerts": [],
+      "details": {
+        "technicals": {
+          "sma_fast": 140.46,
+          "sma_slow": 160.86,
+          "rsi": 42.2,
+          "macd": -0.273,
+          "macd_signal": 0.538,
+          "momentum_12_1": 0.0366
+        },
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 50,
+          "raw": 0.246
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2024-06-30",
+            14.228
+          ],
+          [
+            "2024-03-31",
+            13.393
+          ],
+          [
+            "2023-12-31",
+            10.75
+          ],
+          [
+            "2023-09-30",
+            10.707
+          ],
+          [
+            "2023-06-30",
+            10.983
+          ],
+          [
+            "2023-03-31",
+            6.519
+          ],
+          [
+            "2022-12-31",
+            5.206
+          ],
+          [
+            "2022-09-30",
+            7.028
+          ],
+          [
+            "2022-06-30",
+            7.899
+          ],
+          [
+            "2022-03-31",
+            11.781
+          ],
+          [
+            "2021-12-31",
+            15.927
+          ],
+          [
+            "2021-09-30",
+            20.886
+          ],
+          [
+            "2021-06-30",
+            23.911
+          ],
+          [
+            "2021-03-31",
+            23.5
+          ],
+          [
+            "2020-12-31",
+            26.945
+          ],
+          [
+            "2020-09-30",
+            13.104
+          ]
+        ],
+        "gross_margin": [
+          [
+            "2024-06-30",
+            0.81
+          ],
+          [
+            "2024-03-31",
+            0.817
+          ],
+          [
+            "2023-12-31",
+            0.821
+          ],
+          [
+            "2023-09-30",
+            0.807
+          ],
+          [
+            "2023-06-30",
+            0.8
+          ],
+          [
+            "2023-03-31",
+            0.795
+          ],
+          [
+            "2022-12-31",
+            0.795
+          ],
+          [
+            "2022-09-30",
+            0.775
+          ],
+          [
+            "2022-06-30",
+            0.784
+          ],
+          [
+            "2022-03-31",
+            0.788
+          ],
+          [
+            "2021-12-31",
+            0.798
+          ],
+          [
+            "2021-09-30",
+            0.779
+          ],
+          [
+            "2021-06-30",
+            0.758
+          ],
+          [
+            "2021-03-31",
+            0.783
+          ],
+          [
+            "2020-12-31",
+            0.781
+          ],
+          [
+            "2020-09-30",
+            0.484
+          ]
+        ],
+        "net_margin": [
+          [
+            "2024-06-30",
+            0.198
+          ],
+          [
+            "2024-03-31",
+            0.166
+          ],
+          [
+            "2023-12-31",
+            0.153
+          ],
+          [
+            "2023-09-30",
+            0.128
+          ],
+          [
+            "2023-06-30",
+            0.053
+          ],
+          [
+            "2023-03-31",
+            0.032
+          ],
+          [
+            "2022-12-31",
+            0.061
+          ],
+          [
+            "2022-09-30",
+            -0.259
+          ],
+          [
+            "2022-06-30",
+            -0.379
+          ],
+          [
+            "2022-03-31",
+            -0.227
+          ],
+          [
+            "2021-12-31",
+            -0.361
+          ],
+          [
+            "2021-09-30",
+            -0.261
+          ],
+          [
+            "2021-06-30",
+            -0.369
+          ],
+          [
+            "2021-03-31",
+            -0.362
+          ],
+          [
+            "2020-12-31",
+            -0.461
+          ],
+          [
+            "2020-09-30",
+            -2.949
+          ]
+        ],
+        "current_ratio": [
+          [
+            "2024-03-31",
+            5.91
+          ],
+          [
+            "2023-12-31",
+            5.548
+          ],
+          [
+            "2023-09-30",
+            5.529
+          ],
+          [
+            "2023-06-30",
+            5.219
+          ],
+          [
+            "2023-03-31",
+            5.414
+          ],
+          [
+            "2022-12-31",
+            5.173
+          ],
+          [
+            "2022-09-30",
+            4.281
+          ],
+          [
+            "2022-06-30",
+            4.36
+          ],
+          [
+            "2022-03-31",
+            4.375
+          ],
+          [
+            "2021-12-31",
+            4.338
+          ],
+          [
+            "2021-09-30",
+            4.125
+          ],
+          [
+            "2021-06-30",
+            3.901
+          ],
+          [
+            "2021-03-31",
+            3.879
+          ],
+          [
+            "2020-12-31",
+            3.739
+          ],
+          [
+            "2020-09-30",
+            2.541
+          ],
+          [
+            "2020-06-30",
+            2.781
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "2024-03-31",
+            0.0
+          ],
+          [
+            "2023-12-31",
+            0.0
+          ],
+          [
+            "2023-09-30",
+            0.0
+          ],
+          [
+            "2023-06-30",
+            0.0
+          ],
+          [
+            "2023-03-31",
+            0.0
+          ],
+          [
+            "2022-12-31",
+            0.0
+          ],
+          [
+            "2022-09-30",
+            0.0
+          ],
+          [
+            "2022-06-30",
+            0.0
+          ],
+          [
+            "2022-03-31",
+            0.0
+          ],
+          [
+            "2021-12-31",
+            0.0
+          ],
+          [
+            "2021-09-30",
+            0.0
+          ],
+          [
+            "2021-06-30",
+            0.0
+          ],
+          [
+            "2021-03-31",
+            0.11
+          ],
+          [
+            "2020-12-31",
+            0.13
+          ],
+          [
+            "2020-09-30",
+            0.158
+          ],
+          [
+            "2020-06-30",
+            0.408
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv": "fmp",
+        "fundamentals": "finnhub+fmp"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 138.7723,
+          "display": "138.8\u00d7",
+          "sector_benchmark": 41.9229,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 41.3871,
+          "display": "41.4\u00d7",
+          "sector_benchmark": 7.2821,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 60.6054,
+          "display": "60.6\u00d7",
+          "sector_benchmark": 8.4956,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 84.07,
+          "display": "84.1%",
+          "sector_benchmark": 79.925,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 43.67,
+          "display": "43.7%",
+          "sector_benchmark": 19.11,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 32.18,
+          "display": "32.2%",
+          "sector_benchmark": 18.005,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": 26.39,
+          "display": "26.4%",
+          "sector_benchmark": 9.555,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 6.9068,
+          "display": "6.9\u00d7",
+          "sector_benchmark": 1.4437,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.0,
+          "display": "0.0\u00d7",
+          "sector_benchmark": 0.445,
+          "benchmark_source": "peers",
+          "word": "lean",
+          "tone": "good"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 67.71,
+          "display": "67.7%",
+          "sector_benchmark": 14.245,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 0.0,
+          "display": "0.0%",
+          "sector_benchmark": 1.3772,
           "benchmark_source": "peers",
           "word": "low",
           "tone": "neutral"
@@ -4962,8 +5074,4683 @@
         {
           "key": "fcf",
           "label": "Free cash flow",
-          "value": 11.0716,
-          "display": "11.07",
+          "value": 1.1234,
+          "display": "1.12",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        }
+      ],
+      "peers_in_sector": 10,
+      "verdict": "NEUTRAL",
+      "composite": -0.01,
+      "coverage": 0.75,
+      "scores": {
+        "fundamentals": 0.333,
+        "technicals": -0.401,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] Net margin strong vs peers",
+        "[fundamentals] ROE strong vs peers",
+        "[fundamentals] ROA strong vs peers",
+        "[fundamentals] Current ratio strong vs peers",
+        "[fundamentals] Debt/Equity lean vs peers",
+        "[fundamentals] Rev growth YoY strong vs peers",
+        "[fundamentals] P/E expensive vs peers",
+        "[fundamentals] P/B expensive vs peers",
+        "[fundamentals] P/S expensive vs peers",
+        "[technicals] 12-1 momentum +4% (positive)",
+        "[technicals] SMA50 (140.46) below SMA200 (160.86) \u2014 downtrend",
+        "[technicals] RSI 42 (neutral)",
+        "[technicals] MACD below signal (bearish)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.25 over 50 stories)"
+      ]
+    },
+    {
+      "symbol": "TSM",
+      "company": "Taiwan Semiconductor Manufacturing Company Limited",
+      "sector": "Technology",
+      "price": 427.92,
+      "change_pct": 0.2624,
+      "spark": [
+        354.56,
+        336.71,
+        338.31,
+        340.23,
+        345.98,
+        339.57,
+        338.79,
+        329.24,
+        338.45,
+        343.25,
+        347.75,
+        326.11,
+        326.74,
+        316.5,
+        337.95,
+        341.49,
+        339.04,
+        341.76,
+        345.32,
+        365.9,
+        365.49,
+        370.6,
+        369.57,
+        379.89,
+        375.1,
+        363.35,
+        370.5,
+        366.24,
+        368.08,
+        387.44,
+        382.66,
+        402.46,
+        404.98,
+        392.34,
+        393.83,
+        396.06,
+        397.67,
+        401.61,
+        394.41,
+        419.5,
+        414.15,
+        411.68,
+        404.54,
+        397.28,
+        399.8,
+        417.72,
+        404.35,
+        395.95,
+        392.61,
+        401.62,
+        407.15,
+        404.52,
+        412.32,
+        422.73,
+        424.86,
+        418.45,
+        435.63,
+        446.69,
+        436.69,
+        444.92,
+        415.17,
+        426.8,
+        427.92
+      ],
+      "next_earnings": "2026-07-15",
+      "flags": [
+        "near_52wk_low"
+      ],
+      "alerts": [
+        "Near 52-wk low (427.92 vs 970)"
+      ],
+      "details": {
+        "technicals": {
+          "sma_fast": 393.07,
+          "sma_slow": 328.29,
+          "rsi": 56.0,
+          "macd": 10.756,
+          "macd_signal": 11.307,
+          "momentum_12_1": 0.9543
+        },
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 37,
+          "raw": 0.307
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2009-12-31",
+            3.375
+          ],
+          [
+            "2009-09-30",
+            3.609
+          ],
+          [
+            "2009-06-30",
+            3.232
+          ],
+          [
+            "2009-03-31",
+            2.735
+          ],
+          [
+            "2008-12-31",
+            2.388
+          ],
+          [
+            "2008-09-30",
+            2.943
+          ],
+          [
+            "2008-06-30",
+            3.759
+          ],
+          [
+            "2008-03-31",
+            3.175
+          ],
+          [
+            "2007-12-31",
+            3.364
+          ],
+          [
+            "2007-09-30",
+            3.369
+          ],
+          [
+            "2007-06-30",
+            3.984
+          ],
+          [
+            "2007-03-31",
+            3.333
+          ],
+          [
+            "2006-12-31",
+            3.442
+          ],
+          [
+            "2006-06-30",
+            3.375
+          ],
+          [
+            "2005-12-31",
+            3.385
+          ],
+          [
+            "2005-06-30",
+            3.546
+          ]
+        ],
+        "gross_margin": [
+          [
+            "2009-12-31",
+            0.485
+          ],
+          [
+            "2009-09-30",
+            0.476
+          ],
+          [
+            "2009-06-30",
+            0.462
+          ],
+          [
+            "2009-03-31",
+            0.189
+          ],
+          [
+            "2008-12-31",
+            0.313
+          ],
+          [
+            "2008-09-30",
+            0.464
+          ],
+          [
+            "2008-06-30",
+            0.456
+          ],
+          [
+            "2008-03-31",
+            0.437
+          ],
+          [
+            "2007-12-31",
+            0.478
+          ],
+          [
+            "2007-09-30",
+            0.458
+          ],
+          [
+            "2007-06-30",
+            0.429
+          ],
+          [
+            "2007-03-31",
+            0.379
+          ],
+          [
+            "2006-12-31",
+            0.48
+          ],
+          [
+            "2006-06-30",
+            0.501
+          ],
+          [
+            "2005-12-31",
+            0.483
+          ],
+          [
+            "2005-06-30",
+            0.393
+          ]
+        ],
+        "net_margin": [
+          [
+            "2009-12-31",
+            0.355
+          ],
+          [
+            "2009-09-30",
+            0.34
+          ],
+          [
+            "2009-06-30",
+            0.329
+          ],
+          [
+            "2009-03-31",
+            0.04
+          ],
+          [
+            "2008-12-31",
+            0.193
+          ],
+          [
+            "2008-09-30",
+            0.329
+          ],
+          [
+            "2008-06-30",
+            0.326
+          ],
+          [
+            "2008-03-31",
+            0.322
+          ],
+          [
+            "2007-12-31",
+            0.367
+          ],
+          [
+            "2007-09-30",
+            0.341
+          ],
+          [
+            "2007-06-30",
+            0.34
+          ],
+          [
+            "2007-03-31",
+            0.29
+          ],
+          [
+            "2006-12-31",
+            0.384
+          ],
+          [
+            "2006-06-30",
+            0.416
+          ],
+          [
+            "2005-12-31",
+            0.39
+          ],
+          [
+            "2005-06-30",
+            0.301
+          ]
+        ],
+        "current_ratio": [
+          [
+            "2009-12-31",
+            3.283
+          ],
+          [
+            "2009-09-30",
+            4.44
+          ],
+          [
+            "2009-06-30",
+            2.387
+          ],
+          [
+            "2009-03-31",
+            5.919
+          ],
+          [
+            "2008-12-31",
+            4.447
+          ],
+          [
+            "2008-09-30",
+            3.739
+          ],
+          [
+            "2008-06-30",
+            2.039
+          ],
+          [
+            "2008-03-31",
+            4.537
+          ],
+          [
+            "2007-12-31",
+            5.129
+          ],
+          [
+            "2007-09-30",
+            4.913
+          ],
+          [
+            "2007-06-30",
+            2.301
+          ],
+          [
+            "2007-03-31",
+            6.341
+          ],
+          [
+            "2006-12-31",
+            5.555
+          ],
+          [
+            "2006-06-30",
+            2.536
+          ],
+          [
+            "2005-12-31",
+            6.045
+          ],
+          [
+            "2005-06-30",
+            2.154
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "2009-12-31",
+            0.025
+          ],
+          [
+            "2009-09-30",
+            0.033
+          ],
+          [
+            "2009-06-30",
+            0.036
+          ],
+          [
+            "2009-03-31",
+            0.035
+          ],
+          [
+            "2008-12-31",
+            0.051
+          ],
+          [
+            "2008-09-30",
+            0.053
+          ],
+          [
+            "2008-06-30",
+            0.054
+          ],
+          [
+            "2008-03-31",
+            0.048
+          ],
+          [
+            "2007-12-31",
+            0.05
+          ],
+          [
+            "2007-09-30",
+            0.057
+          ],
+          [
+            "2007-06-30",
+            0.06
+          ],
+          [
+            "2007-03-31",
+            0.054
+          ],
+          [
+            "2006-12-31",
+            0.059
+          ],
+          [
+            "2006-06-30",
+            0.068
+          ],
+          [
+            "2005-12-31",
+            0.069
+          ],
+          [
+            "2005-06-30",
+            0.108
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv": "fmp",
+        "fundamentals": "finnhub+fmp"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 30.8559,
+          "display": "30.9\u00d7",
+          "sector_benchmark": 105.1067,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 7.7477,
+          "display": "7.7\u00d7",
+          "sector_benchmark": 36.1388,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 14.502,
+          "display": "14.5\u00d7",
+          "sector_benchmark": 36.2075,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 61.87,
+          "display": "61.9%",
+          "sector_benchmark": 51.57,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 47.0,
+          "display": "47.0%",
+          "sector_benchmark": 27.925,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 36.93,
+          "display": "36.9%",
+          "sector_benchmark": 43.985,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": 24.92,
+          "display": "24.9%",
+          "sector_benchmark": 27.505,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 2.4883,
+          "display": "2.5\u00d7",
+          "sector_benchmark": 2.2096,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.1725,
+          "display": "0.2\u00d7",
+          "sector_benchmark": 0.0557,
+          "benchmark_source": "peers",
+          "word": "heavy",
+          "tone": "bad"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 30.66,
+          "display": "30.7%",
+          "sector_benchmark": 29.32,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 0.9545,
+          "display": "1.0%",
+          "sector_benchmark": 0.7162,
+          "benchmark_source": "peers",
+          "word": "high",
+          "tone": "neutral"
+        },
+        {
+          "key": "fcf",
+          "label": "Free cash flow",
+          "value": 39.2368,
+          "display": "39.24",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        }
+      ],
+      "peers_in_sector": 12,
+      "verdict": "WATCH-BUY",
+      "composite": 0.523,
+      "coverage": 0.75,
+      "scores": {
+        "fundamentals": 0.5,
+        "technicals": 0.55,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/B cheap vs peers",
+        "[fundamentals] P/S cheap vs peers",
+        "[fundamentals] Gross margin strong vs peers",
+        "[fundamentals] Net margin strong vs peers",
+        "[fundamentals] Current ratio strong vs peers",
+        "[fundamentals] ROE weak vs peers",
+        "[fundamentals] Debt/Equity heavy vs peers",
+        "[technicals] 12-1 momentum +95% (positive)",
+        "[technicals] SMA50 (393.07) above SMA200 (328.29) \u2014 uptrend",
+        "[technicals] RSI 56 (neutral)",
+        "[technicals] MACD below signal (bearish)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.31 over 37 stories)"
+      ]
+    },
+    {
+      "symbol": "NOW",
+      "company": "ServiceNow, Inc.",
+      "sector": "Technology",
+      "price": 106.97,
+      "change_pct": -6.3228,
+      "spark": [],
+      "next_earnings": "2026-07-21",
+      "flags": [
+        "big_daily_move"
+      ],
+      "alerts": [
+        "Daily move -6.3% (>= 5%)"
+      ],
+      "details": {
+        "technicals": {},
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 50,
+          "raw": 0.306
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2016-03-31",
+            32.658
+          ],
+          [
+            "2015-12-31",
+            24.281
+          ],
+          [
+            "2015-09-30",
+            20.972
+          ],
+          [
+            "2015-06-30",
+            24.678
+          ],
+          [
+            "2015-03-31",
+            26.063
+          ],
+          [
+            "2014-12-31",
+            23.473
+          ],
+          [
+            "2014-09-30",
+            20.517
+          ],
+          [
+            "2014-06-30",
+            22.421
+          ],
+          [
+            "2014-03-31",
+            21.282
+          ],
+          [
+            "2013-12-31",
+            19.704
+          ],
+          [
+            "2013-09-30",
+            25.054
+          ],
+          [
+            "2013-06-30",
+            20.449
+          ],
+          [
+            "2013-03-31",
+            17.607
+          ],
+          [
+            "2012-12-31",
+            15.425
+          ],
+          [
+            "2012-09-30",
+            23.498
+          ],
+          [
+            "2012-06-30",
+            117.524
+          ]
+        ],
+        "gross_margin": [
+          [
+            "2014-06-30",
+            0.647
+          ],
+          [
+            "2014-03-31",
+            0.618
+          ],
+          [
+            "2013-12-31",
+            0.638
+          ],
+          [
+            "2013-09-30",
+            0.626
+          ],
+          [
+            "2013-06-30",
+            0.648
+          ],
+          [
+            "2013-03-31",
+            0.624
+          ],
+          [
+            "2012-12-31",
+            0.57
+          ],
+          [
+            "2012-09-30",
+            0.572
+          ],
+          [
+            "2012-06-30",
+            0.597
+          ],
+          [
+            "2012-03-31",
+            0.552
+          ],
+          [
+            "2011-12-31",
+            0.592
+          ],
+          [
+            "2011-09-30",
+            0.651
+          ],
+          [
+            "2011-06-30",
+            0.678
+          ],
+          [
+            "2011-03-31",
+            0.634
+          ],
+          [
+            "2010-12-31",
+            0.648
+          ],
+          [
+            "2010-09-30",
+            0.677
+          ]
+        ],
+        "net_margin": [
+          [
+            "2014-06-30",
+            -0.302
+          ],
+          [
+            "2014-03-31",
+            -0.311
+          ],
+          [
+            "2013-12-31",
+            -0.194
+          ],
+          [
+            "2013-09-30",
+            -0.132
+          ],
+          [
+            "2013-06-30",
+            -0.209
+          ],
+          [
+            "2013-03-31",
+            -0.155
+          ],
+          [
+            "2012-12-31",
+            -0.132
+          ],
+          [
+            "2012-09-30",
+            -0.203
+          ],
+          [
+            "2012-06-30",
+            -0.154
+          ],
+          [
+            "2012-03-31",
+            -0.119
+          ],
+          [
+            "2011-12-31",
+            -0.174
+          ],
+          [
+            "2011-09-30",
+            0.004
+          ],
+          [
+            "2011-06-30",
+            0.069
+          ],
+          [
+            "2011-03-31",
+            0.119
+          ],
+          [
+            "2010-12-31",
+            0.125
+          ],
+          [
+            "2010-09-30",
+            0.129
+          ]
+        ],
+        "current_ratio": [
+          [
+            "2015-06-30",
+            1.613
+          ],
+          [
+            "2015-03-31",
+            1.819
+          ],
+          [
+            "2014-12-31",
+            1.789
+          ],
+          [
+            "2014-09-30",
+            1.959
+          ],
+          [
+            "2014-06-30",
+            2.096
+          ],
+          [
+            "2014-03-31",
+            2.267
+          ],
+          [
+            "2013-12-31",
+            2.432
+          ],
+          [
+            "2013-09-30",
+            1.277
+          ],
+          [
+            "2013-06-30",
+            1.512
+          ],
+          [
+            "2013-03-31",
+            1.952
+          ],
+          [
+            "2012-12-31",
+            1.994
+          ],
+          [
+            "2012-09-30",
+            1.991
+          ],
+          [
+            "2012-06-30",
+            1.002
+          ],
+          [
+            "2012-03-31",
+            1.151
+          ],
+          [
+            "2011-12-31",
+            1.031
+          ],
+          [
+            "2011-06-30",
+            1.101
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "2015-06-30",
+            0.991
+          ],
+          [
+            "2015-03-31",
+            0.992
+          ],
+          [
+            "2014-12-31",
+            1.034
+          ],
+          [
+            "2014-09-30",
+            1.045
+          ],
+          [
+            "2014-06-30",
+            1.078
+          ],
+          [
+            "2014-03-31",
+            1.045
+          ],
+          [
+            "2013-12-31",
+            1.052
+          ],
+          [
+            "2013-09-30",
+            0.004
+          ],
+          [
+            "2013-06-30",
+            0.005
+          ],
+          [
+            "2013-03-31",
+            0.005
+          ],
+          [
+            "2012-12-31",
+            0.006
+          ],
+          [
+            "2012-09-30",
+            0.003
+          ],
+          [
+            "2012-06-30",
+            0.0
+          ],
+          [
+            "2012-03-31",
+            0.0
+          ],
+          [
+            "2011-12-31",
+            0.0
+          ],
+          [
+            "2011-06-30",
+            0.0
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv_error": "yahoo: NOW: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/NOW]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
+        "fundamentals_error": "no usable fundamentals for 'NOW'",
+        "fundamentals": "finnhub"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 67.0262,
+          "display": "67.0\u00d7",
+          "sector_benchmark": 31.3687,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 9.1909,
+          "display": "9.2\u00d7",
+          "sector_benchmark": 6.6336,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 8.4359,
+          "display": "8.4\u00d7",
+          "sector_benchmark": 10.0384,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 76.57,
+          "display": "76.6%",
+          "sector_benchmark": 77.08,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 12.59,
+          "display": "12.6%",
+          "sector_benchmark": 13.705,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 14.98,
+          "display": "15.0%",
+          "sector_benchmark": 17.29,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": 7.46,
+          "display": "7.5%",
+          "sector_benchmark": 4.475,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 0.8449,
+          "display": "0.8\u00d7",
+          "sector_benchmark": 1.439,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.1271,
+          "display": "0.1\u00d7",
+          "sector_benchmark": 0.249,
+          "benchmark_source": "peers",
+          "word": "lean",
+          "tone": "good"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 21.72,
+          "display": "21.7%",
+          "sector_benchmark": 21.34,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        }
+      ],
+      "peers_in_sector": 10,
+      "verdict": "NEUTRAL",
+      "composite": -0.143,
+      "coverage": 0.4,
+      "scores": {
+        "fundamentals": -0.143,
+        "technicals": 0.0,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] P/S cheap vs peers",
+        "[fundamentals] ROA strong vs peers",
+        "[fundamentals] Debt/Equity lean vs peers",
+        "[fundamentals] P/E expensive vs peers",
+        "[fundamentals] P/B expensive vs peers",
+        "[fundamentals] ROE weak vs peers",
+        "[fundamentals] Current ratio weak vs peers",
+        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.31 over 50 stories)"
+      ]
+    },
+    {
+      "symbol": "MU",
+      "company": "Micron Technology, Inc.",
+      "sector": "Technology",
+      "price": 935.89,
+      "change_pct": -1.4105,
+      "spark": [],
+      "next_earnings": "2026-06-24",
+      "flags": [],
+      "alerts": [],
+      "details": {
+        "technicals": {},
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 50,
+          "raw": 0.105
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2003-12-04",
+            1.368
+          ],
+          [
+            "2003-08-28",
+            1.718
+          ],
+          [
+            "2003-05-29",
+            1.325
+          ],
+          [
+            "2003-02-27",
+            0.863
+          ],
+          [
+            "2002-11-28",
+            1.603
+          ],
+          [
+            "2002-08-29",
+            1.635
+          ],
+          [
+            "2002-05-30",
+            2.033
+          ],
+          [
+            "2002-02-28",
+            2.798
+          ],
+          [
+            "2001-11-29",
+            2.418
+          ],
+          [
+            "2001-08-30",
+            3.075
+          ],
+          [
+            "2001-05-31",
+            3.106
+          ],
+          [
+            "2001-03-01",
+            2.853
+          ],
+          [
+            "2000-11-30",
+            2.385
+          ],
+          [
+            "2000-08-31",
+            7.14
+          ],
+          [
+            "2000-06-01",
+            6.861
+          ],
+          [
+            "2000-03-02",
+            5.24
+          ]
+        ],
+        "gross_margin": [
+          [
+            "1993-09-02",
+            0.466
+          ],
+          [
+            "1993-06-03",
+            0.384
+          ],
+          [
+            "1993-03-04",
+            0.299
+          ],
+          [
+            "1992-12-03",
+            0.253
+          ],
+          [
+            "1992-09-03",
+            0.225
+          ],
+          [
+            "1992-06-04",
+            0.231
+          ],
+          [
+            "1992-03-05",
+            0.223
+          ],
+          [
+            "1991-12-05",
+            0.239
+          ],
+          [
+            "1991-08-29",
+            0.273
+          ],
+          [
+            "1991-05-30",
+            0.295
+          ],
+          [
+            "1991-02-28",
+            0.172
+          ],
+          [
+            "1990-11-29",
+            0.065
+          ],
+          [
+            "1990-08-30",
+            0.227
+          ],
+          [
+            "1990-05-31",
+            0.266
+          ],
+          [
+            "1990-03-01",
+            0.195
+          ],
+          [
+            "1989-11-29",
+            0.238
+          ]
+        ],
+        "net_margin": [
+          [
+            "1993-09-02",
+            0.205
+          ],
+          [
+            "1993-06-03",
+            0.137
+          ],
+          [
+            "1993-03-04",
+            0.051
+          ],
+          [
+            "1992-12-03",
+            0.021
+          ],
+          [
+            "1992-09-03",
+            0.021
+          ],
+          [
+            "1992-06-04",
+            0.013
+          ],
+          [
+            "1992-03-05",
+            0.011
+          ],
+          [
+            "1991-12-05",
+            0.006
+          ],
+          [
+            "1991-08-29",
+            0.077
+          ],
+          [
+            "1991-05-30",
+            0.055
+          ],
+          [
+            "1991-02-28",
+            -0.024
+          ],
+          [
+            "1990-11-29",
+            -0.115
+          ],
+          [
+            "1990-08-30",
+            0.029
+          ],
+          [
+            "1990-05-31",
+            0.021
+          ],
+          [
+            "1990-03-01",
+            0.0
+          ],
+          [
+            "1989-11-29",
+            0.001
+          ]
+        ],
+        "current_ratio": [
+          [
+            "1993-09-02",
+            2.088
+          ],
+          [
+            "1993-06-03",
+            2.125
+          ],
+          [
+            "1993-03-04",
+            2.164
+          ],
+          [
+            "1992-12-03",
+            2.224
+          ],
+          [
+            "1992-09-03",
+            2.139
+          ],
+          [
+            "1992-06-04",
+            2.237
+          ],
+          [
+            "1992-03-05",
+            2.06
+          ],
+          [
+            "1991-12-05",
+            1.971
+          ],
+          [
+            "1991-08-29",
+            2.175
+          ],
+          [
+            "1991-05-30",
+            1.904
+          ],
+          [
+            "1991-02-28",
+            2.024
+          ],
+          [
+            "1990-11-29",
+            2.027
+          ],
+          [
+            "1990-08-30",
+            1.966
+          ],
+          [
+            "1990-05-31",
+            2.428
+          ],
+          [
+            "1990-03-01",
+            2.461
+          ],
+          [
+            "1989-11-29",
+            3.029
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "1993-09-02",
+            0.125
+          ],
+          [
+            "1993-06-03",
+            0.146
+          ],
+          [
+            "1993-03-04",
+            0.176
+          ],
+          [
+            "1992-12-03",
+            0.163
+          ],
+          [
+            "1992-09-03",
+            0.174
+          ],
+          [
+            "1992-06-04",
+            0.162
+          ],
+          [
+            "1992-03-05",
+            0.174
+          ],
+          [
+            "1991-12-05",
+            0.179
+          ],
+          [
+            "1991-08-29",
+            0.189
+          ],
+          [
+            "1991-05-30",
+            0.211
+          ],
+          [
+            "1991-02-28",
+            0.239
+          ],
+          [
+            "1990-11-29",
+            0.214
+          ],
+          [
+            "1990-08-30",
+            0.204
+          ],
+          [
+            "1990-05-31",
+            0.206
+          ],
+          [
+            "1990-03-01",
+            0.212
+          ],
+          [
+            "1989-11-29",
+            0.217
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv_error": "yahoo: MU: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/MU]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
+        "fundamentals_error": "no usable fundamentals for 'MU'",
+        "fundamentals": "finnhub"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 42.4611,
+          "display": "42.5\u00d7",
+          "sector_benchmark": 62.8562,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 6.4549,
+          "display": "6.5\u00d7",
+          "sector_benchmark": 9.1981,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 17.6152,
+          "display": "17.6\u00d7",
+          "sector_benchmark": 20.3915,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 58.44,
+          "display": "58.4%",
+          "sector_benchmark": 56.25,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 41.49,
+          "display": "41.5%",
+          "sector_benchmark": 26.365,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 40.84,
+          "display": "40.8%",
+          "sector_benchmark": 19.77,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": 27.66,
+          "display": "27.7%",
+          "sector_benchmark": 15.82,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 2.8968,
+          "display": "2.9\u00d7",
+          "sector_benchmark": 3.0016,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.14,
+          "display": "0.1\u00d7",
+          "sector_benchmark": 0.2649,
+          "benchmark_source": "peers",
+          "word": "lean",
+          "tone": "good"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 85.55,
+          "display": "85.5%",
+          "sector_benchmark": 31.02,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 0.0529,
+          "display": "0.1%",
+          "sector_benchmark": 0.8752,
+          "benchmark_source": "peers",
+          "word": "low",
+          "tone": "neutral"
+        }
+      ],
+      "peers_in_sector": 10,
+      "verdict": "WATCH-BUY",
+      "composite": 1.0,
+      "coverage": 0.4,
+      "scores": {
+        "fundamentals": 1.0,
+        "technicals": 0.0,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] P/B cheap vs peers",
+        "[fundamentals] P/S cheap vs peers",
+        "[fundamentals] Net margin strong vs peers",
+        "[fundamentals] ROE strong vs peers",
+        "[fundamentals] ROA strong vs peers",
+        "[fundamentals] Debt/Equity lean vs peers",
+        "[fundamentals] Rev growth YoY strong vs peers",
+        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.11 over 50 stories)"
+      ]
+    },
+    {
+      "symbol": "AMD",
+      "company": "Advanced Micro Devices, Inc.",
+      "sector": "Technology",
+      "price": 475.505,
+      "change_pct": -3.0235,
+      "spark": [
+        204.83,
+        197.74,
+        193.39,
+        196.58,
+        196.31,
+        199.46,
+        205.27,
+        201.33,
+        202.68,
+        205.37,
+        220.27,
+        203.77,
+        201.99,
+        196.04,
+        203.43,
+        210.21,
+        217.5,
+        220.18,
+        221.53,
+        231.82,
+        236.64,
+        245.04,
+        246.83,
+        255.07,
+        258.12,
+        278.26,
+        278.39,
+        274.95,
+        284.49,
+        303.46,
+        305.33,
+        347.81,
+        334.63,
+        323.21,
+        337.11,
+        354.49,
+        360.54,
+        341.54,
+        355.26,
+        421.39,
+        408.46,
+        455.19,
+        458.79,
+        448.29,
+        445.5,
+        449.7,
+        424.1,
+        420.99,
+        414.05,
+        447.58,
+        449.59,
+        467.51,
+        503.89,
+        495.54,
+        518.09,
+        516.1,
+        510.13,
+        521.54,
+        542.52,
+        523.2,
+        466.38,
+        490.33,
+        475.5
+      ],
+      "next_earnings": "2026-08-03",
+      "flags": [],
+      "alerts": [],
+      "details": {
+        "technicals": {
+          "sma_fast": 369.92,
+          "sma_slow": 249.16,
+          "rsi": 55.3,
+          "macd": 35.849,
+          "macd_signal": 44.04,
+          "momentum_12_1": 2.7689
+        },
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 50,
+          "raw": 0.209
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2003-09-28",
+            1.702
+          ],
+          [
+            "2003-06-29",
+            0.971
+          ],
+          [
+            "2003-03-30",
+            0.904
+          ],
+          [
+            "2002-12-29",
+            0.884
+          ],
+          [
+            "2002-09-29",
+            0.564
+          ],
+          [
+            "2002-06-30",
+            0.888
+          ],
+          [
+            "2002-03-31",
+            1.434
+          ],
+          [
+            "2001-12-30",
+            1.516
+          ],
+          [
+            "2001-09-30",
+            0.755
+          ],
+          [
+            "2001-07-01",
+            2.473
+          ],
+          [
+            "2001-04-01",
+            2.45
+          ],
+          [
+            "2000-12-31",
+            1.365
+          ],
+          [
+            "2000-10-01",
+            2.496
+          ],
+          [
+            "2000-07-02",
+            5.242
+          ],
+          [
+            "2000-04-02",
+            4.209
+          ],
+          [
+            "1999-12-26",
+            2.328
+          ]
+        ],
+        "gross_margin": [
+          [
+            "1993-03-28",
+            0.524
+          ],
+          [
+            "1992-12-27",
+            0.504
+          ],
+          [
+            "1992-09-27",
+            0.487
+          ],
+          [
+            "1992-06-28",
+            0.48
+          ],
+          [
+            "1992-03-29",
+            0.55
+          ],
+          [
+            "1991-12-29",
+            0.492
+          ],
+          [
+            "1991-09-29",
+            0.447
+          ],
+          [
+            "1991-06-30",
+            0.473
+          ],
+          [
+            "1991-03-31",
+            0.43
+          ],
+          [
+            "1990-12-30",
+            0.351
+          ],
+          [
+            "1990-09-30",
+            0.329
+          ],
+          [
+            "1990-07-01",
+            0.337
+          ],
+          [
+            "1990-04-01",
+            0.418
+          ],
+          [
+            "1989-12-31",
+            0.432
+          ],
+          [
+            "1989-09-24",
+            0.41
+          ],
+          [
+            "1989-06-25",
+            0.425
+          ]
+        ],
+        "net_margin": [
+          [
+            "1993-03-28",
+            0.151
+          ],
+          [
+            "1992-12-27",
+            0.174
+          ],
+          [
+            "1992-09-27",
+            0.138
+          ],
+          [
+            "1992-06-28",
+            0.118
+          ],
+          [
+            "1992-03-29",
+            0.208
+          ],
+          [
+            "1991-12-29",
+            0.291
+          ],
+          [
+            "1991-09-29",
+            0.059
+          ],
+          [
+            "1991-06-30",
+            0.058
+          ],
+          [
+            "1991-03-31",
+            0.015
+          ],
+          [
+            "1990-12-30",
+            -0.162
+          ],
+          [
+            "1990-09-30",
+            -0.07
+          ],
+          [
+            "1990-07-01",
+            -0.022
+          ],
+          [
+            "1990-04-01",
+            0.048
+          ],
+          [
+            "1989-12-31",
+            0.041
+          ],
+          [
+            "1989-09-24",
+            0.044
+          ],
+          [
+            "1989-06-25",
+            0.044
+          ]
+        ],
+        "current_ratio": [
+          [
+            "1993-09-26",
+            2.337
+          ],
+          [
+            "1993-06-27",
+            2.319
+          ],
+          [
+            "1993-03-28",
+            2.044
+          ],
+          [
+            "1992-12-27",
+            2.092
+          ],
+          [
+            "1992-09-27",
+            1.69
+          ],
+          [
+            "1992-06-28",
+            1.639
+          ],
+          [
+            "1992-03-29",
+            1.605
+          ],
+          [
+            "1991-12-29",
+            1.375
+          ],
+          [
+            "1991-09-29",
+            1.429
+          ],
+          [
+            "1991-06-30",
+            1.394
+          ],
+          [
+            "1991-03-31",
+            1.327
+          ],
+          [
+            "1990-12-30",
+            1.249
+          ],
+          [
+            "1990-09-30",
+            1.567
+          ],
+          [
+            "1990-07-01",
+            1.84
+          ],
+          [
+            "1990-04-01",
+            2.211
+          ],
+          [
+            "1989-12-31",
+            2.152
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "1993-09-26",
+            0.071
+          ],
+          [
+            "1993-06-27",
+            0.059
+          ],
+          [
+            "1993-03-28",
+            0.054
+          ],
+          [
+            "1992-12-27",
+            0.064
+          ],
+          [
+            "1992-09-27",
+            0.195
+          ],
+          [
+            "1992-06-28",
+            0.208
+          ],
+          [
+            "1992-03-29",
+            0.22
+          ],
+          [
+            "1991-12-29",
+            0.269
+          ],
+          [
+            "1991-09-29",
+            0.315
+          ],
+          [
+            "1991-06-30",
+            0.327
+          ],
+          [
+            "1991-03-31",
+            0.332
+          ],
+          [
+            "1990-12-30",
+            0.302
+          ],
+          [
+            "1990-09-30",
+            0.274
+          ],
+          [
+            "1990-07-01",
+            0.264
+          ],
+          [
+            "1990-04-01",
+            0.255
+          ],
+          [
+            "1989-12-31",
+            0.262
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv": "fmp",
+        "fundamentals": "finnhub+fmp"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 154.7931,
+          "display": "154.8\u00d7",
+          "sector_benchmark": 58.5487,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 4.9581,
+          "display": "5.0\u00d7",
+          "sector_benchmark": 9.1981,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 20.7016,
+          "display": "20.7\u00d7",
+          "sector_benchmark": 18.8483,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 50.28,
+          "display": "50.3%",
+          "sector_benchmark": 57.88,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 13.37,
+          "display": "13.4%",
+          "sector_benchmark": 27.855,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 8.08,
+          "display": "8.1%",
+          "sector_benchmark": 26.41,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": 6.5,
+          "display": "6.5%",
+          "sector_benchmark": 16.645,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 2.7249,
+          "display": "2.7\u00d7",
+          "sector_benchmark": 3.0876,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.05,
+          "display": "0.1\u00d7",
+          "sector_benchmark": 0.2649,
+          "benchmark_source": "peers",
+          "word": "lean",
+          "tone": "good"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 34.97,
+          "display": "35.0%",
+          "sector_benchmark": 31.02,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 0.0,
+          "display": "0.0%",
+          "sector_benchmark": 0.663,
+          "benchmark_source": "peers",
+          "word": "low",
+          "tone": "neutral"
+        },
+        {
+          "key": "fcf",
+          "label": "Free cash flow",
+          "value": 5.2569,
+          "display": "5.26",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        }
+      ],
+      "peers_in_sector": 10,
+      "verdict": "NEUTRAL",
+      "composite": 0.079,
+      "coverage": 0.75,
+      "scores": {
+        "fundamentals": -0.333,
+        "technicals": 0.55,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] P/B cheap vs peers",
+        "[fundamentals] Debt/Equity lean vs peers",
+        "[fundamentals] Rev growth YoY strong vs peers",
+        "[fundamentals] P/E expensive vs peers",
+        "[fundamentals] Gross margin weak vs peers",
+        "[fundamentals] Net margin weak vs peers",
+        "[fundamentals] ROE weak vs peers",
+        "[fundamentals] ROA weak vs peers",
+        "[fundamentals] Current ratio weak vs peers",
+        "[technicals] 12-1 momentum +277% (positive)",
+        "[technicals] SMA50 (369.92) above SMA200 (249.16) \u2014 uptrend",
+        "[technicals] RSI 55 (neutral)",
+        "[technicals] MACD below signal (bearish)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.21 over 50 stories)"
+      ]
+    },
+    {
+      "symbol": "INTC",
+      "company": "Intel Corporation",
+      "sector": "Technology",
+      "price": 107.92,
+      "change_pct": -2.1311,
+      "spark": [
+        47.98,
+        45.25,
+        45.77,
+        45.76,
+        44.06,
+        45.03,
+        46.18,
+        43.87,
+        44.01,
+        44.06,
+        47.18,
+        44.1,
+        43.13,
+        41.19,
+        44.13,
+        48.03,
+        50.38,
+        50.78,
+        52.91,
+        58.95,
+        61.72,
+        62.38,
+        65.18,
+        63.81,
+        64.94,
+        68.5,
+        68.5,
+        65.7,
+        66.26,
+        65.27,
+        66.78,
+        82.54,
+        84.99,
+        84.52,
+        94.75,
+        94.48,
+        99.62,
+        95.78,
+        108.15,
+        113.01,
+        109.62,
+        124.92,
+        129.44,
+        120.61,
+        120.29,
+        115.93,
+        108.77,
+        108.17,
+        110.8,
+        118.96,
+        118.5,
+        119.84,
+        123.52,
+        121.77,
+        120.89,
+        114.68,
+        109.33,
+        107.93,
+        112.71,
+        111.78,
+        99.17,
+        110.27,
+        107.92
+      ],
+      "next_earnings": "2026-07-22",
+      "flags": [],
+      "alerts": [],
+      "details": {
+        "technicals": {
+          "sma_fast": 91.38,
+          "sma_slow": 52.13,
+          "rsi": 51.1,
+          "macd": 3.64,
+          "macd_signal": 6.693,
+          "momentum_12_1": 5.3203
+        },
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 50,
+          "raw": 0.245
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2003-09-27",
+            4.943
+          ],
+          [
+            "2003-06-28",
+            3.831
+          ],
+          [
+            "2003-03-29",
+            3.009
+          ],
+          [
+            "2002-12-28",
+            2.944
+          ],
+          [
+            "2002-09-28",
+            2.606
+          ],
+          [
+            "2002-06-29",
+            3.286
+          ],
+          [
+            "2002-03-30",
+            5.812
+          ],
+          [
+            "2001-12-29",
+            5.891
+          ],
+          [
+            "2001-09-29",
+            3.741
+          ],
+          [
+            "2001-06-30",
+            5.503
+          ],
+          [
+            "2001-03-31",
+            4.699
+          ],
+          [
+            "2000-12-30",
+            5.421
+          ],
+          [
+            "2000-09-30",
+            7.162
+          ],
+          [
+            "2000-07-01",
+            12.364
+          ],
+          [
+            "2000-04-01",
+            12.117
+          ],
+          [
+            "1999-12-25",
+            8.937
+          ]
+        ],
+        "gross_margin": [
+          [
+            "1993-12-25",
+            0.609
+          ],
+          [
+            "1993-09-25",
+            0.628
+          ],
+          [
+            "1993-06-26",
+            0.641
+          ],
+          [
+            "1993-03-27",
+            0.645
+          ],
+          [
+            "1992-12-26",
+            0.61
+          ],
+          [
+            "1992-09-26",
+            0.55
+          ],
+          [
+            "1992-06-27",
+            0.537
+          ],
+          [
+            "1992-03-28",
+            0.532
+          ],
+          [
+            "1991-12-28",
+            0.519
+          ],
+          [
+            "1991-09-28",
+            0.498
+          ],
+          [
+            "1991-06-29",
+            0.529
+          ],
+          [
+            "1991-03-30",
+            0.515
+          ],
+          [
+            "1990-12-29",
+            0.488
+          ],
+          [
+            "1990-09-29",
+            0.52
+          ],
+          [
+            "1990-06-30",
+            0.515
+          ],
+          [
+            "1990-03-31",
+            0.509
+          ]
+        ],
+        "net_margin": [
+          [
+            "1993-12-25",
+            0.249
+          ],
+          [
+            "1993-09-25",
+            0.261
+          ],
+          [
+            "1993-06-26",
+            0.267
+          ],
+          [
+            "1993-03-27",
+            0.271
+          ],
+          [
+            "1992-12-26",
+            0.231
+          ],
+          [
+            "1992-09-26",
+            0.168
+          ],
+          [
+            "1992-06-27",
+            0.162
+          ],
+          [
+            "1992-03-28",
+            0.149
+          ],
+          [
+            "1991-12-28",
+            0.157
+          ],
+          [
+            "1991-09-28",
+            0.17
+          ],
+          [
+            "1991-06-29",
+            0.184
+          ],
+          [
+            "1991-03-30",
+            0.176
+          ],
+          [
+            "1990-12-29",
+            0.156
+          ],
+          [
+            "1990-09-29",
+            0.169
+          ],
+          [
+            "1990-06-30",
+            0.176
+          ],
+          [
+            "1990-03-31",
+            0.161
+          ]
+        ],
+        "current_ratio": [
+          [
+            "1993-12-25",
+            2.385
+          ],
+          [
+            "1993-09-25",
+            2.739
+          ],
+          [
+            "1993-06-26",
+            2.813
+          ],
+          [
+            "1993-03-27",
+            2.951
+          ],
+          [
+            "1992-12-26",
+            2.546
+          ],
+          [
+            "1992-09-26",
+            2.682
+          ],
+          [
+            "1992-06-27",
+            3.095
+          ],
+          [
+            "1992-03-28",
+            3.102
+          ],
+          [
+            "1991-12-28",
+            2.935
+          ],
+          [
+            "1991-09-28",
+            2.938
+          ],
+          [
+            "1991-06-29",
+            2.759
+          ],
+          [
+            "1991-03-30",
+            2.747
+          ],
+          [
+            "1990-12-29",
+            2.376
+          ],
+          [
+            "1990-09-29",
+            2.442
+          ],
+          [
+            "1990-06-30",
+            2.615
+          ],
+          [
+            "1990-03-31",
+            2.58
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "1993-12-25",
+            0.123
+          ],
+          [
+            "1993-09-25",
+            0.112
+          ],
+          [
+            "1993-06-26",
+            0.092
+          ],
+          [
+            "1993-03-27",
+            0.094
+          ],
+          [
+            "1992-12-26",
+            0.103
+          ],
+          [
+            "1992-09-26",
+            0.103
+          ],
+          [
+            "1992-06-27",
+            0.111
+          ],
+          [
+            "1992-03-28",
+            0.104
+          ],
+          [
+            "1991-12-28",
+            0.121
+          ],
+          [
+            "1991-09-28",
+            0.119
+          ],
+          [
+            "1991-06-29",
+            0.121
+          ],
+          [
+            "1991-03-30",
+            0.154
+          ],
+          [
+            "1990-12-29",
+            0.173
+          ],
+          [
+            "1990-09-29",
+            0.165
+          ],
+          [
+            "1990-06-30",
+            0.166
+          ],
+          [
+            "1990-03-31",
+            0.191
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv": "fmp",
+        "fundamentals": "finnhub+fmp"
+      },
+      "fundamentals": [
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 1.8573,
+          "display": "1.9\u00d7",
+          "sector_benchmark": 9.1981,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 9.8392,
+          "display": "9.8\u00d7",
+          "sector_benchmark": 20.3915,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 35.43,
+          "display": "35.4%",
+          "sector_benchmark": 57.88,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": -5.9,
+          "display": "-5.9%",
+          "sector_benchmark": 27.855,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": -2.95,
+          "display": "-2.9%",
+          "sector_benchmark": 26.41,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": -1.56,
+          "display": "-1.6%",
+          "sector_benchmark": 16.645,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 2.312,
+          "display": "2.3\u00d7",
+          "sector_benchmark": 3.0876,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.4042,
+          "display": "0.4\u00d7",
+          "sector_benchmark": 0.1987,
+          "benchmark_source": "peers",
+          "word": "heavy",
+          "tone": "bad"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 1.36,
+          "display": "1.4%",
+          "sector_benchmark": 33.18,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 1.1374,
+          "display": "1.1%",
+          "sector_benchmark": 0.5926,
+          "benchmark_source": "peers",
+          "word": "high",
+          "tone": "neutral"
+        },
+        {
+          "key": "fcf",
+          "label": "Free cash flow",
+          "value": -0.6136,
+          "display": "-0.61",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        }
+      ],
+      "peers_in_sector": 10,
+      "verdict": "NEUTRAL",
+      "composite": -0.04,
+      "coverage": 0.75,
+      "scores": {
+        "fundamentals": -0.556,
+        "technicals": 0.55,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] P/B cheap vs peers",
+        "[fundamentals] P/S cheap vs peers",
+        "[fundamentals] Gross margin weak vs peers",
+        "[fundamentals] Net margin weak vs peers",
+        "[fundamentals] ROE weak vs peers",
+        "[fundamentals] ROA weak vs peers",
+        "[fundamentals] Current ratio weak vs peers",
+        "[fundamentals] Debt/Equity heavy vs peers",
+        "[fundamentals] Rev growth YoY weak vs peers",
+        "[technicals] 12-1 momentum +532% (positive)",
+        "[technicals] SMA50 (91.38) above SMA200 (52.13) \u2014 uptrend",
+        "[technicals] RSI 51 (neutral)",
+        "[technicals] MACD below signal (bearish)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.25 over 50 stories)"
+      ]
+    },
+    {
+      "symbol": "IBM",
+      "company": "International Business Machines Corporation",
+      "sector": "Technology",
+      "price": 277.49,
+      "change_pct": -1.1858,
+      "spark": [],
+      "next_earnings": "2026-07-22",
+      "flags": [],
+      "alerts": [],
+      "details": {
+        "technicals": {},
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 50,
+          "raw": 0.122
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2003-09-30",
+            5.561
+          ],
+          [
+            "2003-06-30",
+            5.372
+          ],
+          [
+            "2003-03-31",
+            5.515
+          ],
+          [
+            "2002-12-31",
+            5.749
+          ],
+          [
+            "2002-09-30",
+            4.461
+          ],
+          [
+            "2002-06-30",
+            5.353
+          ],
+          [
+            "2002-03-31",
+            7.639
+          ],
+          [
+            "2001-12-31",
+            8.886
+          ],
+          [
+            "2001-09-30",
+            7.267
+          ],
+          [
+            "2001-06-30",
+            8.79
+          ],
+          [
+            "2001-03-31",
+            7.662
+          ],
+          [
+            "2000-12-31",
+            7.231
+          ],
+          [
+            "2000-09-30",
+            10.574
+          ],
+          [
+            "2000-06-30",
+            10.061
+          ],
+          [
+            "2000-03-31",
+            10.752
+          ],
+          [
+            "1999-12-31",
+            10.195
+          ]
+        ],
+        "gross_margin": [
+          [
+            "1993-09-30",
+            0.38
+          ],
+          [
+            "1993-06-30",
+            0.385
+          ],
+          [
+            "1993-03-31",
+            0.395
+          ],
+          [
+            "1992-12-31",
+            0.393
+          ],
+          [
+            "1992-09-30",
+            0.461
+          ],
+          [
+            "1992-06-30",
+            0.485
+          ],
+          [
+            "1992-03-31",
+            0.508
+          ],
+          [
+            "1991-12-31",
+            0.469
+          ],
+          [
+            "1991-09-30",
+            0.497
+          ],
+          [
+            "1991-06-30",
+            0.513
+          ],
+          [
+            "1991-03-31",
+            0.533
+          ],
+          [
+            "1990-12-31",
+            0.552
+          ],
+          [
+            "1990-09-30",
+            0.563
+          ],
+          [
+            "1990-06-30",
+            0.552
+          ],
+          [
+            "1990-03-31",
+            0.554
+          ],
+          [
+            "1989-12-31",
+            0.558
+          ]
+        ],
+        "net_margin": [
+          [
+            "1993-09-30",
+            -0.003
+          ],
+          [
+            "1993-06-30",
+            -0.518
+          ],
+          [
+            "1993-03-31",
+            -0.031
+          ],
+          [
+            "1992-12-31",
+            -0.279
+          ],
+          [
+            "1992-09-30",
+            -0.189
+          ],
+          [
+            "1992-06-30",
+            0.045
+          ],
+          [
+            "1992-03-31",
+            0.181
+          ],
+          [
+            "1991-12-31",
+            -0.066
+          ],
+          [
+            "1991-09-30",
+            0.012
+          ],
+          [
+            "1991-06-30",
+            0.009
+          ],
+          [
+            "1991-03-31",
+            -0.126
+          ],
+          [
+            "1990-12-31",
+            0.107
+          ],
+          [
+            "1990-09-30",
+            0.073
+          ],
+          [
+            "1990-06-30",
+            0.086
+          ],
+          [
+            "1990-03-31",
+            0.073
+          ],
+          [
+            "1989-12-31",
+            0.029
+          ]
+        ],
+        "current_ratio": [
+          [
+            "1993-09-30",
+            1.157
+          ],
+          [
+            "1993-06-30",
+            1.081
+          ],
+          [
+            "1993-03-31",
+            1.093
+          ],
+          [
+            "1992-12-31",
+            1.08
+          ],
+          [
+            "1992-09-30",
+            1.286
+          ],
+          [
+            "1992-06-30",
+            1.289
+          ],
+          [
+            "1992-03-31",
+            1.237
+          ],
+          [
+            "1991-12-31",
+            1.207
+          ],
+          [
+            "1991-09-30",
+            1.406
+          ],
+          [
+            "1991-06-30",
+            1.594
+          ],
+          [
+            "1991-03-31",
+            1.636
+          ],
+          [
+            "1990-12-31",
+            1.54
+          ],
+          [
+            "1990-09-30",
+            1.627
+          ],
+          [
+            "1990-06-30",
+            1.641
+          ],
+          [
+            "1990-03-31",
+            1.65
+          ],
+          [
+            "1989-12-31",
+            1.653
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "1993-09-30",
+            1.569
+          ],
+          [
+            "1993-06-30",
+            1.601
+          ],
+          [
+            "1993-03-31",
+            1.095
+          ],
+          [
+            "1992-12-31",
+            1.061
+          ],
+          [
+            "1992-09-30",
+            0.848
+          ],
+          [
+            "1992-06-30",
+            0.747
+          ],
+          [
+            "1992-03-31",
+            0.755
+          ],
+          [
+            "1991-12-31",
+            0.735
+          ],
+          [
+            "1991-09-30",
+            0.689
+          ],
+          [
+            "1991-06-30",
+            0.547
+          ],
+          [
+            "1991-03-31",
+            0.534
+          ],
+          [
+            "1990-12-31",
+            0.456
+          ],
+          [
+            "1990-09-30",
+            0.487
+          ],
+          [
+            "1990-06-30",
+            0.458
+          ],
+          [
+            "1990-03-31",
+            0.467
+          ],
+          [
+            "1989-12-31",
+            0.434
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv_error": "yahoo: IBM: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/IBM]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
+        "fundamentals_error": "no usable fundamentals for 'IBM'",
+        "fundamentals": "finnhub"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 24.2358,
+          "display": "24.2\u00d7",
+          "sector_benchmark": 13.7832,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 6.9088,
+          "display": "6.9\u00d7",
+          "sector_benchmark": 2.0949,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 3.7814,
+          "display": "3.8\u00d7",
+          "sector_benchmark": 1.1638,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 58.36,
+          "display": "58.4%",
+          "sector_benchmark": 28.65,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 15.6,
+          "display": "15.6%",
+          "sector_benchmark": 2.46,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 35.53,
+          "display": "35.5%",
+          "sector_benchmark": 10.67,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": 7.13,
+          "display": "7.1%",
+          "sector_benchmark": 2.6,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 0.7958,
+          "display": "0.8\u00d7",
+          "sector_benchmark": 2.1846,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 2.0125,
+          "display": "2.0\u00d7",
+          "sector_benchmark": 0.2166,
+          "benchmark_source": "peers",
+          "word": "heavy",
+          "tone": "bad"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 9.67,
+          "display": "9.7%",
+          "sector_benchmark": 0.23,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 2.4361,
+          "display": "2.4%",
+          "sector_benchmark": 2.4934,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        }
+      ],
+      "peers_in_sector": 9,
+      "verdict": "NEUTRAL",
+      "composite": 0.0,
+      "coverage": 0.4,
+      "scores": {
+        "fundamentals": 0.0,
+        "technicals": 0.0,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] Gross margin strong vs peers",
+        "[fundamentals] Net margin strong vs peers",
+        "[fundamentals] ROE strong vs peers",
+        "[fundamentals] ROA strong vs peers",
+        "[fundamentals] Rev growth YoY strong vs peers",
+        "[fundamentals] P/E expensive vs peers",
+        "[fundamentals] P/B expensive vs peers",
+        "[fundamentals] P/S expensive vs peers",
+        "[fundamentals] Current ratio weak vs peers",
+        "[fundamentals] Debt/Equity heavy vs peers",
+        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.12 over 50 stories)"
+      ]
+    },
+    {
+      "symbol": "ASML",
+      "company": "ASML Holding N.V.",
+      "sector": "Technology",
+      "price": 1777.77,
+      "change_pct": 1.6426,
+      "spark": [],
+      "next_earnings": "2026-07-15",
+      "flags": [
+        "high_pe",
+        "near_52wk_high"
+      ],
+      "alerts": [
+        "Near 52-wk high (1777.77 vs 1532.6)"
+      ],
+      "details": {
+        "technicals": {},
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 50,
+          "raw": 0.177
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2005-12-31",
+            4.877
+          ],
+          [
+            "2005-09-25",
+            4.001
+          ],
+          [
+            "2005-06-26",
+            4.046
+          ],
+          [
+            "2005-03-27",
+            4.228
+          ],
+          [
+            "2004-12-31",
+            4.104
+          ],
+          [
+            "2004-09-26",
+            4.11
+          ],
+          [
+            "2004-06-27",
+            5.413
+          ],
+          [
+            "2004-03-28",
+            6.226
+          ],
+          [
+            "2003-12-31",
+            6.643
+          ],
+          [
+            "2003-09-28",
+            4.757
+          ],
+          [
+            "2003-06-30",
+            3.396
+          ],
+          [
+            "2003-03-30",
+            2.327
+          ],
+          [
+            "2002-12-31",
+            2.918
+          ],
+          [
+            "2002-06-30",
+            5.125
+          ],
+          [
+            "2001-12-31",
+            7.347
+          ],
+          [
+            "2001-06-30",
+            7.631
+          ]
+        ],
+        "gross_margin": [
+          [
+            "2004-06-27",
+            0.356
+          ],
+          [
+            "2004-03-28",
+            0.322
+          ],
+          [
+            "2003-12-31",
+            0.285
+          ],
+          [
+            "2003-09-28",
+            0.253
+          ],
+          [
+            "2003-06-30",
+            0.22
+          ],
+          [
+            "2003-03-30",
+            0.166
+          ],
+          [
+            "2002-12-31",
+            0.172
+          ],
+          [
+            "2002-09-28",
+            0.266
+          ],
+          [
+            "2002-06-30",
+            0.354
+          ],
+          [
+            "2002-03-31",
+            0.096
+          ],
+          [
+            "2001-12-31",
+            -0.277
+          ],
+          [
+            "2001-06-30",
+            0.277
+          ],
+          [
+            "2000-12-31",
+            0.408
+          ],
+          [
+            "2000-06-30",
+            0.386
+          ],
+          [
+            "1999-12-31",
+            0.338
+          ],
+          [
+            "1999-06-30",
+            0.275
+          ]
+        ],
+        "net_margin": [
+          [
+            "2004-06-27",
+            0.106
+          ],
+          [
+            "2004-03-28",
+            0.045
+          ],
+          [
+            "2003-12-31",
+            0.03
+          ],
+          [
+            "2003-09-28",
+            -0.082
+          ],
+          [
+            "2003-06-30",
+            -0.193
+          ],
+          [
+            "2003-03-30",
+            -0.258
+          ],
+          [
+            "2002-12-31",
+            -0.061
+          ],
+          [
+            "2002-09-28",
+            -0.171
+          ],
+          [
+            "2002-06-30",
+            0.015
+          ],
+          [
+            "2002-03-31",
+            -0.602
+          ],
+          [
+            "2001-12-31",
+            -0.462
+          ],
+          [
+            "2001-06-30",
+            -0.095
+          ],
+          [
+            "2000-12-31",
+            0.133
+          ],
+          [
+            "2000-06-30",
+            0.112
+          ],
+          [
+            "1999-12-31",
+            0.071
+          ],
+          [
+            "1999-06-30",
+            -0.037
+          ]
+        ],
+        "current_ratio": [
+          [
+            "2005-12-31",
+            2.258
+          ],
+          [
+            "2005-09-25",
+            3.876
+          ],
+          [
+            "2005-06-26",
+            3.78
+          ],
+          [
+            "2005-03-27",
+            3.599
+          ],
+          [
+            "2004-12-31",
+            3.298
+          ],
+          [
+            "2004-09-26",
+            2.778
+          ],
+          [
+            "2004-06-27",
+            2.908
+          ],
+          [
+            "2004-03-28",
+            2.971
+          ],
+          [
+            "2003-12-31",
+            3.131
+          ],
+          [
+            "2003-09-28",
+            3.742
+          ],
+          [
+            "2003-06-30",
+            3.621
+          ],
+          [
+            "2003-03-30",
+            2.922
+          ],
+          [
+            "2002-12-31",
+            3.209
+          ],
+          [
+            "2002-06-30",
+            3.197
+          ],
+          [
+            "2001-12-31",
+            3.2
+          ],
+          [
+            "2001-06-30",
+            3.578
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "2005-12-31",
+            0.224
+          ],
+          [
+            "2005-09-25",
+            0.687
+          ],
+          [
+            "2005-06-26",
+            0.724
+          ],
+          [
+            "2005-03-27",
+            0.742
+          ],
+          [
+            "2004-12-31",
+            0.587
+          ],
+          [
+            "2004-09-26",
+            0.826
+          ],
+          [
+            "2004-06-27",
+            0.847
+          ],
+          [
+            "2004-03-28",
+            0.898
+          ],
+          [
+            "2003-12-31",
+            0.754
+          ],
+          [
+            "2003-09-28",
+            1.232
+          ],
+          [
+            "2003-06-30",
+            1.311
+          ],
+          [
+            "2003-03-30",
+            0.978
+          ],
+          [
+            "2002-12-31",
+            0.824
+          ],
+          [
+            "2002-06-30",
+            0.86
+          ],
+          [
+            "2001-12-31",
+            1.252
+          ],
+          [
+            "2001-06-30",
+            0.566
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv_error": "yahoo: ASML: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/ASML]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
+        "fundamentals_error": "no usable fundamentals for 'ASML'",
+        "fundamentals": "finnhub"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 56.6488,
+          "display": "56.6\u00d7",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 14.5055,
+          "display": "14.5\u00d7",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 17.7105,
+          "display": "17.7\u00d7",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 51.83,
+          "display": "51.8%",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 31.26,
+          "display": "31.3%",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 44.68,
+          "display": "44.7%",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": 19.48,
+          "display": "19.5%",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 1.2374,
+          "display": "1.2\u00d7",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.1919,
+          "display": "0.2\u00d7",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 15.58,
+          "display": "15.6%",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 0.4972,
+          "display": "0.5%",
+          "sector_benchmark": null,
+          "benchmark_source": null,
+          "word": null,
+          "tone": null
+        }
+      ],
+      "peers_in_sector": 3,
+      "verdict": "NEUTRAL",
+      "composite": 0.1,
+      "coverage": 0.4,
+      "scores": {
+        "fundamentals": 0.1,
+        "technicals": 0.0,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] P/E 56.6 > 40 (rich)",
+        "[fundamentals] Revenue growth 15.6% YoY > 5%",
+        "[fundamentals] Debt/Equity 0.19 < 1.5",
+        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.18 over 50 stories)"
+      ]
+    },
+    {
+      "symbol": "SNDK",
+      "company": "Sandisk Corporation",
+      "sector": "Technology",
+      "price": 1646.54,
+      "change_pct": 0.2765,
+      "spark": [],
+      "next_earnings": "2026-08-12",
+      "flags": [],
+      "alerts": [],
+      "details": {
+        "technicals": {},
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 50,
+          "raw": 0.152
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2026-04-03",
+            7.516
+          ],
+          [
+            "2026-01-02",
+            3.989
+          ],
+          [
+            "2025-10-03",
+            2.012
+          ],
+          [
+            "2025-06-27",
+            0.747
+          ],
+          [
+            "2025-03-28",
+            0.775
+          ]
+        ],
+        "gross_margin": [
+          [
+            "2026-04-03",
+            0.783
+          ],
+          [
+            "2026-01-02",
+            0.509
+          ],
+          [
+            "2025-10-03",
+            0.298
+          ],
+          [
+            "2025-06-27",
+            0.262
+          ],
+          [
+            "2025-03-28",
+            0.225
+          ],
+          [
+            "2024-12-27",
+            0.323
+          ],
+          [
+            "2024-09-27",
+            0.386
+          ],
+          [
+            "2024-06-28",
+            0.361
+          ],
+          [
+            "2024-03-29",
+            0.272
+          ],
+          [
+            "2023-12-29",
+            0.097
+          ],
+          [
+            "2023-09-29",
+            -0.123
+          ],
+          [
+            "2023-06-30",
+            -0.109
+          ],
+          [
+            "2023-03-31",
+            -0.053
+          ],
+          [
+            "2022-12-30",
+            0.142
+          ],
+          [
+            "2022-09-30",
+            0.242
+          ]
+        ],
+        "net_margin": [
+          [
+            "2026-04-03",
+            0.608
+          ],
+          [
+            "2026-01-02",
+            0.266
+          ],
+          [
+            "2025-10-03",
+            0.049
+          ],
+          [
+            "2025-06-27",
+            -0.012
+          ],
+          [
+            "2025-03-28",
+            -1.14
+          ],
+          [
+            "2024-12-27",
+            0.055
+          ],
+          [
+            "2024-09-27",
+            0.112
+          ],
+          [
+            "2024-06-28",
+            0.068
+          ],
+          [
+            "2024-03-29",
+            0.016
+          ],
+          [
+            "2023-12-29",
+            -0.181
+          ],
+          [
+            "2023-09-29",
+            -0.338
+          ],
+          [
+            "2023-06-30",
+            -0.432
+          ],
+          [
+            "2023-03-31",
+            -0.407
+          ],
+          [
+            "2022-12-30",
+            -0.253
+          ],
+          [
+            "2022-09-30",
+            -0.34
+          ]
+        ],
+        "current_ratio": [
+          [
+            "2026-04-03",
+            4.782
+          ],
+          [
+            "2026-01-02",
+            3.114
+          ],
+          [
+            "2025-10-03",
+            3.288
+          ],
+          [
+            "2025-06-27",
+            3.564
+          ],
+          [
+            "2025-03-28",
+            3.702
+          ],
+          [
+            "2024-12-27",
+            2.379
+          ],
+          [
+            "2024-09-27",
+            2.981
+          ],
+          [
+            "2024-06-28",
+            1.671
+          ],
+          [
+            "2024-03-29",
+            1.6
+          ],
+          [
+            "2023-12-29",
+            1.434
+          ],
+          [
+            "2023-09-29",
+            1.403
+          ],
+          [
+            "2023-06-30",
+            1.564
+          ],
+          [
+            "2023-03-31",
+            1.9
+          ],
+          [
+            "2022-12-30",
+            2.003
+          ],
+          [
+            "2022-09-30",
+            1.735
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "2026-04-03",
+            0.0
+          ],
+          [
+            "2026-01-02",
+            0.059
+          ],
+          [
+            "2025-10-03",
+            0.144
+          ],
+          [
+            "2025-06-27",
+            0.201
+          ],
+          [
+            "2025-03-28",
+            0.212
+          ],
+          [
+            "2024-12-27",
+            0.046
+          ],
+          [
+            "2024-09-27",
+            0.024
+          ],
+          [
+            "2024-06-28",
+            0.073
+          ],
+          [
+            "2024-03-29",
+            0.075
+          ],
+          [
+            "2023-12-29",
+            0.085
+          ],
+          [
+            "2023-09-29",
+            0.081
+          ],
+          [
+            "2023-06-30",
+            0.08
+          ],
+          [
+            "2023-03-31",
+            0.076
+          ],
+          [
+            "2022-12-30",
+            0.069
+          ],
+          [
+            "2022-09-30",
+            0.069
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv_error": "yahoo: SNDK: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: HTTP 402: Premium Query Parameter: 'Special Endpoint : This value set for 'symbol' is not available under your current subscription please visit our subscription page to  | legacy[/historical-price-full/SNDK]: HTTP 403: {\n  \"Error Message\": \"Legacy Endpoint : Due to Legacy endpoints being no longer supported - This endpoint is only available for legacy users who have valid subs",
+        "fundamentals_error": "no usable fundamentals for 'SNDK'",
+        "fundamentals": "finnhub"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 54.1016,
+          "display": "54.1\u00d7",
+          "sector_benchmark": 29.621,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 7.5165,
+          "display": "7.5\u00d7",
+          "sector_benchmark": 5.7614,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 18.4948,
+          "display": "18.5\u00d7",
+          "sector_benchmark": 5.3433,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 56.04,
+          "display": "56.0%",
+          "sector_benchmark": 40.77,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 34.19,
+          "display": "34.2%",
+          "sector_benchmark": 6.015,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 42.33,
+          "display": "42.3%",
+          "sector_benchmark": 18.22,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": 32.3,
+          "display": "32.3%",
+          "sector_benchmark": 6.58,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 4.7825,
+          "display": "4.8\u00d7",
+          "sector_benchmark": 1.0884,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.0,
+          "display": "0.0\u00d7",
+          "sector_benchmark": 0.1633,
+          "benchmark_source": "peers",
+          "word": "lean",
+          "tone": "good"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 82.76,
+          "display": "82.8%",
+          "sector_benchmark": 22.58,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        }
+      ],
+      "peers_in_sector": 11,
+      "verdict": "WATCH-BUY",
+      "composite": 0.4,
+      "coverage": 0.4,
+      "scores": {
+        "fundamentals": 0.4,
+        "technicals": 0.0,
+        "sentiment": 0.0
+      },
+      "reasons": [
+        "[fundamentals] Gross margin strong vs peers",
+        "[fundamentals] Net margin strong vs peers",
+        "[fundamentals] ROE strong vs peers",
+        "[fundamentals] ROA strong vs peers",
+        "[fundamentals] Current ratio strong vs peers",
+        "[fundamentals] Debt/Equity lean vs peers",
+        "[fundamentals] Rev growth YoY strong vs peers",
+        "[fundamentals] P/E expensive vs peers",
+        "[fundamentals] P/B expensive vs peers",
+        "[fundamentals] P/S expensive vs peers",
+        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.15 over 50 stories)"
+      ]
+    },
+    {
+      "symbol": "KO",
+      "company": "Coca-Cola Co",
+      "sector": "Beverages",
+      "price": 81.34,
+      "change_pct": 2.263,
+      "spark": [
+        77.63,
+        77.61,
+        77.34,
+        77.82,
+        77.58,
+        75.97,
+        75.55,
+        74.75,
+        75.11,
+        74.67,
+        75.25,
+        74.69,
+        75.71,
+        76.27,
+        76.05,
+        76.08,
+        76.72,
+        77.22,
+        75.91,
+        77.29,
+        78.18,
+        77.47,
+        76.41,
+        75.9,
+        75.31,
+        75.18,
+        75.74,
+        75.48,
+        74.7,
+        74.63,
+        76.28,
+        76.63,
+        75.44,
+        78.35,
+        78.87,
+        78.76,
+        78.58,
+        78.19,
+        78.48,
+        79.17,
+        78.43,
+        78.42,
+        78.66,
+        80.03,
+        80.26,
+        80.45,
+        80.82,
+        81.2,
+        81.92,
+        81.55,
+        81.17,
+        81.48,
+        80.46,
+        81.62,
+        80.41,
+        79.01,
+        78.64,
+        78.41,
+        78.76,
+        76.82,
+        79.48,
+        79.54,
+        81.34
+      ],
+      "next_earnings": "2026-07-20",
+      "flags": [],
+      "alerts": [],
+      "details": {
+        "technicals": {
+          "sma_fast": 78.24,
+          "sma_slow": 73.27,
+          "rsi": 58.8,
+          "macd": 0.26,
+          "macd_signal": 0.393,
+          "momentum_12_1": 0.096
+        },
+        "sentiment": {
+          "source": "vader_headlines",
+          "stories": 50,
+          "raw": 0.354
+        }
+      },
+      "history": {
+        "pb": [
+          [
+            "2003-09-30",
+            7.807
+          ],
+          [
+            "2003-06-30",
+            8.447
+          ],
+          [
+            "2003-03-31",
+            8.243
+          ],
+          [
+            "2002-12-31",
+            9.21
+          ],
+          [
+            "2002-09-30",
+            10.252
+          ],
+          [
+            "2002-06-30",
+            12.33
+          ],
+          [
+            "2002-03-31",
+            12.343
+          ],
+          [
+            "2001-12-31",
+            10.316
+          ],
+          [
+            "2001-09-30",
+            10.344
+          ],
+          [
+            "2001-06-30",
+            10.899
+          ],
+          [
+            "2001-03-31",
+            11.403
+          ],
+          [
+            "2000-12-31",
+            16.221
+          ],
+          [
+            "2000-09-30",
+            14.336
+          ],
+          [
+            "2000-06-30",
+            15.479
+          ],
+          [
+            "2000-03-31",
+            13.037
+          ],
+          [
+            "1999-12-31",
+            14.637
+          ]
+        ],
+        "gross_margin": [
+          [
+            "1993-06-30",
+            0.625
+          ],
+          [
+            "1993-03-31",
+            0.642
+          ],
+          [
+            "1992-12-31",
+            0.61
+          ],
+          [
+            "1992-09-30",
+            0.605
+          ],
+          [
+            "1992-06-30",
+            0.613
+          ],
+          [
+            "1992-03-31",
+            0.628
+          ],
+          [
+            "1991-12-31",
+            0.586
+          ],
+          [
+            "1991-09-30",
+            0.588
+          ],
+          [
+            "1991-06-30",
+            0.61
+          ],
+          [
+            "1991-03-31",
+            0.611
+          ],
+          [
+            "1990-12-31",
+            0.579
+          ],
+          [
+            "1990-09-30",
+            0.582
+          ],
+          [
+            "1990-06-30",
+            0.598
+          ],
+          [
+            "1990-03-31",
+            0.597
+          ],
+          [
+            "1989-12-31",
+            0.567
+          ],
+          [
+            "1989-09-30",
+            0.592
+          ]
+        ],
+        "net_margin": [
+          [
+            "1993-06-30",
+            0.174
+          ],
+          [
+            "1993-03-31",
+            0.145
+          ],
+          [
+            "1992-12-31",
+            0.049
+          ],
+          [
+            "1992-09-30",
+            0.154
+          ],
+          [
+            "1992-06-30",
+            0.159
+          ],
+          [
+            "1992-03-31",
+            0.06
+          ],
+          [
+            "1991-12-31",
+            0.124
+          ],
+          [
+            "1991-09-30",
+            0.144
+          ],
+          [
+            "1991-06-30",
+            0.159
+          ],
+          [
+            "1991-03-31",
+            0.129
+          ],
+          [
+            "1990-12-31",
+            0.115
+          ],
+          [
+            "1990-09-30",
+            0.142
+          ],
+          [
+            "1990-06-30",
+            0.149
+          ],
+          [
+            "1990-03-31",
+            0.132
+          ],
+          [
+            "1989-12-31",
+            0.339
+          ],
+          [
+            "1989-09-30",
+            0.164
+          ]
+        ],
+        "current_ratio": [
+          [
+            "1993-06-30",
+            0.854
+          ],
+          [
+            "1993-03-31",
+            0.805
+          ],
+          [
+            "1992-12-31",
+            0.801
+          ],
+          [
+            "1992-09-30",
+            0.971
+          ],
+          [
+            "1992-06-30",
+            0.972
+          ],
+          [
+            "1992-03-31",
+            1.007
+          ],
+          [
+            "1991-12-31",
+            0.974
+          ],
+          [
+            "1991-09-30",
+            1.084
+          ],
+          [
+            "1991-06-30",
+            1.008
+          ],
+          [
+            "1991-03-31",
+            1.011
+          ],
+          [
+            "1990-12-31",
+            0.965
+          ],
+          [
+            "1990-09-30",
+            1.045
+          ],
+          [
+            "1990-06-30",
+            0.99
+          ],
+          [
+            "1990-03-31",
+            0.958
+          ],
+          [
+            "1989-12-31",
+            0.985
+          ],
+          [
+            "1989-09-30",
+            0.796
+          ]
+        ],
+        "debt_to_equity": [
+          [
+            "1993-06-30",
+            0.819
+          ],
+          [
+            "1993-03-31",
+            0.812
+          ],
+          [
+            "1992-12-31",
+            0.825
+          ],
+          [
+            "1992-09-30",
+            0.531
+          ],
+          [
+            "1992-06-30",
+            0.628
+          ],
+          [
+            "1992-03-31",
+            0.603
+          ],
+          [
+            "1991-12-31",
+            0.54
+          ],
+          [
+            "1991-09-30",
+            0.529
+          ],
+          [
+            "1991-06-30",
+            0.578
+          ],
+          [
+            "1991-03-31",
+            0.562
+          ],
+          [
+            "1990-12-31",
+            0.659
+          ],
+          [
+            "1990-09-30",
+            0.504
+          ],
+          [
+            "1990-06-30",
+            0.62
+          ],
+          [
+            "1990-03-31",
+            0.784
+          ],
+          [
+            "1989-12-31",
+            0.568
+          ],
+          [
+            "1989-09-30",
+            1.137
+          ]
+        ]
+      },
+      "sources": {
+        "primary": "finnhub",
+        "fmp_enabled": true,
+        "ohlcv": "fmp",
+        "fundamentals": "finnhub+fmp"
+      },
+      "fundamentals": [
+        {
+          "key": "pe",
+          "label": "P/E",
+          "value": 24.984,
+          "display": "25.0\u00d7",
+          "sector_benchmark": 23.379,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "pb",
+          "label": "P/B",
+          "value": 9.8103,
+          "display": "9.8\u00d7",
+          "sector_benchmark": 4.2205,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "ps",
+          "label": "P/S",
+          "value": 6.9456,
+          "display": "6.9\u00d7",
+          "sector_benchmark": 1.841,
+          "benchmark_source": "peers",
+          "word": "expensive",
+          "tone": "bad"
+        },
+        {
+          "key": "gross_margin",
+          "label": "Gross margin",
+          "value": 61.74,
+          "display": "61.7%",
+          "sector_benchmark": 50.71,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "net_margin",
+          "label": "Net margin",
+          "value": 27.8,
+          "display": "27.8%",
+          "sector_benchmark": 8.435,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roe",
+          "label": "ROE",
+          "value": 43.62,
+          "display": "43.6%",
+          "sector_benchmark": 16.205,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "roa",
+          "label": "ROA",
+          "value": 13.07,
+          "display": "13.1%",
+          "sector_benchmark": 5.6,
+          "benchmark_source": "peers",
+          "word": "strong",
+          "tone": "good"
+        },
+        {
+          "key": "current_ratio",
+          "label": "Current ratio",
+          "value": 1.358,
+          "display": "1.4\u00d7",
+          "sector_benchmark": 1.7242,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 1.305,
+          "display": "1.3\u00d7",
+          "sector_benchmark": 0.9974,
+          "benchmark_source": "peers",
+          "word": "heavy",
+          "tone": "bad"
+        },
+        {
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 5.11,
+          "display": "5.1%",
+          "sector_benchmark": 9.475,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 2.6063,
+          "display": "2.6%",
+          "sector_benchmark": 2.4878,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
+        },
+        {
+          "key": "fcf",
+          "label": "Free cash flow",
+          "value": 2.92,
+          "display": "2.92",
           "sector_benchmark": null,
           "benchmark_source": null,
           "word": null,
@@ -4972,472 +9759,404 @@
       ],
       "peers_in_sector": 11,
       "verdict": "NEUTRAL",
-      "composite": -0.103,
-      "coverage": 1.0,
+      "composite": 0.071,
+      "coverage": 0.75,
       "scores": {
-        "fundamentals": 0.2,
-        "technicals": -0.606,
-        "sentiment": 0.116
+        "fundamentals": -0.111,
+        "technicals": 0.278,
+        "sentiment": 0.0
       },
       "reasons": [
+        "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
-        "[fundamentals] Rev growth YoY strong vs peers",
-        "[fundamentals] P/E expensive vs sector",
+        "[fundamentals] ROA strong vs peers",
         "[fundamentals] P/B expensive vs peers",
-        "[technicals] 12-1 momentum -12% (negative)",
-        "[technicals] SMA50 (317.78) below SMA200 (329.96) \u2014 downtrend",
-        "[technicals] RSI 53 (neutral)",
+        "[fundamentals] P/S expensive vs peers",
+        "[fundamentals] Current ratio weak vs peers",
+        "[fundamentals] Debt/Equity heavy vs peers",
+        "[fundamentals] Rev growth YoY weak vs peers",
+        "[technicals] 12-1 momentum +10% (positive)",
+        "[technicals] SMA50 (78.24) above SMA200 (73.27) \u2014 uptrend",
+        "[technicals] RSI 59 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.39 vs own baseline +0.35 (deviation +0.05, 50 stories: 39+ / 7-)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.35 over 50 stories)"
       ]
     },
     {
-      "symbol": "JNJ",
-      "company": "Johnson & Johnson",
-      "sector": "Healthcare",
-      "price": 237,
-      "change_pct": 2.0848,
-      "spark": [
-        242.99,
-        242.04,
-        241.52,
-        243.19,
-        238.11,
-        237.28,
-        237.6,
-        235.37,
-        235.42,
-        235.27,
-        239.93,
-        239.26,
-        240.45,
-        242.49,
-        244.44,
-        244.12,
-        243.04,
-        240.97,
-        238.41,
-        241.3,
-        241.31,
-        238.46,
-        237.96,
-        240.1,
-        238.67,
-        234.54,
-        234.18,
-        230.69,
-        226.16,
-        226.1,
-        230.65,
-        227.5,
-        225.34,
-        227.79,
-        227.35,
-        229.85,
-        227.19,
-        224.2,
-        225.59,
-        224.62,
-        222.51,
-        221.32,
-        221.43,
-        224.26,
-        230.42,
-        230.8,
-        226.71,
-        228.92,
-        230.0,
-        229.32,
-        231.73,
-        234.34,
-        230.18,
-        231.29,
-        230.8,
-        225.33,
-        223.51,
-        222.89,
-        223.24,
-        228.17,
-        232.77,
-        232.16,
-        237.0
-      ],
-      "next_earnings": "2026-07-15",
+      "symbol": "MCD",
+      "company": "McDonald's Corp",
+      "sector": "Hotels, Restaurants & Leisure",
+      "price": 282.25,
+      "change_pct": 1.6092,
+      "spark": [],
+      "next_earnings": "2026-08-04",
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {
-          "sma_fast": 231.24,
-          "sma_slow": 213.69,
-          "rsi": 61.8,
-          "macd": 0.414,
-          "macd_signal": -0.578,
-          "momentum_12_1": 0.4265
-        },
+        "technicals": {},
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.29,
-          "baseline": 0.27,
-          "deviation": 0.02
+          "stories": 45,
+          "raw": 0.373
         }
       },
       "history": {
         "pb": [
           [
-            "2003-09-28",
-            5.75
+            "2003-09-30",
+            2.565
           ],
           [
-            "2003-06-29",
-            6.281
+            "2003-06-30",
+            2.406
           ],
           [
-            "2003-03-30",
-            7.151
+            "2003-03-31",
+            1.7
           ],
           [
-            "2002-12-29",
-            7.039
+            "2002-12-31",
+            1.985
           ],
           [
-            "2002-09-29",
-            7.286
+            "2002-09-30",
+            2.107
           ],
           [
             "2002-06-30",
-            6.947
+            3.462
           ],
           [
             "2002-03-31",
-            8.299
+            3.619
           ],
           [
             "2001-12-31",
-            7.434
+            3.586
           ],
           [
             "2001-09-30",
-            7.285
+            3.598
           ],
           [
-            "2001-07-01",
-            6.825
+            "2001-06-30",
+            3.815
           ],
           [
-            "2001-04-01",
-            5.613
+            "2001-03-31",
+            3.858
           ],
           [
             "2000-12-31",
-            7.161
+            4.844
           ],
           [
-            "2000-10-01",
-            6.503
+            "2000-09-30",
+            4.477
           ],
           [
-            "2000-07-02",
-            7.469
+            "2000-06-30",
+            4.834
           ],
           [
-            "2000-04-02",
-            5.618
+            "2000-03-31",
+            5.307
           ],
           [
-            "2000-01-02",
-            7.583
+            "1999-12-31",
+            5.566
           ]
         ],
         "gross_margin": [
           [
-            "1994-01-02",
-            0.629
+            "1993-12-31",
+            0.386
           ],
           [
-            "1993-10-03",
-            0.663
+            "1993-09-30",
+            0.397
           ],
           [
-            "1993-07-04",
-            0.677
+            "1993-06-30",
+            0.391
           ],
           [
-            "1993-04-04",
-            0.675
+            "1993-03-31",
+            0.369
           ],
           [
-            "1993-01-03",
-            0.65
+            "1992-12-31",
+            0.38
           ],
           [
-            "1992-09-27",
-            0.657
+            "1992-09-30",
+            0.382
           ],
           [
-            "1992-06-28",
-            0.672
+            "1992-06-30",
+            0.371
           ],
           [
-            "1992-03-29",
-            0.666
+            "1992-03-31",
+            0.356
           ],
           [
-            "1991-12-29",
-            0.651
+            "1991-12-31",
+            0.355
           ],
           [
             "1991-09-30",
-            0.655
+            0.371
           ],
           [
             "1991-06-30",
-            0.677
+            0.353
           ],
           [
             "1991-03-31",
-            0.672
+            0.329
           ],
           [
             "1990-12-31",
-            0.625
+            0.329
           ],
           [
             "1990-09-30",
-            0.652
+            0.343
           ],
           [
-            "1990-07-01",
-            0.647
+            "1990-06-30",
+            0.345
           ],
           [
-            "1990-04-01",
-            0.679
+            "1990-03-31",
+            0.323
           ]
         ],
         "net_margin": [
           [
-            "1994-01-02",
-            0.091
+            "1993-12-31",
+            0.137
           ],
           [
-            "1993-10-03",
-            0.131
+            "1993-09-30",
+            0.16
           ],
           [
-            "1993-07-04",
-            0.142
+            "1993-06-30",
+            0.154
           ],
           [
-            "1993-04-04",
-            0.147
+            "1993-03-31",
+            0.132
           ],
           [
-            "1993-01-03",
-            0.092
+            "1992-12-31",
+            0.125
           ],
           [
-            "1992-09-27",
-            0.122
+            "1992-09-30",
+            0.151
           ],
           [
-            "1992-06-28",
-            0.135
+            "1992-06-30",
+            0.143
           ],
           [
-            "1992-03-29",
-            -0.037
+            "1992-03-31",
+            0.116
           ],
           [
-            "1991-12-29",
-            0.058
+            "1991-12-31",
+            0.116
           ],
           [
             "1991-09-30",
-            0.118
+            0.149
           ],
           [
             "1991-06-30",
-            0.136
+            0.139
           ],
           [
             "1991-03-31",
-            0.134
+            0.108
           ],
           [
             "1990-12-31",
-            0.085
+            0.109
           ],
           [
             "1990-09-30",
-            0.112
+            0.137
           ],
           [
-            "1990-07-01",
-            0.127
+            "1990-06-30",
+            0.13
           ],
           [
-            "1990-04-01",
-            0.088
+            "1990-03-31",
+            0.105
           ]
         ],
         "current_ratio": [
           [
-            "1994-01-02",
-            1.548
+            "1993-12-31",
+            0.602
           ],
           [
-            "1993-10-03",
-            1.727
+            "1993-09-30",
+            0.576
           ],
           [
-            "1993-07-04",
-            1.873
+            "1993-06-30",
+            0.603
           ],
           [
-            "1993-04-04",
-            1.755
+            "1993-03-31",
+            0.523
           ],
           [
-            "1993-01-03",
-            1.63
+            "1992-12-31",
+            0.56
           ],
           [
-            "1992-09-27",
-            1.85
+            "1992-09-30",
+            0.391
           ],
           [
-            "1992-06-28",
-            1.698
+            "1992-06-30",
+            0.344
           ],
           [
-            "1992-03-29",
-            1.869
+            "1992-03-31",
+            0.435
           ],
           [
-            "1991-12-29",
-            1.912
+            "1991-12-31",
+            0.502
           ],
           [
             "1991-09-30",
-            2.088
+            0.473
           ],
           [
             "1991-06-30",
-            1.917
+            0.529
           ],
           [
             "1991-03-31",
-            2.09
+            0.422
           ],
           [
             "1990-12-31",
-            1.899
+            0.458
           ],
           [
             "1990-09-30",
-            1.724
+            0.501
           ],
           [
-            "1990-07-01",
-            1.706
+            "1990-06-30",
+            0.519
           ],
           [
-            "1990-04-01",
-            1.675
+            "1990-03-31",
+            0.446
           ]
         ],
         "debt_to_equity": [
           [
-            "1994-01-02",
-            0.452
+            "1993-12-31",
+            0.592
           ],
           [
-            "1993-10-03",
-            0.43
+            "1993-09-30",
+            0.637
           ],
           [
-            "1993-07-04",
-            0.416
+            "1993-06-30",
+            0.663
           ],
           [
-            "1993-04-04",
-            0.405
+            "1993-03-31",
+            0.659
           ],
           [
-            "1993-01-03",
-            0.471
+            "1992-12-31",
+            0.654
           ],
           [
-            "1992-09-27",
-            0.447
+            "1992-09-30",
+            0.783
           ],
           [
-            "1992-06-28",
-            0.452
+            "1992-06-30",
+            0.849
           ],
           [
-            "1992-03-29",
-            0.34
+            "1992-03-31",
+            0.883
           ],
           [
-            "1991-12-29",
-            0.369
+            "1991-12-31",
+            0.954
           ],
           [
             "1991-09-30",
-            0.369
+            0.989
           ],
           [
             "1991-06-30",
-            0.392
+            1.065
           ],
           [
             "1991-03-31",
-            0.404
+            1.096
           ],
           [
             "1990-12-31",
-            0.482
+            1.146
           ],
           [
             "1990-09-30",
-            0.473
+            1.151
           ],
           [
-            "1990-07-01",
-            0.496
+            "1990-06-30",
+            1.182
           ],
           [
-            "1990-04-01",
-            0.474
+            "1990-03-31",
+            1.201
           ]
         ]
       },
       "sources": {
         "primary": "finnhub",
         "fmp_enabled": true,
-        "ohlcv": "fmp",
-        "fundamentals": "finnhub+fmp"
+        "ohlcv_error": "yahoo: MCD: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/MCD]: failed after 3 attempts: HTTP 429",
+        "fundamentals_error": "no usable fundamentals for 'MCD'",
+        "fundamentals": "finnhub"
       },
       "fundamentals": [
         {
           "key": "pe",
           "label": "P/E",
-          "value": 27.1195,
-          "display": "27.1\u00d7",
-          "sector_benchmark": 26.7843,
-          "benchmark_source": "sector",
-          "word": "in line",
-          "tone": "neutral"
+          "value": 22.7379,
+          "display": "22.7\u00d7",
+          "sector_benchmark": 34.2184,
+          "benchmark_source": "peers",
+          "word": "cheap",
+          "tone": "good"
         },
         {
           "key": "pb",
           "label": "P/B",
-          "value": 7.1942,
-          "display": "7.2\u00d7",
-          "sector_benchmark": 6.1706,
+          "value": 160.4594,
+          "display": "160.5\u00d7",
+          "sector_benchmark": 11.8559,
           "benchmark_source": "peers",
           "word": "expensive",
           "tone": "bad"
@@ -5445,9 +10164,9 @@
         {
           "key": "ps",
           "label": "P/S",
-          "value": 5.9214,
-          "display": "5.9\u00d7",
-          "sector_benchmark": 3.4194,
+          "value": 7.1883,
+          "display": "7.2\u00d7",
+          "sector_benchmark": 3.1549,
           "benchmark_source": "peers",
           "word": "expensive",
           "tone": "bad"
@@ -5455,19 +10174,19 @@
         {
           "key": "gross_margin",
           "label": "Gross margin",
-          "value": 67.95,
-          "display": "68.0%",
-          "sector_benchmark": 73.31,
+          "value": 57.35,
+          "display": "57.4%",
+          "sector_benchmark": 31.71,
           "benchmark_source": "peers",
-          "word": "in line",
-          "tone": "neutral"
+          "word": "strong",
+          "tone": "good"
         },
         {
           "key": "net_margin",
           "label": "Net margin",
-          "value": 21.83,
-          "display": "21.8%",
-          "sector_benchmark": 12.33,
+          "value": 31.61,
+          "display": "31.6%",
+          "sector_benchmark": 6.85,
           "benchmark_source": "peers",
           "word": "strong",
           "tone": "good"
@@ -5475,9 +10194,9 @@
         {
           "key": "roe",
           "label": "ROE",
-          "value": 26.26,
-          "display": "26.3%",
-          "sector_benchmark": 12.67,
+          "value": 95.13,
+          "display": "95.1%",
+          "sector_benchmark": 28.21,
           "benchmark_source": "peers",
           "word": "strong",
           "tone": "good"
@@ -5485,9 +10204,9 @@
         {
           "key": "roa",
           "label": "ROA",
-          "value": 10.7,
-          "display": "10.7%",
-          "sector_benchmark": 4.29,
+          "value": 14.48,
+          "display": "14.5%",
+          "sector_benchmark": 4.99,
           "benchmark_source": "peers",
           "word": "strong",
           "tone": "good"
@@ -5495,77 +10214,66 @@
         {
           "key": "current_ratio",
           "label": "Current ratio",
-          "value": 1.0252,
-          "display": "1.0\u00d7",
-          "sector_benchmark": 1.4968,
-          "benchmark_source": "peers",
-          "word": "weak",
-          "tone": "bad"
-        },
-        {
-          "key": "debt_to_equity",
-          "label": "Debt/Equity",
-          "value": 0.6773,
-          "display": "0.7\u00d7",
-          "sector_benchmark": 1.3002,
-          "benchmark_source": "peers",
-          "word": "lean",
-          "tone": "good"
-        },
-        {
-          "key": "rev_growth",
-          "label": "Rev growth YoY",
-          "value": 7.87,
-          "display": "7.9%",
-          "sector_benchmark": 2.89,
+          "value": 1.1358,
+          "display": "1.1\u00d7",
+          "sector_benchmark": 0.989,
           "benchmark_source": "peers",
           "word": "strong",
           "tone": "good"
         },
         {
-          "key": "dividend_yield",
-          "label": "Dividend yield",
-          "value": 2.2616,
-          "display": "2.3%",
-          "sector_benchmark": 2.9522,
+          "key": "debt_to_equity",
+          "label": "Debt/Equity",
+          "value": 0.4064,
+          "display": "0.4\u00d7",
+          "sector_benchmark": 0.2884,
           "benchmark_source": "peers",
-          "word": "low",
-          "tone": "neutral"
+          "word": "heavy",
+          "tone": "bad"
         },
         {
-          "key": "fcf",
-          "label": "Free cash flow",
-          "value": 7.2787,
-          "display": "7.28",
-          "sector_benchmark": null,
-          "benchmark_source": null,
-          "word": null,
-          "tone": null
+          "key": "rev_growth",
+          "label": "Rev growth YoY",
+          "value": 6.77,
+          "display": "6.8%",
+          "sector_benchmark": 9.65,
+          "benchmark_source": "peers",
+          "word": "weak",
+          "tone": "bad"
+        },
+        {
+          "key": "dividend_yield",
+          "label": "Dividend yield",
+          "value": 2.636,
+          "display": "2.6%",
+          "sector_benchmark": 2.5056,
+          "benchmark_source": "peers",
+          "word": "in line",
+          "tone": "neutral"
         }
       ],
-      "peers_in_sector": 9,
-      "verdict": "WATCH-BUY",
-      "composite": 0.41,
-      "coverage": 1.0,
+      "peers_in_sector": 11,
+      "verdict": "NEUTRAL",
+      "composite": 0.2,
+      "coverage": 0.4,
       "scores": {
-        "fundamentals": 0.25,
-        "technicals": 0.85,
-        "sentiment": 0.049
+        "fundamentals": 0.2,
+        "technicals": 0.0,
+        "sentiment": 0.0
       },
       "reasons": [
+        "[fundamentals] P/E cheap vs peers",
+        "[fundamentals] Gross margin strong vs peers",
         "[fundamentals] Net margin strong vs peers",
         "[fundamentals] ROE strong vs peers",
         "[fundamentals] ROA strong vs peers",
-        "[fundamentals] Debt/Equity lean vs peers",
-        "[fundamentals] Rev growth YoY strong vs peers",
+        "[fundamentals] Current ratio strong vs peers",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
-        "[fundamentals] Current ratio weak vs peers",
-        "[technicals] 12-1 momentum +43% (positive)",
-        "[technicals] SMA50 (231.24) above SMA200 (213.69) \u2014 uptrend",
-        "[technicals] RSI 62 (neutral)",
-        "[technicals] MACD above signal (bullish)",
-        "[sentiment] Headline sentiment +0.29 vs own baseline +0.27 (deviation +0.02, 50 stories: 33+ / 11-)"
+        "[fundamentals] Debt/Equity heavy vs peers",
+        "[fundamentals] Rev growth YoY weak vs peers",
+        "[technicals] technicals: unavailable (/stock/candle -> HTTP 403 (no access on this API plan). Some Finnhub free plans gate /stock/candle.)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.37 over 45 stories)"
       ]
     }
   ],
@@ -5573,14 +10281,83 @@
     {
       "symbol": "GOOGL",
       "type": "verdict",
-      "text": "GOOGL NEUTRAL \u2192 WATCH-BUY",
-      "to": "WATCH-BUY"
+      "text": "GOOGL WATCH-BUY \u2192 NEUTRAL",
+      "to": "NEUTRAL"
+    },
+    {
+      "symbol": "AMD",
+      "type": "added",
+      "text": "AMD added to watchlist"
+    },
+    {
+      "symbol": "ASML",
+      "type": "added",
+      "text": "ASML added to watchlist"
+    },
+    {
+      "symbol": "DELL",
+      "type": "added",
+      "text": "DELL added to watchlist"
+    },
+    {
+      "symbol": "IBM",
+      "type": "added",
+      "text": "IBM added to watchlist"
+    },
+    {
+      "symbol": "INTC",
+      "type": "added",
+      "text": "INTC added to watchlist"
+    },
+    {
+      "symbol": "KO",
+      "type": "added",
+      "text": "KO added to watchlist"
+    },
+    {
+      "symbol": "MCD",
+      "type": "added",
+      "text": "MCD added to watchlist"
+    },
+    {
+      "symbol": "MU",
+      "type": "added",
+      "text": "MU added to watchlist"
+    },
+    {
+      "symbol": "NOW",
+      "type": "added",
+      "text": "NOW added to watchlist"
+    },
+    {
+      "symbol": "PLTR",
+      "type": "added",
+      "text": "PLTR added to watchlist"
+    },
+    {
+      "symbol": "SNDK",
+      "type": "added",
+      "text": "SNDK added to watchlist"
+    },
+    {
+      "symbol": "TSM",
+      "type": "added",
+      "text": "TSM added to watchlist"
+    },
+    {
+      "symbol": "JNJ",
+      "type": "removed",
+      "text": "JNJ removed from watchlist"
     },
     {
       "symbol": "JPM",
-      "type": "verdict",
-      "text": "JPM NEUTRAL \u2192 WATCH-BUY",
-      "to": "WATCH-BUY"
+      "type": "removed",
+      "text": "JPM removed from watchlist"
+    },
+    {
+      "symbol": "V",
+      "type": "removed",
+      "text": "V removed from watchlist"
     }
   ]
 }
