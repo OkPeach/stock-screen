@@ -23,6 +23,7 @@ import yaml
 
 from pipeline.data import finnhub_client as fh
 from pipeline.data import fmp_client as fmp
+from pipeline.data import yahoo_client as yahoo
 from pipeline.checks import fundamentals as fund_check
 from pipeline.checks import technicals as tech_check
 from pipeline.checks import sentiment as sent_check
@@ -30,6 +31,7 @@ from pipeline.checks import alerts as alert_check
 from pipeline import scoring
 from pipeline import metrics
 from pipeline import peers
+from pipeline import track_record
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 CONFIG_PATH = REPO_ROOT / "config.yaml"
@@ -50,23 +52,35 @@ def _candle_count(ohlcv) -> int:
     return len(ohlcv.get("c", [])) if isinstance(ohlcv, dict) else 0
 
 
-def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
-    """Fetch + run all checks + score a single ticker into a dashboard record.
+def assemble_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
+    """Fetch data + run the peer-independent checks for one ticker.
 
-    Finnhub is the primary source; when its free tier gates OHLCV/fundamentals
-    we fall back to FMP so technicals and fundamentals still populate.
+    Produces a partial record with technicals/sentiment/alerts and the raw
+    metric values, but NOT the fundamentals score or verdict — those need the
+    sector peer benchmarks, which are computed across the whole watchlist first
+    (see finalize_one).
     """
     raw = fh.fetch_ticker(symbol)
     thresholds = cfg.get("thresholds", {})
     sources = {"primary": "finnhub", "fmp_enabled": use_fmp}
 
+    # OHLCV: Finnhub gates /stock/candle on free plans, so Yahoo (keyless, no
+    # quota) is the primary price source, with FMP as a secondary fallback.
     slow_w = int(thresholds.get("technicals", {}).get("sma_slow", 200))
-    if use_fmp and _candle_count(raw.get("ohlcv")) < slow_w:
+    want = max(slow_w + 50, 400)
+    if _candle_count(raw.get("ohlcv")) < slow_w:
         try:
-            raw["ohlcv"] = fmp.get_ohlcv(symbol, days=max(slow_w + 50, 400))
-            sources["ohlcv"] = "fmp"
-        except fmp.FMPError as exc:
-            sources["ohlcv_error"] = str(exc)  # keep Finnhub's result, record why FMP failed
+            raw["ohlcv"] = yahoo.get_ohlcv(symbol, days=want)
+            sources["ohlcv"] = "yahoo"
+        except yahoo.YahooError as exc:
+            sources["ohlcv_error"] = str(exc)
+            if use_fmp:
+                try:
+                    raw["ohlcv"] = fmp.get_ohlcv(symbol, days=want)
+                    sources["ohlcv"] = "fmp"
+                    sources.pop("ohlcv_error", None)
+                except fmp.FMPError as exc2:
+                    sources["ohlcv_error"] = f"yahoo: {exc} | fmp: {exc2}"
 
     # Keep the two providers' fundamentals separate so metrics.extract can
     # normalize by source (Finnhub=percent, FMP=fraction). A merged dict would
@@ -98,18 +112,11 @@ def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
         except fh.FinnhubError:
             pass
 
-    # For the composite score the existing check normalizes per-value, so a
-    # Finnhub-first merge is fine here (display uses the source-aware extract).
+    # Peer-independent checks now; fundamentals scoring waits for benchmarks.
     merged_fin = {**fin_fmp, **fin_finnhub}
-    fundamentals = fund_check.check(merged_fin, thresholds.get("fundamentals", {}))
     technicals = tech_check.check(raw.get("ohlcv", {}), thresholds.get("technicals", {}))
     sentiment = sent_check.check(raw.get("sentiment", {}), raw.get("news", []), thresholds.get("sentiment", {}))
     alerts = alert_check.check(raw.get("quote", {}), merged_fin, cfg.get("alerts", {}))
-
-    verdict = scoring.score_ticker(
-        fundamentals, technicals, sentiment,
-        cfg.get("weights", {}), cfg.get("verdict_bands", {}),
-    )
 
     quote = raw.get("quote", {})
     return {
@@ -118,12 +125,7 @@ def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
         "sector": profile.get("sector") or "Unknown",
         "price": quote.get("c"),
         "change_pct": quote.get("dp"),
-        "verdict": verdict["verdict"],
-        "composite": verdict["composite"],
-        "coverage": verdict["coverage"],
-        "scores": verdict["scores"],
-        "reasons": verdict["reasons"],
-        "flags": sorted(set(verdict["flags"]) | set(alerts.get("flags", []))),
+        "flags": sorted(alerts.get("flags", [])),
         "alerts": alerts.get("reasons", []),
         "details": {
             "technicals": technicals.get("metrics", {}),
@@ -132,10 +134,38 @@ def score_one(symbol: str, cfg: dict, use_fmp: bool = True) -> dict:
         # Raw normalized metric values; metrics.annotate_records turns these into
         # the sector-relative `fundamentals` list and then removes this key.
         "_metric_values": metrics.extract(fin_finnhub, fin_fmp),
-        # Historical quarterly series for the fundamentals charts.
         "history": metrics.history_from_series(raw.get("series")),
         "sources": sources,
+        # Stashed for finalize_one (removed before output).
+        "_tech": technicals,
+        "_sent": sentiment,
+        "_merged_fin": merged_fin,
     }
+
+
+def finalize_one(record: dict, cfg: dict) -> None:
+    """Compute the fundamentals score + composite verdict, in place.
+
+    Runs after metrics.annotate_records has attached sector-relative labels, so
+    fundamentals are scored from those same labels (sector-aware), falling back
+    to absolute thresholds only when too few peer-benchmarked metrics exist.
+    """
+    fundamentals = metrics.score_from_labels(record.get("fundamentals", []), record.get("sector"))
+    if fundamentals is None:
+        fundamentals = fund_check.check(record["_merged_fin"], cfg.get("thresholds", {}).get("fundamentals", {}))
+
+    verdict = scoring.score_ticker(
+        fundamentals, record["_tech"], record["_sent"],
+        cfg.get("weights", {}), cfg.get("verdict_bands", {}),
+    )
+    record["verdict"] = verdict["verdict"]
+    record["composite"] = verdict["composite"]
+    record["coverage"] = verdict["coverage"]
+    record["scores"] = verdict["scores"]
+    record["reasons"] = verdict["reasons"]
+    record["flags"] = sorted(set(record.get("flags", [])) | set(verdict["flags"]))
+    for k in ("_tech", "_sent", "_merged_fin"):
+        record.pop(k, None)
 
 
 def _is_rate_limited(error_msg: str) -> bool:
@@ -151,7 +181,7 @@ def run(cfg: dict | None = None, rate_limit_cooldown: float = 65.0) -> dict:
 
     def attempt(symbol: str) -> dict:
         try:
-            return score_one(symbol, cfg, use_fmp=use_fmp)
+            return assemble_one(symbol, cfg, use_fmp=use_fmp)
         except fh.FinnhubError as exc:
             return {"symbol": symbol, "error": str(exc)}
 
@@ -196,6 +226,11 @@ def run(cfg: dict | None = None, rate_limit_cooldown: float = 65.0) -> dict:
 
     metrics.annotate_records(records, benchmarks)
 
+    # Now that sector-relative labels exist, score fundamentals + composite.
+    for r in records:
+        if "error" not in r:
+            finalize_one(r, cfg)
+
     return {
         "generated_at": datetime.now(tz=timezone.utc).isoformat(),
         "count": len(records),
@@ -217,6 +252,8 @@ def main() -> None:
     write_outputs(payload)
     ok = sum(1 for r in payload["tickers"] if "error" not in r)
     print(f"Wrote docs/data/latest.json — {ok}/{payload['count']} tickers scored.")
+    # Grade past verdicts against real forward returns (best-effort).
+    track_record.update()
 
 
 if __name__ == "__main__":

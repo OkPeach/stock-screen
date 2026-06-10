@@ -1,0 +1,3 @@
+# Test/CI tooling (not needed by the pipeline at runtime).
+-r requirements.txt
+pytest>=8.0
