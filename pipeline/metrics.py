@@ -147,6 +147,52 @@ def label(m: Metric, value: float, benchmark: float) -> str | None:
     return "in line"
 
 
+# --- sector-aware fundamentals scoring ---------------------------------------
+#
+# Score fundamentals from the SAME sector-relative labels the dashboard shows
+# (good/bad tone per metric), so the score can never contradict the display.
+# Different sectors are judged on different metrics — debt/equity and current
+# ratio are meaningless for banks, so they're dropped from the financial set.
+
+_FINANCIAL_KW = ("financ", "bank", "insur", "capital market", "thrift", "mortgage", "brokerage")
+_DEFAULT_SET = ["pe", "pb", "ps", "gross_margin", "net_margin", "roe", "roa", "current_ratio", "debt_to_equity", "rev_growth"]
+_FINANCIAL_SET = ["pe", "pb", "roe", "net_margin", "rev_growth"]
+
+
+def relevant_metrics(sector: str | None) -> list[str]:
+    s = (sector or "").lower()
+    return _FINANCIAL_SET if any(kw in s for kw in _FINANCIAL_KW) else _DEFAULT_SET
+
+
+def score_from_labels(fundamentals: list[dict], sector: str | None) -> dict | None:
+    """Fundamentals dimension score derived from sector-relative metric tones.
+
+    Returns a check-style dict {score, reasons, flags, metrics}, or None when
+    fewer than 3 sector-relevant metrics carry a benchmark (caller then falls
+    back to absolute thresholds so the dimension isn't silently dropped).
+    """
+    keys = set(relevant_metrics(sector))
+    good, bad, contribs = [], [], []
+    for m in fundamentals:
+        if m.get("key") not in keys or m.get("sector_benchmark") is None:
+            continue
+        ref = "sector" if m.get("benchmark_source") == "sector" else "peers"
+        if m.get("tone") == "good":
+            contribs.append(1.0)
+            good.append(f"{m['label']} {m['word']} vs {ref}")
+        elif m.get("tone") == "bad":
+            contribs.append(-1.0)
+            bad.append(f"{m['label']} {m['word']} vs {ref}")
+    if len(contribs) < 3:
+        return None
+    return {
+        "score": round(sum(contribs) / len(contribs), 3),
+        "reasons": good + bad,
+        "flags": [],
+        "metrics": {"basis": "sector-relative", "scored": len(contribs)},
+    }
+
+
 def _median(xs: list[float]) -> float:
     s = sorted(xs)
     n = len(s)
