@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T09:31:52.001572+00:00",
+  "generated_at": "2026-06-11T17:09:16.093443+00:00",
   "count": 19,
   "tickers": [
     {
@@ -88,7 +88,7 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 246,
+          "stories": 244,
           "raw": 0.326,
           "baseline": 0.348,
           "deviation": -0.022
@@ -562,7 +562,7 @@
       "scores": {
         "fundamentals": -0.111,
         "technicals": 0.55,
-        "sentiment": -0.056
+        "sentiment": -0.055
       },
       "reasons": [
         "[fundamentals] Gross margin strong vs peers",
@@ -578,7 +578,7 @@
         "[technicals] SMA50 (283.95) above SMA200 (266.22) \u2014 uptrend",
         "[technicals] RSI 44 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.33 vs own baseline +0.35 (deviation -0.02, 246 stories: 162+ / 50-)"
+        "[sentiment] Headline sentiment +0.33 vs own baseline +0.35 (deviation -0.02, 244 stories: 162+ / 53-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -674,9 +674,9 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 250,
-          "raw": 0.273,
-          "baseline": 0.281,
-          "deviation": -0.008
+          "raw": 0.26,
+          "baseline": 0.273,
+          "deviation": -0.013
         }
       },
       "history": {
@@ -1142,12 +1142,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": -0.092,
+      "composite": -0.095,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.333,
         "technicals": -0.629,
-        "sentiment": -0.021
+        "sentiment": -0.032
       },
       "reasons": [
         "[fundamentals] P/E cheap vs peers",
@@ -1163,7 +1163,7 @@
         "[technicals] SMA50 (410.97) below SMA200 (454.86) \u2014 downtrend",
         "[technicals] RSI 39 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.27 vs own baseline +0.28 (deviation -0.01, 250 stories: 163+ / 65-)"
+        "[sentiment] Headline sentiment +0.26 vs own baseline +0.27 (deviation -0.01, 250 stories: 162+ / 65-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -1258,10 +1258,10 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 246,
-          "raw": 0.312,
-          "baseline": 0.309,
-          "deviation": 0.003
+          "stories": 248,
+          "raw": 0.297,
+          "baseline": 0.312,
+          "deviation": -0.015
         }
       },
       "history": {
@@ -1727,12 +1727,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": 0.195,
+      "composite": 0.183,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.0,
         "technicals": 0.55,
-        "sentiment": 0.008
+        "sentiment": -0.037
       },
       "reasons": [
         "[fundamentals] Net margin strong vs peers",
@@ -1749,7 +1749,7 @@
         "[technicals] SMA50 (359.61) above SMA200 (306.44) \u2014 uptrend",
         "[technicals] RSI 40 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.31 vs own baseline +0.31 (deviation +0.00, 246 stories: 164+ / 53-)"
+        "[sentiment] Headline sentiment +0.30 vs own baseline +0.31 (deviation -0.01, 248 stories: 165+ / 53-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -1845,9 +1845,9 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 250,
-          "raw": 0.392,
+          "raw": 0.381,
           "baseline": 0.364,
-          "deviation": 0.028
+          "deviation": 0.017
         }
       },
       "history": {
@@ -2312,13 +2312,13 @@
         }
       ],
       "peers_in_sector": 10,
-      "verdict": "WATCH-BUY",
-      "composite": 0.254,
+      "verdict": "NEUTRAL",
+      "composite": 0.247,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.2,
         "technicals": 0.445,
-        "sentiment": 0.071
+        "sentiment": 0.043
       },
       "reasons": [
         "[fundamentals] Gross margin strong vs peers",
@@ -2335,10 +2335,10 @@
         "[technicals] SMA50 (253.55) above SMA200 (232.39) \u2014 uptrend",
         "[technicals] RSI 32 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.39 vs own baseline +0.36 (deviation +0.03, 250 stories: 184+ / 50-)"
+        "[sentiment] Headline sentiment +0.38 vs own baseline +0.36 (deviation +0.02, 250 stories: 186+ / 50-)"
       ],
       "ai": {
-        "takeaway": "Screening as a possible BUY \u2014 mainly because strong gross margins.",
+        "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
         "bull": "On the plus side, strong gross margins, strong profit margins, high returns on shareholder money and the price trend is heading up.",
         "bear": "Watch out that the price looks expensive for its earnings, pricey relative to assets and pricey relative to sales.",
         "source": "deterministic"
@@ -2430,10 +2430,10 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 250,
-          "raw": 0.29,
+          "stories": 249,
+          "raw": 0.286,
           "baseline": 0.294,
-          "deviation": -0.004
+          "deviation": -0.008
         }
       },
       "history": {
@@ -2899,12 +2899,12 @@
       ],
       "peers_in_sector": 11,
       "verdict": "WATCH-BUY",
-      "composite": 0.501,
+      "composite": 0.499,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.778,
         "technicals": 0.55,
-        "sentiment": -0.011
+        "sentiment": -0.019
       },
       "reasons": [
         "[fundamentals] P/E cheap vs peers",
@@ -2920,7 +2920,7 @@
         "[technicals] SMA50 (205.71) above SMA200 (189.02) \u2014 uptrend",
         "[technicals] RSI 41 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.29 vs own baseline +0.29 (deviation -0.00, 250 stories: 157+ / 58-)"
+        "[sentiment] Headline sentiment +0.29 vs own baseline +0.29 (deviation -0.01, 249 stories: 158+ / 61-)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because the price looks cheap for its earnings.",
@@ -3015,10 +3015,10 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 248,
-          "raw": 0.291,
-          "baseline": 0.284,
-          "deviation": 0.007
+          "stories": 247,
+          "raw": 0.311,
+          "baseline": 0.285,
+          "deviation": 0.026
         }
       },
       "history": {
@@ -3484,12 +3484,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": 0.003,
+      "composite": 0.015,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.556,
         "technicals": -0.639,
-        "sentiment": 0.018
+        "sentiment": 0.065
       },
       "reasons": [
         "[fundamentals] P/E cheap vs peers",
@@ -3505,7 +3505,7 @@
         "[technicals] SMA50 (622.15) below SMA200 (659.95) \u2014 downtrend",
         "[technicals] RSI 36 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.29 vs own baseline +0.28 (deviation +0.01, 248 stories: 162+ / 58-)"
+        "[sentiment] Headline sentiment +0.31 vs own baseline +0.28 (deviation +0.03, 247 stories: 161+ / 57-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -3600,10 +3600,10 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 242,
-          "raw": 0.267,
-          "baseline": 0.265,
-          "deviation": 0.002
+          "stories": 243,
+          "raw": 0.282,
+          "baseline": 0.267,
+          "deviation": 0.015
         }
       },
       "history": {
@@ -3940,8 +3940,9 @@
       },
       "sources": {
         "fmp_enabled": true,
-        "ohlcv": "yahoo",
-        "price": "yahoo",
+        "ohlcv_error": "yahoo: TSLA: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/TSLA]: failed after 3 attempts: HTTP 429",
+        "ohlcv": "cache(stale)",
+        "price": "cache(stale)",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -4068,12 +4069,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": 0.064,
+      "composite": 0.072,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.2,
         "technicals": -0.05,
-        "sentiment": 0.005
+        "sentiment": 0.038
       },
       "reasons": [
         "[fundamentals] Gross margin strong vs peers",
@@ -4090,7 +4091,7 @@
         "[technicals] SMA50 (396.72) below SMA200 (414.95) \u2014 downtrend",
         "[technicals] RSI 44 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.27 vs own baseline +0.27 (deviation +0.00, 242 stories: 155+ / 56-)"
+        "[sentiment] Headline sentiment +0.28 vs own baseline +0.27 (deviation +0.02, 243 stories: 157+ / 52-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -4185,8 +4186,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 109,
-          "raw": 0.436
+          "stories": 118,
+          "raw": 0.44
         }
       },
       "history": {
@@ -4661,7 +4662,7 @@
         "[technicals] SMA50 (250.53) above SMA200 (164.13) \u2014 uptrend",
         "[technicals] RSI 64 (neutral)",
         "[technicals] MACD above signal (bullish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.44 over 109 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.44 over 118 stories)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because the price looks cheap for its earnings.",
@@ -4756,8 +4757,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 124,
-          "raw": 0.254
+          "stories": 134,
+          "raw": 0.246
         }
       },
       "history": {
@@ -5244,7 +5245,7 @@
         "[technicals] SMA50 (140.31) below SMA200 (160.71) \u2014 downtrend",
         "[technicals] RSI 41 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.25 over 124 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.25 over 134 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -5343,8 +5344,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 39,
-          "raw": 0.279
+          "stories": 40,
+          "raw": 0.278
         }
       },
       "history": {
@@ -5830,7 +5831,7 @@
         "[technicals] SMA50 (394.91) above SMA200 (329.17) \u2014 uptrend",
         "[technicals] RSI 48 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.28 over 39 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.28 over 40 stories)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because the price looks cheap for its earnings.",
@@ -5929,8 +5930,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 61,
-          "raw": 0.273
+          "stories": 66,
+          "raw": 0.257
         }
       },
       "history": {
@@ -6396,7 +6397,7 @@
         "[technicals] SMA50 (99.42) below SMA200 (139.52) \u2014 downtrend",
         "[technicals] RSI 50 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.27 over 61 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.26 over 66 stories)"
       ],
       "ai": {
         "takeaway": "Screening as one to AVOID/trim \u2014 mainly because the price looks expensive for its earnings.",
@@ -6969,7 +6970,7 @@
         "[technicals] SMA50 (640.81) above SMA200 (369.12) \u2014 uptrend",
         "[technicals] RSI 60 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.13 over 248 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.14 over 248 stories)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because the price looks cheap for its earnings.",
@@ -7064,8 +7065,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 246,
-          "raw": 0.214
+          "stories": 248,
+          "raw": 0.239
         }
       },
       "history": {
@@ -7552,7 +7553,7 @@
         "[technicals] SMA50 (375.05) above SMA200 (250.58) \u2014 uptrend",
         "[technicals] RSI 50 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.21 over 246 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.24 over 248 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -7648,7 +7649,7 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 250,
-          "raw": 0.276
+          "raw": 0.324
         }
       },
       "history": {
@@ -8125,7 +8126,7 @@
         "[technicals] SMA50 (92.70) above SMA200 (52.54) \u2014 uptrend",
         "[technicals] RSI 50 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.28 over 250 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.32 over 250 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -8220,8 +8221,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 119,
-          "raw": 0.23
+          "stories": 125,
+          "raw": 0.229
         }
       },
       "history": {
@@ -8700,7 +8701,7 @@
         "[technicals] SMA50 (247.22) below SMA200 (272.59) \u2014 downtrend",
         "[technicals] RSI 56 (neutral)",
         "[technicals] MACD above signal (bullish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.23 over 119 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.23 over 125 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -8800,8 +8801,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 55,
-          "raw": 0.179
+          "stories": 60,
+          "raw": 0.18
         }
       },
       "history": {
@@ -9273,7 +9274,7 @@
         "[technicals] SMA50 (1505.83) above SMA200 (1229.04) \u2014 uptrend",
         "[technicals] RSI 65 (neutral)",
         "[technicals] MACD above signal (bullish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.18 over 55 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.18 over 60 stories)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because it scores well overall.",
@@ -9368,8 +9369,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 132,
-          "raw": 0.186
+          "stories": 141,
+          "raw": 0.193
         }
       },
       "history": {
@@ -9778,7 +9779,7 @@
         "[technicals] SMA50 (1221.27) above SMA200 (546.24) \u2014 uptrend",
         "[technicals] RSI 59 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.19 over 132 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.19 over 141 stories)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because strong gross margins.",
@@ -9877,8 +9878,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 71,
-          "raw": 0.356
+          "stories": 79,
+          "raw": 0.393
         }
       },
       "history": {
@@ -10366,7 +10367,7 @@
         "[technicals] SMA50 (78.39) above SMA200 (73.34) \u2014 uptrend",
         "[technicals] RSI 66 (neutral)",
         "[technicals] MACD above signal (bullish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.36 over 71 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.39 over 79 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -10461,8 +10462,8 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 50,
-          "raw": 0.269
+          "stories": 56,
+          "raw": 0.277
         }
       },
       "history": {
@@ -10941,7 +10942,7 @@
         "[technicals] SMA50 (290.43) below SMA200 (306.31) \u2014 downtrend",
         "[technicals] RSI 50 (neutral)",
         "[technicals] MACD above signal (bullish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.27 over 50 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.28 over 56 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -10953,27 +10954,10 @@
   ],
   "changes": [
     {
-      "symbol": "ASML",
+      "symbol": "AMZN",
       "type": "verdict",
-      "text": "ASML NEUTRAL \u2192 WATCH-BUY",
-      "to": "WATCH-BUY"
-    },
-    {
-      "symbol": "DELL",
-      "type": "verdict",
-      "text": "DELL NEUTRAL \u2192 WATCH-BUY",
-      "to": "WATCH-BUY"
-    },
-    {
-      "symbol": "NOW",
-      "type": "verdict",
-      "text": "NOW NEUTRAL \u2192 WATCH-SELL",
-      "to": "WATCH-SELL"
-    },
-    {
-      "symbol": "NOW",
-      "type": "flag",
-      "text": "NOW new: big daily move"
+      "text": "AMZN WATCH-BUY \u2192 NEUTRAL",
+      "to": "NEUTRAL"
     },
     {
       "symbol": "AMD",
@@ -10997,9 +10981,9 @@
     }
   ],
   "briefing": {
-    "generated_at": "2026-06-11T09:32:04.693839+00:00",
+    "generated_at": "2026-06-11T17:09:30.122830+00:00",
     "source": "deterministic",
-    "text": "Verdict changes today: ASML NEUTRAL \u2192 WATCH-BUY; DELL NEUTRAL \u2192 WATCH-BUY; NOW NEUTRAL \u2192 WATCH-SELL. Screening as possible buys: MU, TSM, DELL, NVDA, SNDK, ASML. Screening as ones to avoid or trim: NOW.",
+    "text": "Verdict changes today: AMZN WATCH-BUY \u2192 NEUTRAL. Screening as possible buys: MU, TSM, DELL, NVDA, SNDK, ASML. Screening as ones to avoid or trim: NOW.",
     "buy": [
       {
         "symbol": "MU",
