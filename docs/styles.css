@@ -34,9 +34,11 @@
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
   --ease: cubic-bezier(0.22, 0.68, 0.32, 1);
-  --aur-1: rgba(95, 115, 255, 0.16);
-  --aur-2: rgba(52, 232, 164, 0.07);
-  --aur-3: rgba(168, 127, 255, 0.11);
+  --aur-1: rgba(95, 115, 255, 0.27);
+  --aur-2: rgba(52, 232, 164, 0.13);
+  --aur-3: rgba(168, 127, 255, 0.19);
+  --price-ink-a: #ffffff;
+  --price-ink-b: #b9c3d8;
 }
 
 [data-theme="light"] {
@@ -59,9 +61,11 @@
   --down: #d92d55;
   --warn: #9a6f0c;
   --shadow: 0 1px 2px rgba(50, 70, 130, 0.08), 0 14px 40px rgba(50, 70, 130, 0.14);
-  --aur-1: rgba(91, 110, 255, 0.16);
-  --aur-2: rgba(10, 168, 110, 0.08);
-  --aur-3: rgba(154, 109, 255, 0.12);
+  --aur-1: rgba(91, 110, 255, 0.22);
+  --aur-2: rgba(10, 168, 110, 0.12);
+  --aur-3: rgba(154, 109, 255, 0.18);
+  --price-ink-a: #0c1226;
+  --price-ink-b: #36436a;
 }
 
 * { box-sizing: border-box; }
@@ -206,19 +210,29 @@ button { font-family: inherit; }
   border: 1px solid transparent;
   box-shadow: var(--shadow), 0 0 60px -18px color-mix(in srgb, var(--accent) 45%, transparent);
 }
-.brief::before {  /* 1px gradient border ring */
+/* registered so the conic angle interpolates — browsers without @property
+   simply show the static gradient ring */
+@property --ga {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 120deg;
+}
+.brief::before {  /* 1px rotating gradient border ring */
   content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
-  background: linear-gradient(120deg,
-    color-mix(in srgb, var(--accent) 65%, transparent),
-    color-mix(in srgb, var(--accent) 12%, transparent) 30%,
-    color-mix(in srgb, var(--accent-2) 12%, transparent) 70%,
-    color-mix(in srgb, var(--accent-2) 65%, transparent));
+  background: conic-gradient(from var(--ga),
+    color-mix(in srgb, var(--accent) 80%, transparent),
+    color-mix(in srgb, var(--accent) 10%, transparent) 25%,
+    color-mix(in srgb, var(--accent-2) 70%, transparent) 50%,
+    color-mix(in srgb, var(--accent-2) 10%, transparent) 75%,
+    color-mix(in srgb, var(--accent) 80%, transparent));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
           mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
           mask-composite: exclude;
   pointer-events: none;
+  animation: ring-spin 9s linear infinite;
 }
+@keyframes ring-spin { to { --ga: 480deg; } }
 .brief::after {  /* shimmering accent line sweeping along the top edge */
   content: ""; position: absolute; top: 0; left: 0; height: 1px; width: 38%;
   background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 90%, #fff), transparent);
@@ -360,8 +374,21 @@ button { font-family: inherit; }
 }
 .card.buy::after { background: radial-gradient(70% 55% at 18% 0%, color-mix(in srgb, var(--buy) 11%, transparent), transparent 70%); }
 .card.sell::after { background: radial-gradient(70% 55% at 18% 0%, color-mix(in srgb, var(--sell) 11%, transparent), transparent 70%); }
-.card:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+.card:hover { transform: translateY(-4px) scale(1.005); border-color: var(--border-strong); }
 .card:hover::after { opacity: 1; }
+
+/* cursor-tracking spotlight (--mx/--my set from JS on pointermove) */
+.card .spot {
+  position: absolute; inset: 0; pointer-events: none; opacity: 0;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 20%),
+    rgba(255, 255, 255, 0.07), transparent 65%);
+  transition: opacity 0.25s var(--ease);
+}
+.card:hover .spot { opacity: 1; }
+[data-theme="light"] .card .spot {
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 20%),
+    rgba(58, 94, 255, 0.07), transparent 65%);
+}
 .card.buy:hover { box-shadow: 0 22px 60px -12px color-mix(in srgb, var(--buy) 22%, transparent), var(--shadow), inset 0 1px 0 var(--inner-hi); }
 .card.sell:hover { box-shadow: 0 22px 60px -12px color-mix(in srgb, var(--sell) 22%, transparent), var(--shadow), inset 0 1px 0 var(--inner-hi); }
 .card.neutral:hover { box-shadow: 0 22px 60px -12px color-mix(in srgb, var(--accent) 18%, transparent), var(--shadow), inset 0 1px 0 var(--inner-hi); }
@@ -418,8 +445,16 @@ button { font-family: inherit; }
 @keyframes ping { 0% { transform: scale(1); opacity: 0.7; } 70%, 100% { transform: scale(2.6); opacity: 0; } }
 
 .price-row { display: flex; align-items: center; gap: 0.55rem; margin: 0.75rem 0 0.2rem; }
-.price { font-size: 1.7rem; font-weight: 700; letter-spacing: -0.03em; font-family: var(--font-display); }
-.change { font-weight: 600; font-size: 0.95rem; }
+.price {
+  font-size: 1.7rem; font-weight: 700; letter-spacing: -0.03em; font-family: var(--font-display);
+  background: linear-gradient(180deg, var(--price-ink-a), var(--price-ink-b));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: var(--price-ink-b);
+}
+.change {
+  font-weight: 600; font-size: 0.88rem; padding: 0.1rem 0.48rem; border-radius: 8px;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
 .change.up { color: var(--up); } .change.down { color: var(--down); }
 
 /* ---- sparkline: draws itself in, gradient area fade, glowing tip ---- */

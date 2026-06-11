@@ -324,6 +324,7 @@ function cardEl(t) {
   const ds = dimStatus(t);
 
   card.innerHTML = `
+    <span class="spot" aria-hidden="true"></span>
     <div class="card-head">
       <div class="head-id">${monogram(t.symbol)}<div>
         <span class="ticker">${esc(t.symbol)}</span>
@@ -511,6 +512,14 @@ document.getElementById("changes").addEventListener("click", (e) => {
   const search = document.getElementById("search");
   search.value = search.value === chip.dataset.sym ? "" : chip.dataset.sym;
   state.search = search.value; apply();
+});
+// Feed the cursor-tracking card spotlight (cheap: two custom props per move).
+document.getElementById("cards").addEventListener("pointermove", (e) => {
+  const card = e.target.closest(".card");
+  if (!card) return;
+  const r = card.getBoundingClientRect();
+  card.style.setProperty("--mx", `${e.clientX - r.left}px`);
+  card.style.setProperty("--my", `${e.clientY - r.top}px`);
 });
 document.getElementById("add-btn").addEventListener("click", () => manage("add"));
 document.getElementById("remove-btn").addEventListener("click", () => manage("remove"));
