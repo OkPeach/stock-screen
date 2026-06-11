@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T06:23:43.578788+00:00",
+  "generated_at": "2026-06-11T09:31:52.001572+00:00",
   "count": 19,
   "tickers": [
     {
@@ -89,8 +89,8 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 246,
-          "raw": 0.327,
-          "baseline": 0.349,
+          "raw": 0.326,
+          "baseline": 0.348,
           "deviation": -0.022
         }
       },
@@ -578,7 +578,7 @@
         "[technicals] SMA50 (283.95) above SMA200 (266.22) \u2014 uptrend",
         "[technicals] RSI 44 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.33 vs own baseline +0.35 (deviation -0.02, 246 stories: 163+ / 50-)"
+        "[sentiment] Headline sentiment +0.33 vs own baseline +0.35 (deviation -0.02, 246 stories: 162+ / 50-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -674,9 +674,9 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 250,
-          "raw": 0.281,
+          "raw": 0.273,
           "baseline": 0.281,
-          "deviation": -0.0
+          "deviation": -0.008
         }
       },
       "history": {
@@ -1142,12 +1142,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": -0.087,
+      "composite": -0.092,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.333,
         "technicals": -0.629,
-        "sentiment": -0.001
+        "sentiment": -0.021
       },
       "reasons": [
         "[fundamentals] P/E cheap vs peers",
@@ -1163,7 +1163,7 @@
         "[technicals] SMA50 (410.97) below SMA200 (454.86) \u2014 downtrend",
         "[technicals] RSI 39 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.28 vs own baseline +0.28 (deviation -0.00, 250 stories: 165+ / 64-)"
+        "[sentiment] Headline sentiment +0.27 vs own baseline +0.28 (deviation -0.01, 250 stories: 163+ / 65-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -1259,9 +1259,9 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 246,
-          "raw": 0.309,
-          "baseline": 0.311,
-          "deviation": -0.002
+          "raw": 0.312,
+          "baseline": 0.309,
+          "deviation": 0.003
         }
       },
       "history": {
@@ -1727,12 +1727,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": 0.192,
+      "composite": 0.195,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.0,
         "technicals": 0.55,
-        "sentiment": -0.004
+        "sentiment": 0.008
       },
       "reasons": [
         "[fundamentals] Net margin strong vs peers",
@@ -1749,7 +1749,7 @@
         "[technicals] SMA50 (359.61) above SMA200 (306.44) \u2014 uptrend",
         "[technicals] RSI 40 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.31 vs own baseline +0.31 (deviation -0.00, 246 stories: 162+ / 53-)"
+        "[sentiment] Headline sentiment +0.31 vs own baseline +0.31 (deviation +0.00, 246 stories: 164+ / 53-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -1844,10 +1844,10 @@
         },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 249,
-          "raw": 0.393,
-          "baseline": 0.356,
-          "deviation": 0.037
+          "stories": 250,
+          "raw": 0.392,
+          "baseline": 0.364,
+          "deviation": 0.028
         }
       },
       "history": {
@@ -2313,12 +2313,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "WATCH-BUY",
-      "composite": 0.259,
+      "composite": 0.254,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.2,
         "technicals": 0.445,
-        "sentiment": 0.092
+        "sentiment": 0.071
       },
       "reasons": [
         "[fundamentals] Gross margin strong vs peers",
@@ -2335,7 +2335,7 @@
         "[technicals] SMA50 (253.55) above SMA200 (232.39) \u2014 uptrend",
         "[technicals] RSI 32 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.39 vs own baseline +0.36 (deviation +0.04, 249 stories: 183+ / 50-)"
+        "[sentiment] Headline sentiment +0.39 vs own baseline +0.36 (deviation +0.03, 250 stories: 184+ / 50-)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because strong gross margins.",
@@ -2431,9 +2431,9 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 250,
-          "raw": 0.287,
-          "baseline": 0.3,
-          "deviation": -0.013
+          "raw": 0.29,
+          "baseline": 0.294,
+          "deviation": -0.004
         }
       },
       "history": {
@@ -2899,12 +2899,12 @@
       ],
       "peers_in_sector": 11,
       "verdict": "WATCH-BUY",
-      "composite": 0.495,
+      "composite": 0.501,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.778,
         "technicals": 0.55,
-        "sentiment": -0.033
+        "sentiment": -0.011
       },
       "reasons": [
         "[fundamentals] P/E cheap vs peers",
@@ -2920,7 +2920,7 @@
         "[technicals] SMA50 (205.71) above SMA200 (189.02) \u2014 uptrend",
         "[technicals] RSI 41 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.29 vs own baseline +0.30 (deviation -0.01, 250 stories: 157+ / 58-)"
+        "[sentiment] Headline sentiment +0.29 vs own baseline +0.29 (deviation -0.00, 250 stories: 157+ / 58-)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because the price looks cheap for its earnings.",
@@ -3016,9 +3016,9 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 248,
-          "raw": 0.284,
-          "baseline": 0.269,
-          "deviation": 0.015
+          "raw": 0.291,
+          "baseline": 0.284,
+          "deviation": 0.007
         }
       },
       "history": {
@@ -3484,12 +3484,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": 0.008,
+      "composite": 0.003,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.556,
         "technicals": -0.639,
-        "sentiment": 0.038
+        "sentiment": 0.018
       },
       "reasons": [
         "[fundamentals] P/E cheap vs peers",
@@ -3505,7 +3505,7 @@
         "[technicals] SMA50 (622.15) below SMA200 (659.95) \u2014 downtrend",
         "[technicals] RSI 36 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.28 vs own baseline +0.27 (deviation +0.02, 248 stories: 160+ / 60-)"
+        "[sentiment] Headline sentiment +0.29 vs own baseline +0.28 (deviation +0.01, 248 stories: 162+ / 58-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -3518,9 +3518,10 @@
       "symbol": "TSLA",
       "company": "Tesla, Inc.",
       "sector": "Consumer Cyclical",
-      "price": 381.59,
-      "change_pct": -3.8,
+      "price": 396.68,
+      "change_pct": -3.0,
       "spark": [
+        407.82,
         395.01,
         391.2,
         395.56,
@@ -3582,8 +3583,7 @@
         418.45,
         391.0,
         408.95,
-        396.68,
-        381.59
+        396.68
       ],
       "next_earnings": "2026-07-21",
       "missing": [],
@@ -3591,19 +3591,19 @@
       "alerts": [],
       "details": {
         "technicals": {
-          "sma_fast": 397.25,
-          "sma_slow": 415.16,
-          "rsi": 39.4,
-          "macd": -1.546,
-          "macd_signal": 4.669,
-          "momentum_12_1": 0.3292
+          "sma_fast": 396.72,
+          "sma_slow": 414.95,
+          "rsi": 43.9,
+          "macd": 1.147,
+          "macd_signal": 6.223,
+          "momentum_12_1": 0.4421
         },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 242,
-          "raw": 0.265,
+          "raw": 0.267,
           "baseline": 0.265,
-          "deviation": 0.001
+          "deviation": 0.002
         }
       },
       "history": {
@@ -3940,9 +3940,8 @@
       },
       "sources": {
         "fmp_enabled": true,
-        "ohlcv_error": "yahoo: TSLA: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/TSLA]: failed after 3 attempts: HTTP 429",
-        "ohlcv": "cache(stale)",
-        "price": "cache(stale)",
+        "ohlcv": "yahoo",
+        "price": "yahoo",
         "fundamentals": "finnhub+fmp"
       },
       "fundamentals": [
@@ -4069,12 +4068,12 @@
       ],
       "peers_in_sector": 10,
       "verdict": "NEUTRAL",
-      "composite": 0.063,
+      "composite": 0.064,
       "coverage": 1.0,
       "scores": {
         "fundamentals": 0.2,
         "technicals": -0.05,
-        "sentiment": 0.002
+        "sentiment": 0.005
       },
       "reasons": [
         "[fundamentals] Gross margin strong vs peers",
@@ -4087,11 +4086,11 @@
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
-        "[technicals] 12-1 momentum +33% (positive)",
-        "[technicals] SMA50 (397.25) below SMA200 (415.16) \u2014 downtrend",
-        "[technicals] RSI 39 (neutral)",
+        "[technicals] 12-1 momentum +44% (positive)",
+        "[technicals] SMA50 (396.72) below SMA200 (414.95) \u2014 downtrend",
+        "[technicals] RSI 44 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] Headline sentiment +0.27 vs own baseline +0.26 (deviation +0.00, 242 stories: 155+ / 56-)"
+        "[sentiment] Headline sentiment +0.27 vs own baseline +0.27 (deviation +0.00, 242 stories: 155+ / 56-)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -4104,17 +4103,86 @@
       "symbol": "DELL",
       "company": "Dell Technologies Inc.",
       "sector": "Technology",
-      "price": 369.83,
-      "change_pct": -3.1301,
-      "spark": [],
-      "next_earnings": null,
-      "missing": [
-        "ohlcv"
+      "price": 381.78,
+      "change_pct": -4.74,
+      "spark": [
+        147.37,
+        149.91,
+        151.62,
+        156.54,
+        153.01,
+        149.21,
+        156.76,
+        157.67,
+        164.59,
+        176.91,
+        184.01,
+        175.82,
+        171.81,
+        164.66,
+        164.13,
+        169.38,
+        174.37,
+        173.18,
+        177.69,
+        185.47,
+        181.46,
+        177.8,
+        189.79,
+        184.51,
+        177.28,
+        193.09,
+        196.55,
+        204.24,
+        212.36,
+        214.65,
+        212.14,
+        216.09,
+        215.97,
+        205.93,
+        205.66,
+        208.95,
+        210.17,
+        211.64,
+        216.32,
+        238.8,
+        230.27,
+        260.46,
+        247.04,
+        238.94,
+        243.87,
+        247.89,
+        241.99,
+        238.03,
+        235.26,
+        242.93,
+        252.8,
+        295.19,
+        305.08,
+        305.32,
+        317.05,
+        420.91,
+        465.96,
+        435.31,
+        421.08,
+        422.05,
+        394.39,
+        400.77,
+        381.78
       ],
+      "next_earnings": null,
+      "missing": [],
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {},
+        "technicals": {
+          "sma_fast": 250.53,
+          "sma_slow": 164.13,
+          "rsi": 63.5,
+          "macd": 50.443,
+          "macd_signal": 46.759,
+          "momentum_12_1": 1.1628
+        },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 109,
@@ -4452,7 +4520,8 @@
       "sources": {
         "fmp_enabled": true,
         "ohlcv_error": "yahoo: DELL: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/DELL]: failed after 3 attempts: HTTP 429",
-        "price": "finnhub_quote",
+        "ohlcv": "cache(stale)",
+        "price": "cache(stale)",
         "fmp_fund_error": "no usable fundamentals for 'DELL'",
         "fundamentals": "finnhub"
       },
@@ -4569,12 +4638,12 @@
         }
       ],
       "peers_in_sector": 11,
-      "verdict": "NEUTRAL",
-      "composite": 0.2,
-      "coverage": 0.4,
+      "verdict": "WATCH-BUY",
+      "composite": 0.503,
+      "coverage": 0.75,
       "scores": {
         "fundamentals": 0.2,
-        "technicals": 0.0,
+        "technicals": 0.85,
         "sentiment": 0.0
       },
       "reasons": [
@@ -4588,12 +4657,15 @@
         "[fundamentals] Gross margin weak vs peers",
         "[fundamentals] Net margin weak vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] technicals: unavailable (DELL: failed after retries: HTTP 429)",
+        "[technicals] 12-1 momentum +116% (positive)",
+        "[technicals] SMA50 (250.53) above SMA200 (164.13) \u2014 uptrend",
+        "[technicals] RSI 64 (neutral)",
+        "[technicals] MACD above signal (bullish)",
         "[sentiment] sentiment: unavailable (baseline building; raw +0.44 over 109 stories)"
       ],
       "ai": {
-        "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
-        "bull": "On the plus side, the price looks cheap for its earnings, cheap relative to sales and high returns on shareholder money.",
+        "takeaway": "Screening as a possible BUY \u2014 mainly because the price looks cheap for its earnings.",
+        "bull": "On the plus side, the price looks cheap for its earnings, cheap relative to sales, high returns on shareholder money and the price trend is heading up.",
         "bear": "Watch out that pricey relative to assets, thin gross margins and thin profit margins.",
         "source": "deterministic"
       }
@@ -5771,21 +5843,94 @@
       "symbol": "NOW",
       "company": "ServiceNow, Inc.",
       "sector": "Technology",
-      "price": 106.06,
-      "change_pct": -0.8507,
-      "spark": [],
-      "next_earnings": "2026-07-21",
-      "missing": [
-        "ohlcv"
+      "price": 106.97,
+      "change_pct": -6.32,
+      "spark": [
+        115.63,
+        112.97,
+        113.62,
+        114.88,
+        116.72,
+        113.71,
+        113.27,
+        110.38,
+        110.95,
+        104.65,
+        103.06,
+        103.64,
+        99.41,
+        104.97,
+        104.55,
+        104.04,
+        102.0,
+        102.42,
+        100.55,
+        97.47,
+        89.81,
+        83.0,
+        89.06,
+        87.79,
+        94.19,
+        96.44,
+        96.66,
+        99.72,
+        100.14,
+        103.07,
+        84.78,
+        90.17,
+        90.45,
+        90.49,
+        88.89,
+        88.31,
+        91.16,
+        91.97,
+        92.01,
+        89.05,
+        93.59,
+        91.18,
+        91.49,
+        89.0,
+        87.05,
+        90.5,
+        95.07,
+        103.42,
+        101.83,
+        103.3,
+        99.69,
+        102.13,
+        99.92,
+        102.12,
+        108.73,
+        124.37,
+        135.86,
+        127.65,
+        117.9,
+        119.36,
+        112.45,
+        114.19,
+        106.97
       ],
-      "flags": [],
-      "alerts": [],
+      "next_earnings": "2026-07-21",
+      "missing": [],
+      "flags": [
+        "big_daily_move"
+      ],
+      "alerts": [
+        "Daily move -6.3% (>= 5%)"
+      ],
       "details": {
-        "technicals": {},
+        "technicals": {
+          "sma_fast": 99.42,
+          "sma_slow": 139.52,
+          "rsi": 49.9,
+          "macd": 5.259,
+          "macd_signal": 5.336,
+          "momentum_12_1": -0.5545
+        },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 60,
-          "raw": 0.27
+          "stories": 61,
+          "raw": 0.273
         }
       },
       "history": {
@@ -6123,7 +6268,8 @@
       "sources": {
         "fmp_enabled": true,
         "ohlcv_error": "yahoo: NOW: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/NOW]: failed after 3 attempts: HTTP 429",
-        "price": "finnhub_quote",
+        "ohlcv": "cache(stale)",
+        "price": "cache(stale)",
         "fmp_fund_error": "no usable fundamentals for 'NOW'",
         "fundamentals": "finnhub"
       },
@@ -6230,12 +6376,12 @@
         }
       ],
       "peers_in_sector": 10,
-      "verdict": "NEUTRAL",
-      "composite": -0.143,
-      "coverage": 0.4,
+      "verdict": "WATCH-SELL",
+      "composite": -0.473,
+      "coverage": 0.75,
       "scores": {
         "fundamentals": -0.143,
-        "technicals": 0.0,
+        "technicals": -0.85,
         "sentiment": 0.0
       },
       "reasons": [
@@ -6246,13 +6392,16 @@
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] ROE weak vs peers",
         "[fundamentals] Current ratio weak vs peers",
-        "[technicals] technicals: unavailable (NOW: failed after retries: HTTP 429)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.27 over 60 stories)"
+        "[technicals] 12-1 momentum -55% (negative)",
+        "[technicals] SMA50 (99.42) below SMA200 (139.52) \u2014 downtrend",
+        "[technicals] RSI 50 (neutral)",
+        "[technicals] MACD below signal (bearish)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.27 over 61 stories)"
       ],
       "ai": {
-        "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
+        "takeaway": "Screening as one to AVOID/trim \u2014 mainly because the price looks expensive for its earnings.",
         "bull": "On the plus side, cheap relative to sales, uses its assets efficiently and low debt.",
-        "bear": "Watch out that the price looks expensive for its earnings, pricey relative to assets and low returns on shareholder money.",
+        "bear": "Watch out that the price looks expensive for its earnings, pricey relative to assets, low returns on shareholder money and the price trend is heading down.",
         "source": "deterministic"
       }
     },
@@ -6260,21 +6409,90 @@
       "symbol": "MU",
       "company": "Micron Technology, Inc.",
       "sector": "Technology",
-      "price": 891.88,
-      "change_pct": -4.7025,
-      "spark": [],
-      "next_earnings": "2026-06-24",
-      "missing": [
-        "ohlcv"
+      "price": 935.89,
+      "change_pct": -1.41,
+      "spark": [
+        418.69,
+        405.35,
+        426.13,
+        441.8,
+        461.69,
+        461.73,
+        444.27,
+        422.9,
+        404.35,
+        395.53,
+        382.09,
+        355.46,
+        357.22,
+        321.8,
+        337.84,
+        367.85,
+        366.24,
+        377.76,
+        377.58,
+        406.73,
+        421.51,
+        420.59,
+        426.56,
+        465.66,
+        456.23,
+        457.23,
+        455.07,
+        448.42,
+        449.38,
+        487.48,
+        481.72,
+        496.72,
+        524.56,
+        504.29,
+        518.46,
+        517.16,
+        542.21,
+        576.45,
+        640.2,
+        666.59,
+        646.63,
+        746.81,
+        795.33,
+        766.58,
+        803.63,
+        776.01,
+        724.66,
+        681.54,
+        698.74,
+        731.99,
+        762.1,
+        751.0,
+        895.88,
+        928.41,
+        923.52,
+        971.0,
+        1035.5,
+        1064.1,
+        1079.57,
+        996.0,
+        864.01,
+        949.28,
+        935.89
       ],
+      "next_earnings": "2026-06-24",
+      "missing": [],
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {},
+        "technicals": {
+          "sma_fast": 640.81,
+          "sma_slow": 369.12,
+          "rsi": 59.6,
+          "macd": 96.732,
+          "macd_signal": 104.426,
+          "momentum_12_1": 6.1684
+        },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 248,
-          "raw": 0.136
+          "raw": 0.135
         }
       },
       "history": {
@@ -6612,7 +6830,8 @@
       "sources": {
         "fmp_enabled": true,
         "ohlcv_error": "yahoo: MU: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/MU]: failed after 3 attempts: HTTP 429",
-        "price": "finnhub_quote",
+        "ohlcv": "cache(stale)",
+        "price": "cache(stale)",
         "fmp_fund_error": "no usable fundamentals for 'MU'",
         "fundamentals": "finnhub"
       },
@@ -6730,11 +6949,11 @@
       ],
       "peers_in_sector": 10,
       "verdict": "WATCH-BUY",
-      "composite": 1.0,
-      "coverage": 0.4,
+      "composite": 0.79,
+      "coverage": 0.75,
       "scores": {
         "fundamentals": 1.0,
-        "technicals": 0.0,
+        "technicals": 0.55,
         "sentiment": 0.0
       },
       "reasons": [
@@ -6746,12 +6965,15 @@
         "[fundamentals] ROA strong vs peers",
         "[fundamentals] Debt/Equity lean vs peers",
         "[fundamentals] Rev growth YoY strong vs peers",
-        "[technicals] technicals: unavailable (MU: failed after retries: HTTP 429)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.14 over 248 stories)"
+        "[technicals] 12-1 momentum +617% (positive)",
+        "[technicals] SMA50 (640.81) above SMA200 (369.12) \u2014 uptrend",
+        "[technicals] RSI 60 (neutral)",
+        "[technicals] MACD below signal (bearish)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.13 over 248 stories)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because the price looks cheap for its earnings.",
-        "bull": "On the plus side, the price looks cheap for its earnings, cheap relative to assets and cheap relative to sales.",
+        "bull": "On the plus side, the price looks cheap for its earnings, cheap relative to assets, cheap relative to sales and the price trend is heading up.",
         "bear": "No obvious red flags, but always check valuation and timing yourself.",
         "source": "deterministic"
       }
@@ -6843,7 +7065,7 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 246,
-          "raw": 0.218
+          "raw": 0.214
         }
       },
       "history": {
@@ -7330,7 +7552,7 @@
         "[technicals] SMA50 (375.05) above SMA200 (250.58) \u2014 uptrend",
         "[technicals] RSI 50 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.22 over 246 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.21 over 246 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -7426,7 +7648,7 @@
         "sentiment": {
           "source": "vader_headlines",
           "stories": 250,
-          "raw": 0.269
+          "raw": 0.276
         }
       },
       "history": {
@@ -7903,7 +8125,7 @@
         "[technicals] SMA50 (92.70) above SMA200 (52.54) \u2014 uptrend",
         "[technicals] RSI 50 (neutral)",
         "[technicals] MACD below signal (bearish)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.27 over 250 stories)"
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.28 over 250 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
@@ -7916,17 +8138,86 @@
       "symbol": "IBM",
       "company": "International Business Machines Corporation",
       "sector": "Technology",
-      "price": 272.36,
-      "change_pct": -1.8487,
-      "spark": [],
-      "next_earnings": "2026-07-22",
-      "missing": [
-        "ohlcv"
+      "price": 277.49,
+      "change_pct": -1.19,
+      "spark": [
+        248.87,
+        247.68,
+        246.28,
+        249.25,
+        256.11,
+        251.6,
+        250.37,
+        241.77,
+        248.44,
+        240.59,
+        241.39,
+        241.67,
+        236.34,
+        237.25,
+        242.39,
+        243.14,
+        248.16,
+        246.74,
+        245.07,
+        241.74,
+        237.18,
+        230.76,
+        237.82,
+        240.27,
+        244.8,
+        251.0,
+        253.47,
+        253.71,
+        255.68,
+        251.86,
+        231.08,
+        231.98,
+        228.05,
+        233.04,
+        227.1,
+        230.98,
+        232.2,
+        229.48,
+        229.03,
+        225.74,
+        231.31,
+        229.76,
+        223.55,
+        219.22,
+        214.64,
+        218.37,
+        219.3,
+        222.75,
+        222.33,
+        225.0,
+        252.97,
+        253.84,
+        250.69,
+        255.2,
+        264.22,
+        297.8,
+        320.42,
+        329.23,
+        305.63,
+        301.77,
+        284.84,
+        280.82,
+        277.49
       ],
+      "next_earnings": "2026-07-22",
+      "missing": [],
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {},
+        "technicals": {
+          "sma_fast": 247.22,
+          "sma_slow": 272.59,
+          "rsi": 55.7,
+          "macd": 15.568,
+          "macd_signal": 13.94,
+          "momentum_12_1": -0.1784
+        },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 119,
@@ -8268,7 +8559,8 @@
       "sources": {
         "fmp_enabled": true,
         "ohlcv_error": "yahoo: IBM: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/IBM]: failed after 3 attempts: HTTP 429",
-        "price": "finnhub_quote",
+        "ohlcv": "cache(stale)",
+        "price": "cache(stale)",
         "fmp_fund_error": "no usable fundamentals for 'IBM'",
         "fundamentals": "finnhub"
       },
@@ -8386,11 +8678,11 @@
       ],
       "peers_in_sector": 9,
       "verdict": "NEUTRAL",
-      "composite": 0.0,
-      "coverage": 0.4,
+      "composite": -0.181,
+      "coverage": 0.75,
       "scores": {
         "fundamentals": 0.0,
-        "technicals": 0.0,
+        "technicals": -0.388,
         "sentiment": 0.0
       },
       "reasons": [
@@ -8404,13 +8696,16 @@
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Current ratio weak vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
-        "[technicals] technicals: unavailable (IBM: failed after retries: HTTP 429)",
+        "[technicals] 12-1 momentum -18% (negative)",
+        "[technicals] SMA50 (247.22) below SMA200 (272.59) \u2014 downtrend",
+        "[technicals] RSI 56 (neutral)",
+        "[technicals] MACD above signal (bullish)",
         "[sentiment] sentiment: unavailable (baseline building; raw +0.23 over 119 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
         "bull": "On the plus side, strong gross margins, strong profit margins and high returns on shareholder money.",
-        "bear": "Watch out that the price looks expensive for its earnings, pricey relative to assets and pricey relative to sales.",
+        "bear": "Watch out that the price looks expensive for its earnings, pricey relative to assets, pricey relative to sales and the price trend is heading down.",
         "source": "deterministic"
       }
     },
@@ -8418,26 +8713,95 @@
       "symbol": "ASML",
       "company": "ASML Holding N.V.",
       "sector": "Technology",
-      "price": 1734.19,
-      "change_pct": -2.4514,
-      "spark": [],
-      "next_earnings": "2026-07-15",
-      "missing": [
-        "ohlcv"
+      "price": 1777.77,
+      "change_pct": 1.64,
+      "spark": [
+        1386.68,
+        1351.58,
+        1345.69,
+        1375.56,
+        1389.16,
+        1355.17,
+        1366.39,
+        1317.25,
+        1369.62,
+        1399.42,
+        1393.89,
+        1329.5,
+        1302.47,
+        1253.96,
+        1320.83,
+        1359.76,
+        1317.23,
+        1304.01,
+        1306.45,
+        1421.05,
+        1448.64,
+        1478.28,
+        1500.2,
+        1518.3,
+        1481.77,
+        1410.83,
+        1459.8,
+        1476.5,
+        1458.97,
+        1443.66,
+        1417.8,
+        1457.7,
+        1432.44,
+        1384.56,
+        1394.08,
+        1438.99,
+        1427.02,
+        1386.21,
+        1442.92,
+        1544.74,
+        1516.6,
+        1592.02,
+        1565.81,
+        1520.94,
+        1581.58,
+        1584.51,
+        1501.81,
+        1472.39,
+        1459.44,
+        1550.13,
+        1592.0,
+        1632.9,
+        1632.03,
+        1597.87,
+        1605.77,
+        1612.76,
+        1628.57,
+        1705.37,
+        1726.36,
+        1757.47,
+        1641.74,
+        1749.04,
+        1777.77
       ],
+      "next_earnings": "2026-07-15",
+      "missing": [],
       "flags": [
         "high_pe",
         "near_52wk_high"
       ],
       "alerts": [
-        "Near 52-wk high (1734.19 vs 1582.4)"
+        "Near 52-wk high (1777.77 vs 1582.4)"
       ],
       "details": {
-        "technicals": {},
+        "technicals": {
+          "sma_fast": 1505.83,
+          "sma_slow": 1229.04,
+          "rsi": 65.0,
+          "macd": 68.612,
+          "macd_signal": 56.836,
+          "momentum_12_1": 1.033
+        },
         "sentiment": {
           "source": "vader_headlines",
-          "stories": 53,
-          "raw": 0.182
+          "stories": 55,
+          "raw": 0.179
         }
       },
       "history": {
@@ -8775,7 +9139,8 @@
       "sources": {
         "fmp_enabled": true,
         "ohlcv_error": "yahoo: ASML: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/ASML]: failed after 3 attempts: HTTP 429",
-        "price": "finnhub_quote",
+        "ohlcv": "cache(stale)",
+        "price": "cache(stale)",
         "fmp_fund_error": "no usable fundamentals for 'ASML'",
         "fundamentals": "finnhub"
       },
@@ -8892,24 +9257,27 @@
         }
       ],
       "peers_in_sector": 3,
-      "verdict": "NEUTRAL",
-      "composite": 0.1,
-      "coverage": 0.4,
+      "verdict": "WATCH-BUY",
+      "composite": 0.45,
+      "coverage": 0.75,
       "scores": {
         "fundamentals": 0.1,
-        "technicals": 0.0,
+        "technicals": 0.85,
         "sentiment": 0.0
       },
       "reasons": [
         "[fundamentals] P/E 56.4 > 40 (rich)",
         "[fundamentals] Revenue growth 15.6% YoY > 5%",
         "[fundamentals] Debt/Equity 0.19 < 1.5",
-        "[technicals] technicals: unavailable (ASML: failed after retries: HTTP 429)",
-        "[sentiment] sentiment: unavailable (baseline building; raw +0.18 over 53 stories)"
+        "[technicals] 12-1 momentum +103% (positive)",
+        "[technicals] SMA50 (1505.83) above SMA200 (1229.04) \u2014 uptrend",
+        "[technicals] RSI 65 (neutral)",
+        "[technicals] MACD above signal (bullish)",
+        "[sentiment] sentiment: unavailable (baseline building; raw +0.18 over 55 stories)"
       ],
       "ai": {
-        "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
-        "bull": "Nothing clearly stands out in its favour in the screened data.",
+        "takeaway": "Screening as a possible BUY \u2014 mainly because it scores well overall.",
+        "bull": "On the plus side, the price trend is heading up.",
         "bear": "No obvious red flags, but always check valuation and timing yourself.",
         "source": "deterministic"
       }
@@ -8918,17 +9286,86 @@
       "symbol": "SNDK",
       "company": "Sandisk Corporation",
       "sector": "Technology",
-      "price": 1643.23,
-      "change_pct": -0.201,
-      "spark": [],
-      "next_earnings": "2026-08-12",
-      "missing": [
-        "ohlcv"
+      "price": 1646.54,
+      "change_pct": 0.28,
+      "spark": [
+        655.43,
+        618.82,
+        661.62,
+        703.63,
+        720.17,
+        753.69,
+        772.09,
+        709.71,
+        702.49,
+        702.48,
+        677.86,
+        603.17,
+        615.83,
+        572.5,
+        635.34,
+        692.73,
+        701.59,
+        724.63,
+        710.8,
+        780.9,
+        851.57,
+        851.77,
+        952.5,
+        944.46,
+        891.72,
+        919.47,
+        920.99,
+        913.02,
+        903.49,
+        979.07,
+        932.43,
+        989.9,
+        1070.2,
+        1002.35,
+        1064.21,
+        1096.51,
+        1187.0,
+        1255.86,
+        1406.32,
+        1409.98,
+        1339.96,
+        1562.34,
+        1547.56,
+        1452.02,
+        1447.23,
+        1382.72,
+        1407.61,
+        1333.01,
+        1383.29,
+        1392.56,
+        1542.24,
+        1478.69,
+        1589.55,
+        1589.94,
+        1641.64,
+        1694.98,
+        1761.43,
+        1716.36,
+        1831.5,
+        1759.68,
+        1559.32,
+        1642.0,
+        1646.54
       ],
+      "next_earnings": "2026-08-12",
+      "missing": [],
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {},
+        "technicals": {
+          "sma_fast": 1221.27,
+          "sma_slow": 546.24,
+          "rsi": 58.7,
+          "macd": 131.554,
+          "macd_signal": 149.462,
+          "momentum_12_1": 36.0053
+        },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 132,
@@ -9210,7 +9647,8 @@
       "sources": {
         "fmp_enabled": true,
         "ohlcv_error": "yahoo: SNDK: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/SNDK]: failed after 3 attempts: HTTP 429",
-        "price": "finnhub_quote",
+        "ohlcv": "cache(stale)",
+        "price": "cache(stale)",
         "fmp_fund_error": "no usable fundamentals for 'SNDK'",
         "fundamentals": "finnhub"
       },
@@ -9318,11 +9756,11 @@
       ],
       "peers_in_sector": 11,
       "verdict": "WATCH-BUY",
-      "composite": 0.4,
-      "coverage": 0.4,
+      "composite": 0.47,
+      "coverage": 0.75,
       "scores": {
         "fundamentals": 0.4,
-        "technicals": 0.0,
+        "technicals": 0.55,
         "sentiment": 0.0
       },
       "reasons": [
@@ -9336,12 +9774,15 @@
         "[fundamentals] P/E expensive vs peers",
         "[fundamentals] P/B expensive vs peers",
         "[fundamentals] P/S expensive vs peers",
-        "[technicals] technicals: unavailable (SNDK: failed after retries: HTTP 429)",
+        "[technicals] 12-1 momentum +3601% (positive)",
+        "[technicals] SMA50 (1221.27) above SMA200 (546.24) \u2014 uptrend",
+        "[technicals] RSI 59 (neutral)",
+        "[technicals] MACD below signal (bearish)",
         "[sentiment] sentiment: unavailable (baseline building; raw +0.19 over 132 stories)"
       ],
       "ai": {
         "takeaway": "Screening as a possible BUY \u2014 mainly because strong gross margins.",
-        "bull": "On the plus side, strong gross margins, strong profit margins and high returns on shareholder money.",
+        "bull": "On the plus side, strong gross margins, strong profit margins, high returns on shareholder money and the price trend is heading up.",
         "bear": "Watch out that the price looks expensive for its earnings, pricey relative to assets and pricey relative to sales.",
         "source": "deterministic"
       }
@@ -9938,17 +10379,86 @@
       "symbol": "MCD",
       "company": "McDonald's Corporation",
       "sector": "Consumer Cyclical",
-      "price": 282.52,
-      "change_pct": 0.0957,
-      "spark": [],
-      "next_earnings": "2026-08-04",
-      "missing": [
-        "ohlcv"
+      "price": 282.25,
+      "change_pct": 1.61,
+      "spark": [
+        325.21,
+        323.91,
+        326.46,
+        326.65,
+        326.3,
+        315.73,
+        309.58,
+        308.85,
+        308.47,
+        307.84,
+        311.7,
+        308.93,
+        305.9,
+        308.53,
+        310.79,
+        307.29,
+        307.14,
+        309.76,
+        304.85,
+        307.01,
+        309.55,
+        305.68,
+        304.51,
+        303.22,
+        306.26,
+        306.96,
+        311.36,
+        306.94,
+        301.84,
+        300.07,
+        302.53,
+        299.36,
+        290.21,
+        292.39,
+        290.08,
+        293.59,
+        286.64,
+        284.1,
+        285.17,
+        284.1,
+        283.7,
+        275.75,
+        274.6,
+        274.84,
+        275.7,
+        274.97,
+        276.39,
+        282.47,
+        280.8,
+        280.27,
+        284.18,
+        282.27,
+        279.26,
+        280.92,
+        277.97,
+        279.2,
+        276.11,
+        276.36,
+        273.29,
+        272.72,
+        279.84,
+        277.78,
+        282.25
       ],
+      "next_earnings": "2026-08-04",
+      "missing": [],
       "flags": [],
       "alerts": [],
       "details": {
-        "technicals": {},
+        "technicals": {
+          "sma_fast": 290.43,
+          "sma_slow": 306.31,
+          "rsi": 50.2,
+          "macd": -3.264,
+          "macd_signal": -4.405,
+          "momentum_12_1": -0.099
+        },
         "sentiment": {
           "source": "vader_headlines",
           "stories": 50,
@@ -10290,7 +10800,8 @@
       "sources": {
         "fmp_enabled": true,
         "ohlcv_error": "yahoo: MCD: failed after retries: HTTP 429 | fmp: stable[/historical-price-eod/full]: failed after 3 attempts: HTTP 429 | legacy[/historical-price-full/MCD]: failed after 3 attempts: HTTP 429",
-        "price": "finnhub_quote",
+        "ohlcv": "cache(stale)",
+        "price": "cache(stale)",
         "fmp_fund_error": "no usable fundamentals for 'MCD'",
         "fundamentals": "finnhub"
       },
@@ -10408,11 +10919,11 @@
       ],
       "peers_in_sector": 11,
       "verdict": "NEUTRAL",
-      "composite": 0.2,
-      "coverage": 0.4,
+      "composite": -0.025,
+      "coverage": 0.75,
       "scores": {
         "fundamentals": 0.2,
-        "technicals": 0.0,
+        "technicals": -0.282,
         "sentiment": 0.0
       },
       "reasons": [
@@ -10426,23 +10937,43 @@
         "[fundamentals] P/S expensive vs peers",
         "[fundamentals] Debt/Equity heavy vs peers",
         "[fundamentals] Rev growth YoY weak vs peers",
-        "[technicals] technicals: unavailable (MCD: failed after retries: HTTP 429)",
+        "[technicals] 12-1 momentum -10% (negative)",
+        "[technicals] SMA50 (290.43) below SMA200 (306.31) \u2014 downtrend",
+        "[technicals] RSI 50 (neutral)",
+        "[technicals] MACD above signal (bullish)",
         "[sentiment] sentiment: unavailable (baseline building; raw +0.27 over 50 stories)"
       ],
       "ai": {
         "takeaway": "A mixed picture \u2014 worth watching, but no strong push either way.",
         "bull": "On the plus side, the price looks cheap for its earnings, strong gross margins and strong profit margins.",
-        "bear": "Watch out that pricey relative to assets, pricey relative to sales and heavy debt.",
+        "bear": "Watch out that pricey relative to assets, pricey relative to sales, heavy debt and the price trend is heading down.",
         "source": "deterministic"
       }
     }
   ],
   "changes": [
     {
-      "symbol": "KO",
+      "symbol": "ASML",
       "type": "verdict",
-      "text": "KO WATCH-BUY \u2192 NEUTRAL",
-      "to": "NEUTRAL"
+      "text": "ASML NEUTRAL \u2192 WATCH-BUY",
+      "to": "WATCH-BUY"
+    },
+    {
+      "symbol": "DELL",
+      "type": "verdict",
+      "text": "DELL NEUTRAL \u2192 WATCH-BUY",
+      "to": "WATCH-BUY"
+    },
+    {
+      "symbol": "NOW",
+      "type": "verdict",
+      "text": "NOW NEUTRAL \u2192 WATCH-SELL",
+      "to": "WATCH-SELL"
+    },
+    {
+      "symbol": "NOW",
+      "type": "flag",
+      "text": "NOW new: big daily move"
     },
     {
       "symbol": "AMD",
@@ -10450,9 +10981,14 @@
       "text": "AMD -4.9% today"
     },
     {
-      "symbol": "MU",
+      "symbol": "DELL",
       "type": "mover",
-      "text": "MU -4.7% today"
+      "text": "DELL -4.7% today"
+    },
+    {
+      "symbol": "NOW",
+      "type": "mover",
+      "text": "NOW -6.3% today"
     },
     {
       "symbol": "TSM",
@@ -10461,9 +10997,9 @@
     }
   ],
   "briefing": {
-    "generated_at": "2026-06-11T06:23:56.652386+00:00",
+    "generated_at": "2026-06-11T09:32:04.693839+00:00",
     "source": "deterministic",
-    "text": "Verdict changes today: KO WATCH-BUY \u2192 NEUTRAL. Screening as possible buys: MU, TSM, NVDA, SNDK, AMZN.",
+    "text": "Verdict changes today: ASML NEUTRAL \u2192 WATCH-BUY; DELL NEUTRAL \u2192 WATCH-BUY; NOW NEUTRAL \u2192 WATCH-SELL. Screening as possible buys: MU, TSM, DELL, NVDA, SNDK, ASML. Screening as ones to avoid or trim: NOW.",
     "buy": [
       {
         "symbol": "MU",
@@ -10473,6 +11009,11 @@
       {
         "symbol": "TSM",
         "company": "Taiwan Semiconductor Manufacturing Company Limited",
+        "line": "Screening as a possible BUY \u2014 mainly because the price looks cheap for its earnings."
+      },
+      {
+        "symbol": "DELL",
+        "company": "Dell Technologies Inc.",
         "line": "Screening as a possible BUY \u2014 mainly because the price looks cheap for its earnings."
       },
       {
@@ -10486,11 +11027,17 @@
         "line": "Screening as a possible BUY \u2014 mainly because strong gross margins."
       },
       {
-        "symbol": "AMZN",
-        "company": "Amazon.com, Inc.",
-        "line": "Screening as a possible BUY \u2014 mainly because strong gross margins."
+        "symbol": "ASML",
+        "company": "ASML Holding N.V.",
+        "line": "Screening as a possible BUY \u2014 mainly because it scores well overall."
       }
     ],
-    "sell": []
+    "sell": [
+      {
+        "symbol": "NOW",
+        "company": "ServiceNow, Inc.",
+        "line": "Screening as one to AVOID/trim \u2014 mainly because the price looks expensive for its earnings."
+      }
+    ]
   }
 }
