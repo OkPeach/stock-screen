@@ -116,7 +116,10 @@ function setUpdated(data) {
   el.textContent = `Updated ${when.toLocaleString()}${data.sample ? " · sample" : ""}`;
 }
 
-// Tiny inline SVG price line (cards + fundamentals rows).
+// Tiny inline SVG price line (cards + fundamentals rows): gradient area fill
+// fading to transparent, line draws itself in (pathLength + dashoffset in CSS),
+// glowing dot on the latest point.
+let sparkSeq = 0;
 function sparklineSvg(series, opts = {}) {
   if (!Array.isArray(series) || series.length < 2) return "";
   const W = opts.w || 84, H = opts.h || 30, n = series.length;
@@ -127,8 +130,24 @@ function sparklineSvg(series, opts = {}) {
   const pts = series.map((c, i) => `${x(i).toFixed(1)},${y(c).toFixed(1)}`).join(" ");
   const up = series[n - 1] >= series[0];
   const col = up ? "var(--up)" : "var(--down)";
+  const gid = `sg${++sparkSeq}`;   // gradient ids must be unique per svg
   return `<svg viewBox="0 0 ${W} ${H}" class="spark" preserveAspectRatio="none" aria-hidden="true">
-    <polyline points="${pts}" fill="none" stroke="${col}" stroke-width="1.5"/></svg>`;
+    <defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${col}" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="${col}" stop-opacity="0"/>
+    </linearGradient></defs>
+    <polygon class="spark-area" points="0,${H} ${pts} ${W},${H}" fill="url(#${gid})"/>
+    <polyline class="spark-line" points="${pts}" fill="none" stroke="${col}" stroke-width="1.6"
+      stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+    <circle class="spark-dot" cx="${x(n - 1).toFixed(1)}" cy="${y(series[n - 1]).toFixed(1)}" r="2.2"
+      fill="${col}" style="filter:drop-shadow(0 0 3px ${col})"/></svg>`;
+}
+
+// Verdict pill; Watch-Buy gets the animated pulse dot.
+function badgeHtml(verdict) {
+  const vcls = VCLASS[verdict] || "neutral";
+  const dot = vcls === "buy" ? `<span class="pulse" aria-hidden="true"></span>` : "";
+  return `<span class="badge ${vcls}">${dot}${esc(verdict || "—")}</span>`;
 }
 
 function scoreBar(letter, v, naLabel) {
@@ -254,14 +273,33 @@ function apply() {
   renderCards(rows);
 }
 
+let pricesAnimated = false;   // odometer prices run once, not on every filter/sort
+
 function renderCards(rows) {
   const c = document.getElementById("cards");
   c.innerHTML = "";
   if (!rows.length) { c.innerHTML = `<p class="status">No tickers match the filter.</p>`; return; }
   rows.forEach((t, i) => {
     const el = cardEl(t);
-    el.style.animationDelay = `${Math.min(i * 45, 450)}ms`;   // staggered entrance
+    el.style.animationDelay = `${Math.min(i * 40, 480)}ms`;   // staggered entrance
     c.appendChild(el);
+  });
+  if (!pricesAnimated) { animatePrices(c); pricesAnimated = true; }
+}
+
+// Odometer-style count-up on the price figures (first paint only).
+function animatePrices(root) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  root.querySelectorAll(".price[data-v]").forEach((el, i) => {
+    const target = parseFloat(el.dataset.v);
+    if (!isFinite(target)) return;
+    const ms = 800, t0 = performance.now() + Math.min(i * 40, 480);
+    const tick = (now) => {
+      const p = Math.min(1, Math.max(0, (now - t0) / ms));
+      el.textContent = "$" + (target * (1 - Math.pow(1 - p, 3))).toFixed(2);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
   });
 }
 
@@ -291,10 +329,10 @@ function cardEl(t) {
         <span class="ticker">${esc(t.symbol)}</span>
         <div class="name">${esc(t.company || "")}${t.company && t.sector && t.sector !== "Unknown" ? " · " : ""}${t.sector && t.sector !== "Unknown" ? esc(t.sector) : ""}</div>
       </div></div>
-      <span class="badge ${vcls}">${esc(t.verdict || "—")}</span>
+      ${badgeHtml(t.verdict)}
     </div>
     <div class="price-row">
-      <span class="price tabular">${fmtMoney(t.price)}</span>
+      <span class="price tabular"${typeof t.price === "number" ? ` data-v="${t.price}"` : ""}>${fmtMoney(t.price)}</span>
       <span class="change ${changeCls} tabular">${fmtPct(t.change_pct)}</span>
       ${sparklineSvg(t.spark)}
     </div>
@@ -306,7 +344,7 @@ function cardEl(t) {
       ${scoreBar("F", s.fundamentals)}${scoreBar("T", s.technicals, ds.tech)}${scoreBar("S", s.sentiment, ds.sent)}
     </div>
     ${flags ? `<div class="flags">${flags}</div>` : ""}
-    <div class="card-cta">${hasAi ? `<span class="ai-hint">🤖 Ask AI</span>` : "<span></span>"}<span>Details →</span></div>`;
+    <div class="card-cta">${hasAi ? `<span class="ai-hint">🤖 Ask AI</span>` : "<span></span>"}<span class="go">Details →</span></div>`;
 
   card.addEventListener("click", () => openDrawer(t.symbol));
   return card;
@@ -318,7 +356,6 @@ function openDrawer(symbol) {
   const t = state.tickers.find((x) => x.symbol === symbol);
   if (!t || t.error) return;
   const s = t.scores || {};
-  const vcls = VCLASS[t.verdict] || "neutral";
   const changeCls = (t.change_pct || 0) >= 0 ? "up" : "down";
 
   const ai = t.ai && t.ai.bull ? `<div class="section"><h3>In plain English</h3>
@@ -348,7 +385,7 @@ function openDrawer(symbol) {
   drawer.innerHTML = `
     <div class="drawer-head">
       <div>
-        <h2>${monogram(t.symbol)}${esc(t.symbol)} <span class="badge ${vcls}">${esc(t.verdict || "—")}</span></h2>
+        <h2>${monogram(t.symbol)}${esc(t.symbol)} ${badgeHtml(t.verdict)}</h2>
         <div class="name">${esc(t.company || "")}${t.sector && t.sector !== "Unknown" ? " · " + esc(t.sector) : ""}</div>
         <div class="price-row"><span class="price tabular">${fmtMoney(t.price)}</span>
           <span class="change ${changeCls} tabular">${fmtPct(t.change_pct)}</span></div>
